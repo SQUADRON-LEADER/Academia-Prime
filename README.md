@@ -88,3 +88,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - CAPTCHA support is packaged locally under `captcha_solver/`.
 - CAPTCHA model and runtime assets are loaded by the extension when required.
 - The popup interface is located under `src/popup/`.
+- The project uses browser-local processing for its core calculations.
