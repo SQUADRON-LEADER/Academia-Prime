@@ -74,4 +74,5 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 
 ---
 
-> _Skip the Feedback. Track the Margin._
+### Project notes
+- Browser extension enhancements for SRM Academia are organized under `src/`.
