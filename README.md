@@ -81,3 +81,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - Local storage is used for user preferences and customizations.
 - Timetable tools support editing and image export workflows.
 - Academic utilities include CGPA and SGPA calculations.
+- Attendance tools provide focused academic progress information.
