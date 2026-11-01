@@ -1,97 +1,117 @@
-<!-- Academia Prime Banner -->
-<img src="https://github.com/ivaishnavraj/Academia-Prime/blob/main/Github%20Preview.png" alt="Academia Prime Preview" width="100%">
+<div align="center">
 
-## 🎓 Academia Prime
+<img src="Academia%20Prime%20Learning%20Logo.png" alt="Academia Prime" width="180">
 
-Academia Prime enhances the SRM Academia experience with automation, smarter insights, and a clean, minimal UI.
+# Academia Prime
 
----
+### A smarter, cleaner SRM Academia experience
 
-### 🔹 Get Here - Stable Release (v1.3.6) 🟢 LIVE
+Skip repetitive work. Understand your academics. Keep everything in one place.
 
-<p align="center">
-  <!-- Firefox -->
-    <a href="https://chromewebstore.google.com/detail/academia-prime/kkhjcadiccbncoajcohhndhdiijpgmdj"><img src="ChromeWebStore.png" alt="Download for Chrome" height="48" /></a>
-   <!-- <a href="https://github.com/ivaishnavraj/PixterialTab"><img src="https://github.com/ivaishnavraj/PixterialTab/blob/main/images/github.png" alt="Download from GitHub" height="48" /></a> -->
-   <a href="https://microsoftedge.microsoft.com/addons/detail/academia-prime/aimpgooblkfholbbjpdkdlaoeobllklf"><img src="https://github.com/ivaishnavraj/AcademiaPrime/blob/main/EdgeAdd-ons.png" alt="Download for Edge" height="48" /></a>
-
+<p>
+  <a href="https://chromewebstore.google.com/detail/academia-prime/kkhjcadiccbncoajcohhndhdiijpgmdj">
+    <img src="ChromeWebStore.png" alt="Get it on Chrome Web Store" height="44">
+  </a>
+  &nbsp;
+  <a href="https://microsoftedge.microsoft.com/addons/detail/academia-prime/aimpgooblkfholbbjpdkdlaoeobllklf">
+    <img src="EdgeAdd-ons.png" alt="Get it on Microsoft Edge Add-ons" height="44">
+  </a>
 </p>
 
-> _Available on Chromium-based desktop & mobile/tablet browsers (Quetta, Kiwi, Lemur)._
+</div>
 
 ---
 
-### ✨ Features
+## What is Academia Prime?
 
-- **⚡ 100% FREE FOREVER**
-  - No hidden costs, paywalls, or subscriptions—ever.
+Academia Prime is a free browser extension that improves the SRM Academia and SRM student portal experience with useful automation, academic insights, and a modern interface.
 
-- **📅 Prime Interactive Timetable (NEW in v1.2.0)**
-  - **Modern Schedule View**: High-contrast, color-coded weekly timetable layout with live slot timing indicators
-  - **In-Page Slot Customizer**: Click any slot to edit subject names, room numbers, and custom colors (with hex input and preset palette)
-  - **Optional Slot Strikeout**: Mark classes or labs as optional with instant visual strikeout
-  - **Hide / Restore Custom Edits**: One-click toggle between customized view and raw original schedule
-  - **10x Ultra-HD Studio Image Export**:
-    - **Original Size (Landscape)**: Framed with studio header and university footer branding
-    - **WhatsApp DP (1:1 Square)**: Crop-safe 1:1 format with 16 studio gradient themes (Tokyo Cyberpunk, Aurora Borealis, Sunset Velvet, Rose Gold Luxe, etc.) or custom hex colors + live countdown timer
+It works alongside your existing login session—no new account, no tracking, and no complicated setup.
 
-- **ℹ️ Prime Information Hub**
-  - Collapsible, space-saving info panel located directly below Grade Details
-  - **Version-wise Changelog**: Complete dated release history directly inside SRM Academia
-  - **Phone/Tablet Installation Guide**: Step-by-step instructions for running Prime on Quetta Browser & other extension-enabled mobile browsers
-  - **Frequently Asked Questions (FAQ)**: Quick answers regarding 100% free status and complete credential privacy
-  - **Integrated Bug Report Form**: Embedded Google Form for submitting feedback and bug reports directly within the portal without opening a new tab
+## Highlights
 
-- **🚀 Smart Auto Feedback**
-  - Fill all course feedback forms in seconds
-  - Customizable default ratings and comments
+### Academic insights
 
-- **📊 Advanced Academic Insights**
-  - **Interactive CGPA Calculator**: Live GPA prediction based on estimated grades
-  - **Marks & Margin Analysis**: Visual indicators for attendance safety
-  - **Grade Forecasting**: See exactly what marks you need to hit your target grade (e.g., O, A+, A)
-  - **Marks Lost Tracker**: Real-time calculation of internal marks lost
+- Interactive CGPA and SGPA calculators
+- Grade forecasting and target-mark calculations
+- Attendance safety and margin analysis
+- Internal marks and marks-lost tracking
+- Clear visual summaries for faster decisions
 
-- **🔄 Dynamic Syncing**
-  - **Future-Proof Timetable Sync**: Automatically fetches credits regardless of the academic year (2024, 2025, 2031, etc.)
-  - One-click credit restoration from the portal
+### Timetable, redesigned
 
-- **🎨 Premium UI Overhaul**
-  - Clean, minimalist Dashboard-style layout
-  - Elegant indigo-themed identity banners
-  - Typography powered by **Plus Jakarta Sans**
+- Clean weekly timetable view
+- Edit subjects, rooms, colors, and optional classes
+- Restore the original timetable whenever needed
+- Export polished timetable images
+- Square WhatsApp DP export with custom themes
 
-- **🛡️ Privacy & Security**
-  - **No Login Required**: Works entirely on your existing session
-  - **Zero Tracking**: No analytics, no data collection
-  - **Local Processing**: All calculations happen in your browser
+### Less repetitive work
+
+- Complete course feedback forms quickly
+- Restore timetable credits when needed
+- Add helpful tools directly inside the student portal
+- Access faculty and campus contact information in context
+
+### A better interface
+
+- Minimal, high-contrast UI
+- Indigo-themed visual identity
+- Responsive layouts for desktop and supported mobile browsers
+- Built-in information hub, changelog, FAQs, and installation help
+
+## Privacy first
+
+Academia Prime is designed to stay out of the way:
+
+- No registration required
+- No analytics or tracking
+- No external data collection
+- Calculations run locally in your browser
+- Your existing SRM session is used; credentials are not requested
+
+Read the full [Privacy Policy](privacy-policy.html).
+
+## Installation
+
+1. Install Academia Prime from the [Chrome Web Store](https://chromewebstore.google.com/detail/academia-prime/kkhjcadiccbncoajcohhndhdiijpgmdj) or [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/academia-prime/aimpgooblkfholbbjpdkdlaoeobllklf).
+2. Open SRM Academia or the SRM student portal.
+3. Sign in normally and use the new tools directly in the page.
+
+The extension is also designed to work with supported Chromium-based mobile browsers such as Quetta, Kiwi, and Lemur.
+
+## For developers
+
+This repository contains the browser extension source code:
+
+```text
+src/                Academia Prime core features
+studentportal/      SRM student portal enhancements
+captcha_solver/     Local CAPTCHA support
+important_contacts/ Runtime contact-directory resources
+icons/              Extension icons and branding
+manifest.json       Manifest V3 configuration
+```
+
+To try the extension locally:
+
+1. Clone this repository.
+2. Open `chrome://extensions` or `edge://extensions`.
+3. Enable **Developer mode**.
+4. Choose **Load unpacked** and select the project folder.
+
+## Contributing
+
+Suggestions, bug reports, and improvements are welcome. Please keep contributions focused on usability, reliability, and the project's privacy-first design.
+
+## License
+
+This project is distributed under the terms of the [LICENSE](LICENSE) file.
 
 ---
 
-## 🔏 Privacy Policy
+<div align="center">
 
-Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://ivaishnavraj.github.io/AcademiaPrime/privacy-policy.html)
+**Skip the feedback. Track the margin. Own your timetable.**
 
----
-
-### Project notes
-- Browser extension enhancements for SRM Academia are organized under `src/`.
-- Student portal integrations are maintained under `studentportal/`.
-- The extension manifest targets Manifest V3.
-- Local storage is used for user preferences and customizations.
-- Timetable tools support editing and image export workflows.
-- Academic utilities include CGPA and SGPA calculations.
-- Attendance tools provide focused academic progress information.
-- Marks views include visual analysis for easier review.
-- Feedback automation reduces repetitive course feedback entry.
-- Contact-directory assets are included for in-portal reference.
-- CAPTCHA support is packaged locally under `captcha_solver/`.
-- CAPTCHA model and runtime assets are loaded by the extension when required.
-- The popup interface is located under `src/popup/`.
-- The project uses browser-local processing for its core calculations.
-- No analytics or tracking services are part of the extension.
-- The privacy policy is available in `privacy-policy.html`.
-- Chrome and Edge store links are included near the top of this README.
-- Required runtime PDF references are preserved under `important_contacts/`.
-- Scratch files and local tooling are excluded through `.gitignore`.
-- Contributions should preserve existing privacy and local-processing behavior.
+</div>
