@@ -94,3 +94,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - Chrome and Edge store links are included near the top of this README.
 - Required runtime PDF references are preserved under `important_contacts/`.
 - Scratch files and local tooling are excluded through `.gitignore`.
+- Contributions should preserve existing privacy and local-processing behavior.
