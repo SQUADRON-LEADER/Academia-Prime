@@ -1,0 +1,607 @@
+/* ==========================================================================
+   Student Portal - Exam Inspect & Hidden Datesheet Module
+   - Button appears only when a month is selected
+   - 4-column Matrix Grid for Months with May/Nov/Dec light purple highlight
+   - Clean Dotted UI Styling for Tooltip & Modal
+   - Updates <select id="txtExamMonthYear"> text & value
+   - Strictly for sp.srmist.edu.in
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+
+/* ── Container Beside #txtExamMonthYear (Visible by default under Scribe Request) ── */
+.sp-exam-action-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-left: 10px !important;
+  margin-right: 6px !important;
+  vertical-align: middle !important;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif !important;
+  z-index: 1000 !important;
+  position: relative !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease !important;
+}
+
+/* Shown state */
+.sp-exam-action-wrapper.sp-visible {
+  display: inline-flex !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* ── "View  Hidden Datesheet" Dotted Action Button ── */
+.sp-hidden-datesheet-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  color: #132450 !important;
+  border: 1.5px dotted #253b70 !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  cursor: pointer !important;
+  text-transform: none !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+  transition: all 0.15s ease !important;
+  user-select: none !important;
+  text-decoration: none !important;
+  line-height: normal !important;
+  height: auto !important;
+}
+
+.sp-hidden-datesheet-btn svg {
+  color: #253b70 !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.15s ease !important;
+}
+
+.sp-hidden-datesheet-btn:hover {
+  background: #e8ecf5 !important;
+  border-color: #0d1938 !important;
+  color: #0d1938 !important;
+  transform: translateY(-0.5px) !important;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.12) !important;
+}
+
+.sp-hidden-datesheet-btn:hover svg {
+  color: #0d1938 !important;
+  transform: scale(1.06) !important;
+}
+
+.sp-hidden-datesheet-btn:active {
+  background: #e8ecf5 !important;
+  transform: translateY(0.5px) !important;
+}
+
+/* ── "i" Info Button with Hover Tooltip ── */
+.sp-exam-info-container {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.sp-exam-info-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1.5px dotted #94a3b8 !important;
+  color: #475569 !important;
+  font-family:
+    "Space Grotesk",
+    -apple-system,
+    sans-serif !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  cursor: help !important;
+  transition: all 0.15s ease !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03) !important;
+  user-select: none !important;
+  flex-shrink: 0 !important;
+  line-height: normal !important;
+}
+
+.sp-exam-info-btn:hover {
+  background: #f1f5f9 !important;
+  border-color: #253b70 !important;
+  color: #132450 !important;
+  transform: scale(1.06) !important;
+}
+
+/* Tooltip on Hover (Multi-Line & Clean Dotted UI) */
+.sp-exam-tooltip {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  bottom: calc(100% + 8px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(4px) !important;
+  width: 270px !important;
+  max-width: 90vw !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+  padding: 8px 11px !important;
+  border-radius: 8px !important;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.12),
+    0 2px 6px rgba(15, 23, 42, 0.05) !important;
+  z-index: 2147483645 !important;
+  pointer-events: none !important;
+  transition:
+    opacity 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 1.5px dotted #253b70 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.sp-exam-tooltip-line {
+  display: block !important;
+  color: #334155 !important;
+}
+
+.sp-exam-tooltip-warn {
+  color: #9a7200 !important;
+  font-weight: 600 !important;
+}
+
+.sp-exam-tooltip-sub {
+  color: #64748b !important;
+  font-size: 10.5px !important;
+}
+
+.sp-exam-tooltip::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-width: 5px !important;
+  border-style: solid !important;
+  border-color: #253b70 transparent transparent transparent !important;
+}
+
+.sp-exam-info-container:hover .sp-exam-tooltip,
+.sp-exam-info-btn:hover + .sp-exam-tooltip {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MODAL POPUP OVERLAY & MATRIX CARD
+   ══════════════════════════════════════════════════════════════════════════ */
+#sp-exam-inspect-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(15, 23, 42, 0.55) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  z-index: 2147483640 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0 !important;
+  transition: opacity 0.18s ease-in-out !important;
+  pointer-events: none !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+}
+
+#sp-exam-inspect-modal-overlay.sp-modal-open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.sp-exam-modal-card {
+  width: 95% !important;
+  max-width: 440px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.18),
+    0 4px 12px rgba(15, 23, 42, 0.05) !important;
+  font-family:
+    "Plus Jakarta Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif !important;
+  box-sizing: border-box !important;
+  transform: translateY(8px) scale(0.98) !important;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#sp-exam-inspect-modal-overlay.sp-modal-open .sp-exam-modal-card {
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Modal Header */
+.sp-exam-modal-header {
+  background: #ffffff !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-sizing: border-box !important;
+}
+
+.sp-exam-header-title-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-exam-header-icon-wrap {
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 6px !important;
+  background: #f8fafc !important;
+  border: 1.5px dotted #253b70 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #132450 !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-exam-header-title {
+  font-family:
+    "Space Grotesk",
+    -apple-system,
+    sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  line-height: 1.2 !important;
+}
+
+.sp-exam-modal-close-btn {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 5px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #64748b !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-exam-modal-close-btn:hover {
+  background: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+  color: #b91c1c !important;
+}
+
+/* Modal Body */
+.sp-exam-modal-body {
+  padding: 14px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+  background: #f8fafc !important;
+}
+
+/* Tentative Notice */
+.sp-exam-banner-tentative {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  background: #fffaf0 !important;
+  border: 1px solid #fff4c2 !important;
+  border-left: 3.5px solid #F4C542 !important;
+  padding: 8px 10px !important;
+  border-radius: 6px !important;
+  font-size: 11px !important;
+  color: #9a7200 !important;
+  line-height: 1.35 !important;
+}
+
+.sp-exam-banner-tentative svg {
+  flex-shrink: 0 !important;
+  color: #c69a22 !important;
+  margin-top: 1px !important;
+}
+
+/* Professional Blue Advisory Box */
+.sp-exam-banner-blue {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  background: #e8ecf5 !important;
+  border: 1px solid #bfdbfe !important;
+  border-left: 3.5px solid #3b82f6 !important;
+  padding: 9px 11px !important;
+  border-radius: 6px !important;
+  font-size: 11px !important;
+  color: #1e40af !important;
+  line-height: 1.4 !important;
+}
+
+.sp-exam-banner-blue svg {
+  flex-shrink: 0 !important;
+  color: #132450 !important;
+  margin-top: 2px !important;
+}
+
+/* Section Box */
+.sp-exam-matrix-box {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.sp-exam-matrix-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.sp-exam-matrix-label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #475569 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+}
+
+.sp-exam-matrix-pill {
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  background: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #132450 !important;
+  padding: 2px 10px !important;
+  border-radius: 5px !important;
+}
+
+/* 4x3 Month Matrix Grid */
+.sp-exam-month-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 6px !important;
+}
+
+.sp-exam-month-btn {
+  padding: 6px 4px !important;
+  border-radius: 6px !important;
+  background: #f8fafc !important;
+  border: 1.5px dotted #cbd5e1 !important;
+  color: #334155 !important;
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  transition: all 0.12s ease !important;
+  user-select: none !important;
+}
+
+.sp-exam-month-btn:hover {
+  background: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+.sp-exam-month-btn.active {
+  background: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #0d1938 !important;
+  box-shadow: 0 1px 3px rgba(79, 70, 229, 0.12) !important;
+}
+
+/* Highlight for End Semester Months (May, Nov, Dec) - Light Purple Accent */
+.sp-exam-month-btn.sp-exam-highlight-month {
+  background: #faf5ff !important;
+  border: 1.5px dotted #c084fc !important;
+  color: #132450 !important;
+}
+
+.sp-exam-month-btn.sp-exam-highlight-month:hover {
+  background: #e8ecf5 !important;
+  border-color: #a855f7 !important;
+  color: #6b21a8 !important;
+}
+
+.sp-exam-month-btn.sp-exam-highlight-month.active {
+  background: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #0d1938 !important;
+  box-shadow: 0 1px 3px rgba(19, 36, 80, 0.15) !important;
+}
+
+/* Year Row Buttons */
+.sp-exam-year-row {
+  display: flex !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+}
+
+.sp-exam-year-btn {
+  flex: 1 !important;
+  min-width: 48px !important;
+  padding: 6.5px 6px !important;
+  border-radius: 6px !important;
+  background: #f8fafc !important;
+  border: 1.5px dotted #cbd5e1 !important;
+  color: #334155 !important;
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  transition: all 0.15s ease !important;
+  user-select: none !important;
+}
+
+.sp-exam-year-btn:hover {
+  background: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+.sp-exam-year-btn.active {
+  background: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #0d1938 !important;
+  box-shadow: 0 1px 3px rgba(19, 36, 80, 0.15) !important;
+}
+
+/* Expanded & Highlighted Custom Year Input */
+.sp-exam-custom-year-input {
+  flex: 1.5 !important;
+  min-width: 125px !important;
+  padding: 6px 8px !important;
+  border-radius: 6px !important;
+  background: #fbfaff !important;
+  border: 1.5px dotted #b8c2d9 !important;
+  color: #0d1938 !important;
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-exam-custom-year-input::placeholder {
+  color: #253b70 !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  opacity: 0.85 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.sp-exam-custom-year-input:hover {
+  border-color: #818cf8 !important;
+  background: #e8ecf5 !important;
+}
+
+.sp-exam-custom-year-input:focus {
+  border-color: #132450 !important;
+  background: #ffffff !important;
+  color: #1e1b4b !important;
+  box-shadow: 0 0 0 2.5px rgba(79, 70, 229, 0.18) !important;
+}
+
+.sp-exam-custom-year-input.active {
+  background: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #0d1938 !important;
+  box-shadow: 0 1px 3px rgba(19, 36, 80, 0.15) !important;
+}
+
+.sp-exam-custom-year-input.active {
+  background: #e8ecf5 !important;
+  border-color: #132450 !important;
+  color: #0d1938 !important;
+}
+
+/* Modal Footer */
+.sp-exam-modal-footer {
+  background: #ffffff !important;
+  padding: 10px 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-top: 1px solid #e2e8f0 !important;
+  box-sizing: border-box !important;
+}
+
+.sp-exam-footer-note {
+  font-size: 10px !important;
+  color: #94a3b8 !important;
+  font-style: italic !important;
+}
+
+.sp-exam-footer-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-exam-btn-secondary {
+  padding: 5px 12px !important;
+  background: #ffffff !important;
+  border: 1.5px dotted #cbd5e1 !important;
+  border-radius: 6px !important;
+  color: #475569 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-exam-btn-secondary:hover {
+  background: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+.sp-exam-btn-primary {
+  padding: 5px 14px !important;
+  background: #132450 !important;
+  border: 1px solid #0d1938 !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 2px rgba(79, 70, 229, 0.2) !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-exam-btn-primary:hover {
+  background: #0d1938 !important;
+}

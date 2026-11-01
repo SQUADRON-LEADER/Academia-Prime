@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia Prime - CGPA Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+  <!-- MAC OS WINDOW SHELL (Light Mode with Curved Border) -->
+  <div class="mac-window-shell">
+
+    <!-- MAC OS TITLEBAR WITH DUMMY MAC BUTTONS (DO NOT WORK) -->
+    <div class="mac-titlebar">
+      <!-- 3 Mac Traffic Light Dummy Buttons -->
+      <div class="mac-traffic-lights" aria-hidden="true">
+        <span class="mac-dot mac-dot-red" title="Close (Dummy)"></span>
+        <span class="mac-dot mac-dot-yellow" title="Minimize (Dummy)"></span>
+        <span class="mac-dot mac-dot-green" title="Maximize (Dummy)"></span>
+      </div>
+
+      <!-- Right Live Status Badge -->
+      <div class="mac-titlebar-right">
+        <span class="mac-status-pill">v1.4.5</span>
+      </div>
+    </div>
+
+    <!-- HERO BRAND SECTION (Matching image typography in Light Mode) -->
+    <header class="mac-hero-section">
+      <div class="mac-hero-headline">
+        The <span class="highlight-orange">Unofficial</span> Upgrade to<br>
+        <span class="highlight-red">SRM Student</span> &amp; <span class="highlight-green">Academia Portal</span>.
+      </div>
+
+      <div class="mac-hero-center-box">
+        <img src="../../icons/academia-prime-logo.png" alt="Academia Prime" class="mac-hero-logo">
+        <h1 class="mac-hero-title">Academia Prime - CGPA Calculator</h1>
+        <div class="mac-hero-meta">
+          <span class="mac-hero-badge">Available for All Devices</span>
+          <span class="mac-hero-sub">Chromium Based Extension</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN PAGE WRAPPER -->
+    <main class="calc-page-wrapper">
+
+      <!-- 1. GPA CALCULATOR SECTION (Ditto Theme) -->
+      <section id="cgpa-calc-section-v31">
+        <div id="cgpa-panels-v31">
+          <!-- LEFT PANEL -->
+          <div id="cgpa-left-panel-v31">
+            <!-- HEADER -->
+            <div id="cgpa-hdr-v31">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="#132450" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+                <span
+                  style="font-size: 15px; font-weight: 900; color: #1e1b4b; text-transform: uppercase; letter-spacing: .04em;">
+                  GPA Calculator
+                </span>
+                <div class="tooltip-v31" style="color: #94a3b8; display: flex; align-items: center; cursor: pointer;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                  </svg>
+                  <div class="tooltip-bubble" style="width: 220px;">
+                    <div
+                      style="font-size: 8px; color: #132450; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 900; text-align: center;">
+                      GPA Formula</div>
+                    <div class="formula-box">
+                      <div style="margin-bottom: 1px;">Σ (Credits × Grade Points)</div>
+                      <div class="formula-line"></div>
+                      <div style="margin-top: 1px;">Σ Total Credits</div>
+                    </div>
+                    <div
+                      style="font-size: 9px; font-weight: 600; color: #64748b; margin-top: 6px; line-height: 1.35; text-align: center;">
+                      Calculated by multiplying course credits by estimated grade points and dividing by total credits.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <button type="button" id="cgpa-reset-credits-v31" title="Clear and purge all credit values"
+                  style="display: flex; align-items: center; gap: 5px; background: #fffaf0; border: 1.5px solid #f4d875; color: #745900; border-radius: 8px; padding: 6px 11px; font-size: 11px; font-weight: 800; font-family: inherit; cursor: pointer; transition: all .2s;">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>Reset Credits
+                </button>
+                <button type="button" id="cgpa-fresh-v31" title="Clear all grades"
+                  style="display: flex; align-items: center; gap: 5px; background: #e8ecf5; border: 1.5px solid #ddd6fe; color: #132450; border-radius: 8px; padding: 6px 11px; font-size: 11px; font-weight: 800; font-family: inherit; cursor: pointer; transition: all .2s;">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                    <path d="M3 3v5h5" />
+                  </svg>Reset Grades
+                </button>
+              </div>
+            </div>
+
+            <!-- TABLE CARD -->
+            <div id="cgpa-card-v31"
+              style="border: 1.5px solid #b8c2d9; border-radius: 16px; overflow: visible; box-shadow: 0 4px 20px -3px rgba(49, 46, 129, 0.12); background: #ffffff; position: relative; z-index: 25;">
+              <table id="cgpa-tbl-v31" style="width: 100%; border-collapse: separate; border-spacing: 0;">
+                <thead>
+                  <tr style="background: #0d1938; border-bottom: 1.5px solid #1e1b4b;">
+                    <th
+                      style="width: 36px; padding: 11px 4px; text-align: center; font-size: 11px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: .08em; border-top-left-radius: 15px; background: #0d1938; border-bottom: 1.5px solid #1e1b4b;">
+                      #</th>
+                    <th
+                      style="padding: 11px 12px; text-align: left; font-size: 11px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: .08em; background: #0d1938; border-bottom: 1.5px solid #1e1b4b;">
+                      Subject</th>
+                    <th
+                      style="padding: 11px 12px; text-align: center; font-size: 11px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: .08em; width: 100px; background: #0d1938; border-bottom: 1.5px solid #1e1b4b;">
+                      Credits</th>
+                    <th
+                      style="padding: 11px 12px; text-align: center; font-size: 11px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: .08em; width: 110px; background: #0d1938; border-bottom: 1.5px solid #1e1b4b;">
+                      Grade</th>
+                    <th
+                      style="width: 32px; padding: 11px 6px; border-top-right-radius: 15px; background: #0d1938; border-bottom: 1.5px solid #1e1b4b;">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="cgpa-tbody-v31">
+                  <!-- Dynamically populated rows -->
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5"
+                      style="padding: 10px 12px; border-top: 1.5px solid #e8eaf0; background: #fafbff; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                      <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <button type="button" id="cgpa-add-v31"
+                          style="display: inline-flex; align-items: center; gap: 5px; background: transparent; border: 1.5px dashed #b8c2d9; color: #132450; border-radius: 8px; padding: 6px 14px; font-size: 11px; font-weight: 800; font-family: inherit; cursor: pointer; transition: all .2s;">
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          </svg>Add Subject
+                        </button>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                          <button type="button" id="cgpa-clear-all-v31"
+                            style="display: inline-flex; align-items: center; gap: 5px; background: transparent; border: 1.5px solid #fca5a5; color: #dc2626; border-radius: 8px; padding: 6px 14px; font-size: 11px; font-weight: 800; font-family: inherit; cursor: pointer; transition: all .2s;">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                              <polyline points="3 6 5 6 21 6" />
+                              <path d="M19 6l-1 14H6L5 6" />
+                              <path d="M10 11v6" />
+                              <path d="M14 11v6" />
+                              <path d="M9 6V4h6v2" />
+                            </svg>Clear All
+                          </button>
+                          <button type="button" id="cgpa-restore-subjects-v31"
+                            title="Sync subjects and credits from Timetable cache"
+                            style="display: inline-flex; align-items: center; gap: 5px; background: #e8ecf5; border: 1.5px solid #b8c2d9; color: #132450; border-radius: 8px; padding: 6px 14px; font-size: 11px; font-weight: 800; font-family: inherit; cursor: pointer; transition: all .2s;">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                              <path d="M3 3v5h5" />
+                              <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+                              <path d="M16 16h5v5" />
+                            </svg>Sync Credits
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          <!-- RIGHT PANEL (Sticky Live GPA) -->
+          <div id="cgpa-right-panel-v31"
+            style="width: 220px; flex-shrink: 0; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 24px; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); position: sticky; top: 80px; transition: all 0.3s;">
+            <div style="width: 100%; text-align: center;">
+              <div
+                style="font-size: 10px; font-weight: 900; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
+                <span class="live-dot"></span> Live GPA
+              </div>
+              <div id="cgpa-live-box"
+                style="background: #f8fafc; border-radius: 20px; padding: 24px 10px; border: 1.5px solid #f1f5f9; margin-bottom: 20px; transition: all 0.4s;">
+                <div id="cgpa-live-val"
+                  style="font-size: 58px; font-weight: 900; color: #1e1b4b; line-height: 1; letter-spacing: -0.04em; transition: all 0.3s;">
+                  —</div>
+                <div style="font-size: 11px; font-weight: 800; color: #132450; margin-top: 8px; opacity: 0.8;">Semester
+                  GPA</div>
+              </div>
+              <div style="width: 100%; padding: 0 10px;">
+                <div
+                  style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 800; color: #64748b; margin-bottom: 8px;">
+                  <span id="cgpa-live-lbl">Progress</span>
+                  <span id="cgpa-pct-lbl" style="color: #132450;">0%</span>
+                </div>
+                <div style="width: 100%; background: #f1f5f9; border-radius: 99px; height: 6px; overflow: hidden;">
+                  <div id="cgpa-live-bar"
+                    style="height: 100%; width: 0%; background: #132450; border-radius: 99px; transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);">
+                  </div>
+                </div>
+              </div>
+              <div style="margin-top: 24px; display: flex; justify-content: center; width: 100%;">
+                <div class="tooltip-v31"
+                  style="display: flex; align-items: center; gap: 6px; cursor: pointer; padding: 4px 6px; border-radius: 8px; max-width: 100%;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#132450" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                  </svg>
+                  <span
+                    style="font-size: 10px; font-weight: 700; color: #94a3b8; line-height: 1.2; text-align: left;">GPA
+                    Calculated from Estimated Grades</span>
+                  <div class="tooltip-bubble"
+                    style="width: 200px; bottom: 130%; left: 50%; transform: translateX(-50%);">
+                    <div
+                      style="font-size: 8px; color: #132450; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 900; text-align: center;">
+                      GPA Formula</div>
+                    <div class="formula-box">
+                      <div style="margin-bottom: 1px;">Σ (Credits × Points)</div>
+                      <div class="formula-line"></div>
+                      <div style="margin-top: 1px;">Σ Credits</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXACT DITTO FOOTER NOTE -->
+        <div id="cgpa-footer-note-v31"
+          style="margin-top: 14px; padding: 12px 16px; border-radius: 12px; background: linear-gradient(135deg, #f8faff 0%, #f1f5f9 100%); border: 1.5px solid #e8ecf5; font-size: 11.5px; color: #334155; display: flex; align-items: center; justify-content: space-between; gap: 14px; box-shadow: 0 2px 8px -2px rgba(99, 102, 241, 0.08); flex-wrap: wrap;">
+          <div style="display: flex; align-items: flex-start; gap: 10px; flex: 1; min-width: 280px;">
+            <div
+              style="width: 28px; height: 28px; border-radius: 8px; background: #e8ecf5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#132450" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+            </div>
+            <div style="line-height: 1.45; display: flex; flex-direction: column; gap: 4px;">
+              <div>
+                <span style="font-weight: 800; color: #1e1b4b;">Sync Course Credits Automatically:</span>
+                <span style="color: #64748b; margin-left: 4px;">
+                  Open the <a href="https://academia.srmist.edu.in/#My_Time_Table_Attendance" target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #132450; font-weight: 800; text-decoration: underline; text-underline-offset: 2px;">Academia
+                    My Time Table</a> page, wait ~2 seconds for courses to sync, then return here and click <strong>Sync
+                    Internal Marks</strong>.
+                </span>
+              </div>
+              <div
+                style="font-size: 11px; color: #64748b; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; margin-top: 1px;">
+                <span style="font-weight: 800; color: #c69a22;">Seeing wrong subjects?</span>
+                <span>Make sure Academia is logged into your own account (not a friend's), or click</span>
+                <button type="button" id="cgpa-reset-sync-btn"
+                  style="display: inline-flex; align-items: center; gap: 4px; background: #fff1f2; border: 1px solid #fecdd3; color: #e11d48; border-radius: 6px; padding: 2px 7px; font-size: 10px; font-weight: 800; font-family: inherit; cursor: pointer; transition: all .15s; vertical-align: middle;"
+                  title="Clear cached timetable data so you can re-sync from your own account">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                    <path d="M21 3v5h-5" />
+                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                    <path d="M3 21v-5h5" />
+                  </svg>Reset Sync
+                </button>
+                <span>to clear cache and re-sync.</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://academia.srmist.edu.in/#My_Time_Table_Attendance" target="_blank" rel="noopener noreferrer"
+            id="cgpa-open-tt-link"
+            style="display: inline-flex; align-items: center; gap: 6px; background: #ffffff; border: 1.5px solid #b8c2d9; color: #132450; border-radius: 8px; padding: 7px 13px; font-size: 11px; font-weight: 800; text-decoration: none; transition: all .2s; box-shadow: 0 1px 3px rgba(0,0,0,0.05); white-space: nowrap; align-self: center;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            Open My Time Table ↗
+          </a>
+
+        </div>
+      </section>
+
+
+      <!-- 2. OVERALL CGPA SECTION (Ditto Theme) -->
+      <section id="overall-cgpa-section-v31">
+        <!-- CGPA CALCULATOR HEADING (Exact ditto student portal) -->
+        <div id="cgpa-hdr-overall-v31"
+          style="display: flex; align-items: center; margin-bottom: 12px; max-width: 600px;">
+          <div
+            style="display: flex; align-items: center; font-size: 16px; font-weight: 800; color: #1e1b4b; text-transform: uppercase; letter-spacing: 0.03em;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+              style="margin-right: 6px; color: #132450;">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+              <line x1="8" y1="6" x2="16" y2="6" />
+              <line x1="8" y1="10" x2="16" y2="10" />
+              <line x1="8" y1="14" x2="16" y2="14" />
+              <line x1="8" y1="18" x2="16" y2="18" />
+            </svg>
+            CGPA Calculator
+          </div>
+          <div class="tooltip-v31"
+            style="margin-left: 8px; color: #94a3b8; display: inline-flex; align-items: center; cursor: pointer;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+            <div class="tooltip-bubble" style="width: 180px;">
+              <div
+                style="font-size: 8px; color: #132450; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 900; text-align: center;">
+                CGPA Formula</div>
+              <div class="formula-box">
+                <div style="margin-bottom: 1px;">Σ Semester GPA</div>
+                <div class="formula-line"></div>
+                <div style="margin-top: 1px;">Total Semesters</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="compact-container">
+          <div class="compact-header">
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <div class="compact-lbl">Semester-wise Average</div>
+              <div id="compact-meta" style="font-size: 11px; font-weight: 700; color: #b8c2d9;">0 Semesters Recorded
+              </div>
+            </div>
+            <div class="compact-score-group">
+              <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+                <div class="compact-lbl">Overall CGPA</div>
+                <div id="compact-val-pill" class="compact-val-pill tier-neutral">
+                  <span id="compact-val" class="compact-val">—</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="compact-grid" class="compact-grid"></div>
+          <div class="compact-footer">
+            <button type="button" id="add-compact" class="compact-btn btn-add-compact">+ Add More</button>
+            <button type="button" id="reset-compact" class="compact-btn">Reset All</button>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 3. GRADE DETAILS REFERENCE SECTION (Ditto Theme) -->
+      <section id="sp-grade-details-section-v31">
+        <div id="sp-grade-hdr-v31"
+          style="display: flex; align-items: center; margin-bottom: 13px; width: 480px; max-width: 100%; box-sizing: border-box;">
+          <div
+            style="display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 900; color: #1e1b4b; text-transform: uppercase; letter-spacing: 0.04em;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="#132450" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+            Grade Details
+          </div>
+        </div>
+
+        <div class="sp-grade-table-card"
+          style="width: 480px; max-width: 100%; border: 1.5px solid #b8c2d9; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px -3px rgba(49, 46, 129, 0.12); background: #ffffff; box-sizing: border-box;">
+          <table class="sp-grade-table" style="width: 100%; border-collapse: separate; border-spacing: 0;">
+            <thead>
+              <tr style="background: #0d1938; border-bottom: 1.5px solid #1e1b4b;">
+                <th
+                  style="padding: 8.5px 16px; text-align: center; font-size: 11.5px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: .08em; background: #0d1938; width: 90px; border-top-left-radius: 15px; border-right: 1px solid rgba(255, 255, 255, 0.15); border-bottom: 1.5px solid #1e1b4b;">
+                  Grade</th>
+                <th
+                  style="padding: 8.5px 16px; text-align: center; font-size: 11.5px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: .08em; background: #0d1938; width: 105px; border-right: 1px solid rgba(255, 255, 255, 0.15); border-bottom: 1.5px solid #1e1b4b;">
+                  Min.%</th>
+                <th
+                  style="padding: 8.5px 16px; text-align: center; font-size: 11.5px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: .08em; background: #0d1938; width: 105px; border-right: 1px solid rgba(255, 255, 255, 0.15); border-bottom: 1.5px solid #1e1b4b;">
+                  Max%.</th>
+                <th
+                  style="padding: 8.5px 16px; text-align: center; font-size: 11.5px; font-weight: 900; color: #ffffff; text-transform: uppercase; letter-spacing: .08em; background: #0d1938; border-top-right-radius: 15px; border-bottom: 1.5px solid #1e1b4b;">
+                  Result</th>
+              </tr>
+            </thead>
+            <tbody id="sp-grade-tbody-v31">
+              <!-- Dynamically populated with official SRM thresholds -->
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          style="display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: #94a3b8; margin-top: 10px; margin-left: 4px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 16v-4" />
+            <path d="M12 8h.01" />
+          </svg>
+          Table Source: SRM Student Portal Grade Details
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER TERMINAL / BADGE BAR (Matching image bottom in Light Mode) -->
+    <footer class="mac-footer-bar">
+      <div class="mac-footer-row">
+        <div class="mac-footer-cmd">
+          <div class="cmd-line"><span class="cmd-prompt">$</span> open Chrome Web Store</div>
+          <div class="cmd-line"><span class="cmd-prompt">$</span> search "Academia Prime"</div>
+        </div>
+        <div class="mac-footer-store">
+          <div class="mac-store-header-row">
+            <div class="mac-store-label">
+              <span class="mac-store-indicator"></span>
+              Available on
+            </div>
+            <a href="https://chromewebstore.google.com/detail/academia-prime/kkhjcadiccbncoajcohhndhdiijpgmdj/reviews"
+              target="_blank" rel="noopener noreferrer" class="mac-store-review-btn"
+              title="Leave a Review on Chrome Web Store">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#F4C542" stroke="#F4C542" stroke-width="1.5">
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              Review on Store ↗
+            </a>
+          </div>
+          <div class="mac-store-lines">
+            <div class="mac-store-line">
+              <span class="mac-platform-chip">Desktop</span>
+              <span class="mac-store-browsers">Any Chromium Based Browser</span>
+            </div>
+            <div class="mac-store-line">
+              <span class="mac-platform-chip mobile">Mobile / Tablets</span>
+              <span class="mac-store-browsers">Quetta Browser</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mac-footer-author">Managed by Aayush</div>
+    </footer>
+
+  </div> <!-- End .mac-window-shell -->
+
+  <script src="calculator.js"></script>
+</body>
+
+</html>

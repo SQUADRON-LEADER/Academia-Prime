@@ -1,0 +1,1070 @@
+/* ============================================================
+   ACADEMIA PRIME - STANDALONE GPA & CGPA SUITE
+   Ditto Theme & Styles matching Student Portal & Academia
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f1f5f9;
+  background-image: radial-gradient(at 0% 0%, #e8ecf5 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, #f0fdf4 0px, transparent 50%);
+  color: #0f172a;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  padding: 30px 16px 60px;
+}
+
+/* MAC OS WINDOW FRAME (Light Mode with Curved Border) */
+.mac-window-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1.5px solid #b8c2d9;
+  box-shadow: 0 25px 60px -15px rgba(30, 41, 59, 0.12),
+              0 0 0 1px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+/* macOS Window Titlebar with Dummy Buttons */
+.mac-titlebar {
+  background: #ffffff;
+  border-bottom: 1.5px solid #e2e8f0;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.mac-traffic-lights {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.mac-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: default;
+  pointer-events: none; /* Dummy buttons that do not work */
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.mac-dot-red {
+  background: #ff5f56;
+  border: 0.5px solid #e0443e;
+}
+
+.mac-dot-yellow {
+  background: #ffbd2e;
+  border: 0.5px solid #dea123;
+}
+
+.mac-dot-green {
+  background: #27c93f;
+  border: 0.5px solid #1aab29;
+}
+
+.mac-titlebar-right {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.mac-status-pill {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+  border-radius: 99px;
+  padding: 4px 11px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* HERO BRAND SECTION (Matching image typography in Light Mode) */
+.mac-hero-section {
+  background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+  border-bottom: 1.5px solid #e2e8f0;
+  padding: 38px 24px 28px;
+  text-align: center;
+  position: relative;
+}
+
+.mac-hero-headline {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.mac-hero-headline .highlight-orange {
+  color: #ea580c;
+  font-weight: 900;
+}
+
+.mac-hero-headline .highlight-red {
+  color: #ef4444;
+  font-weight: 900;
+}
+
+.mac-hero-headline .highlight-green {
+  color: #16a34a;
+  font-weight: 900;
+}
+
+.mac-hero-center-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mac-hero-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(22, 163, 74, 0.25));
+  transition: transform 0.25s ease;
+}
+
+.mac-hero-logo:hover {
+  transform: scale(1.06);
+}
+
+.mac-hero-title {
+  margin: 14px 0 10px;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 26px;
+  font-weight: 900;
+  color: #1e1b4b;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.mac-hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mac-hero-badge {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 99px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 3px rgba(21, 128, 61, 0.08);
+}
+
+.mac-hero-sub {
+  color: #64748b;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* PAGE WRAPPER INSIDE MAC WINDOW */
+.calc-page-wrapper {
+  padding: 28px 24px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* FOOTER TERMINAL BAR (Matching image bottom in Light Mode) */
+.mac-footer-bar {
+  background: #f8fafc;
+  border-top: 1.5px solid #e2e8f0;
+  padding: 16px 24px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mac-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  width: 100%;
+}
+
+.mac-footer-cmd {
+  font-family: 'Space Grotesk', 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  line-height: 1.3;
+}
+
+.mac-footer-cmd .cmd-prompt {
+  color: #253b70;
+  font-weight: 900;
+  margin-right: 4px;
+}
+
+.mac-footer-store {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #b8c2d9;
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 10px -2px rgba(79, 70, 229, 0.08);
+  min-width: 290px;
+}
+
+.mac-store-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mac-store-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #475569;
+}
+
+.mac-store-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.7);
+  display: inline-block;
+}
+
+.mac-store-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fffaf0;
+  border: 1px solid #f4d875;
+  color: #9a7200;
+  border-radius: 7px;
+  padding: 3px 8px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.16s ease;
+  box-shadow: 0 1px 2px rgba(245, 158, 11, 0.08);
+}
+
+.mac-store-review-btn:hover {
+  background: #fff4c2;
+  border-color: #F4C542;
+  color: #9a7200;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(245, 158, 11, 0.16);
+}
+
+.mac-store-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mac-store-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.25;
+}
+
+.mac-platform-chip {
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: #e8ecf5;
+  color: #0d1938;
+  border: 1px solid #b8c2d9;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.mac-platform-chip.mobile {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.mac-store-browsers {
+  color: #1e1b4b;
+  font-size: 11.5px;
+  font-weight: 700;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.mac-footer-author {
+  text-align: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.02em;
+  padding-top: 10px;
+  border-top: 1px dashed #e2e8f0;
+  width: 100%;
+}
+
+.mac-footer-author-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 750;
+  cursor: pointer;
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+}
+
+.mac-footer-author-link:hover {
+  color: #132450;
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 12px 8px 30px;
+  }
+  .mac-window-shell {
+    border-radius: 18px;
+  }
+  .mac-titlebar {
+    padding: 12px 14px;
+  }
+  .mac-traffic-lights,
+  .mac-titlebar-right {
+    width: auto;
+  }
+  .mac-hero-headline {
+    font-size: 21px;
+  }
+  .mac-hero-logo {
+    width: 52px;
+    height: 52px;
+  }
+  .mac-hero-title {
+    font-size: 20px;
+  }
+  .calc-page-wrapper {
+    padding: 18px 12px 24px;
+  }
+  .mac-footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================================
+   1. GPA CALCULATOR SECTION STYLES (Ditto Theme)
+   ============================================================ */
+#cgpa-calc-section-v31 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+#cgpa-panels-v31 {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+#cgpa-left-panel-v31 {
+  flex: 1;
+  min-width: 0;
+  overflow: visible;
+}
+
+#cgpa-hdr-v31 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Row delete button */
+.cgpa-row .cgpa-del {
+  opacity: 0;
+  transition: opacity .15s, transform .15s;
+}
+.cgpa-row:hover .cgpa-del {
+  opacity: 1 !important;
+}
+
+/* Hide number spinners */
+.cgpa-cred::-webkit-inner-spin-button,
+.cgpa-cred::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Input focus states */
+.cgpa-subj:focus, .cgpa-cred:focus {
+  outline: none;
+  border-color: #253b70 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Matrix Grade Selector & Dropdown UI */
+.cgpa-row {
+  position: relative;
+}
+.cgpa-row.popover-active {
+  position: relative !important;
+  z-index: 999999 !important;
+}
+.cgpa-row.popover-active td {
+  position: relative !important;
+  z-index: 999999 !important;
+}
+.cgpa-matrix-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.cgpa-matrix-wrap.open {
+  position: relative !important;
+  z-index: 999999 !important;
+}
+.cgpa-matrix-trigger {
+  width: 100%;
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+.cgpa-matrix-trigger:hover {
+  filter: brightness(0.97);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+}
+.cgpa-matrix-arrow {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.cgpa-matrix-wrap.open .cgpa-matrix-arrow {
+  transform: rotate(180deg);
+}
+.cgpa-matrix-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  left: auto;
+  transform: translateY(4px);
+  width: 236px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  box-shadow: 0 20px 42px -4px rgba(15, 23, 42, 0.35), 0 8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 999999 !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  pointer-events: none;
+}
+.cgpa-matrix-wrap.open .cgpa-matrix-popover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.cgpa-matrix-wrap.popover-above .cgpa-matrix-popover {
+  top: auto;
+  bottom: calc(100% + 6px);
+  transform: translateY(-4px);
+}
+.cgpa-matrix-wrap.open.popover-above .cgpa-matrix-popover {
+  transform: translateY(0);
+}
+.cgpa-matrix-popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 10px 10px 0 0;
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #475569;
+}
+.cgpa-matrix-close {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  font-weight: 700;
+}
+.cgpa-matrix-close:hover {
+  color: #0f172a;
+}
+.cgpa-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 0 0 10px 10px;
+}
+.cgpa-matrix-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5px;
+  padding: 5px 2px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  outline: none;
+  min-height: 38px;
+  border: 1px solid transparent;
+}
+.cgpa-matrix-cell:hover {
+  transform: translateY(-1px);
+  filter: brightness(0.96);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+.cgpa-matrix-cell.active {
+  box-shadow: 0 0 0 2px #132450 !important;
+  font-weight: 900 !important;
+}
+.cgpa-m-grade {
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+}
+.cgpa-m-pts {
+  font-size: 8.5px;
+  font-weight: 700;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+/* Trigger Colors matching Grade */
+.cgpa-trig-empty {
+  background: #f8faff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  color: #94a3b8 !important;
+}
+.cgpa-trig-O {
+  background: #dcfce7 !important;
+  border: 1.5px solid #86efac !important;
+  color: #15803d !important;
+}
+.cgpa-trig-Ap {
+  background: #e8ecf5 !important;
+  border: 1.5px solid #bfdbfe !important;
+  color: #132450 !important;
+}
+.cgpa-trig-A {
+  background: #e0f2fe !important;
+  border: 1.5px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+.cgpa-trig-Bp {
+  background: #ffedd5 !important;
+  border: 1.5px solid #fed7aa !important;
+  color: #9a7200 !important;
+}
+.cgpa-trig-B {
+  background: #fff4c2 !important;
+  border: 1.5px solid #F4C542 !important;
+  color: #9a7200 !important;
+}
+.cgpa-trig-C {
+  background: #f1f5f9 !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #475569 !important;
+}
+.cgpa-trig-F {
+  background: #fee2e2 !important;
+  border: 1.5px solid #fca5a5 !important;
+  color: #dc2626 !important;
+}
+.cgpa-trig-other {
+  background: #f8fafc !important;
+  border: 1.5px solid #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+/* Empty credit highlight pulsing glow */
+.cgpa-cred-glow {
+  border-color: #F4C542 !important;
+  background: #fffaf0 !important;
+  animation: credGlow 1.8s ease-in-out infinite;
+}
+@keyframes credGlow {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(245,158,11,.4); }
+  50% { box-shadow: 0 0 0 4px rgba(245,158,11,.15); }
+}
+
+/* Zero-credit / Fully Internal Paper - Green Credit Box */
+.cgpa-cred.cgpa-cred-zero,
+.cgpa-row.is-zero-credit .cgpa-cred {
+  background: #dcfce7 !important;
+  border: 1.5px solid #86efac !important;
+  color: #15803d !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.18) !important;
+  transition: all 0.2s ease !important;
+}
+.cgpa-cred.cgpa-cred-zero:focus,
+.cgpa-row.is-zero-credit .cgpa-cred:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Live indicator dot animation */
+.live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  margin-right: 6px;
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+/* Score update pulse */
+.cgpa-pulse {
+  animation: numPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+@keyframes numPop {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Formula Tooltip Styles (Light Frosted Theme) */
+.tooltip-v31 {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+}
+.tooltip-v31 .tooltip-bubble {
+  visibility: hidden;
+  width: 210px;
+  background: #f4f3ff !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #1e1b4b !important;
+  text-align: center;
+  border-radius: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  z-index: 999999 !important;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  pointer-events: none;
+  border: 1.5px solid #e9e9ff !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.tooltip-v31:hover .tooltip-bubble {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(-4px) !important;
+}
+.tooltip-v31 .tooltip-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #f4f3ff transparent transparent transparent;
+}
+.formula-box {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px dashed rgba(79, 70, 229, 0.25) !important;
+  border-radius: 8px;
+  padding: 6px 8px;
+  margin-top: 4px;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 9.5px;
+  color: #132450 !important;
+  font-weight: 800;
+}
+.formula-line {
+  height: 1.5px;
+  background: #132450 !important;
+  margin: 4px 0;
+}
+
+/* ============================================================
+   2. OVERALL CGPA SECTION STYLES (Ditto Theme)
+   ============================================================ */
+#overall-cgpa-section-v31 {
+  position: relative;
+  z-index: 30;
+  max-width: 600px;
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+.compact-container {
+  background: #ffffff !important;
+  border-radius: 14px;
+  border: 1.5px solid #b8c2d9 !important;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -3px rgba(49, 46, 129, 0.12);
+  box-sizing: border-box;
+}
+.compact-header {
+  background: #0d1938 !important;
+  border-bottom: 1.5px solid #1e1b4b !important;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff !important;
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+.compact-lbl {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b8c2d9 !important;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  font-family: inherit;
+}
+#compact-meta {
+  color: #b8c2d9 !important;
+}
+.compact-score-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.compact-val-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 78px;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1.5px solid #b8c2d9;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.compact-val {
+  font-size: 22px;
+  font-weight: 900;
+  color: #253b70;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  transition: color 0.25s ease;
+  font-family: inherit;
+}
+.compact-val-pill.tier-green {
+  background: #dcfce7 !important;
+  border-color: #86efac !important;
+  box-shadow: 0 2px 8px rgba(21, 128, 61, 0.15) !important;
+}
+.compact-val-pill.tier-green .compact-val {
+  color: #15803d !important;
+}
+.compact-val-pill.tier-yellow {
+  background: #fff4c2 !important;
+  border-color: #F4C542 !important;
+  box-shadow: 0 2px 8px rgba(244, 197, 66, 0.15) !important;
+}
+.compact-val-pill.tier-yellow .compact-val {
+  color: #9a7200 !important;
+}
+.compact-val-pill.tier-red {
+  background: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15) !important;
+}
+.compact-val-pill.tier-red .compact-val {
+  color: #dc2626 !important;
+}
+.compact-val-pill.tier-neutral {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+.compact-val-pill.tier-neutral .compact-val {
+  color: #e8ecf5 !important;
+}
+
+/* Exact 4x2 Matrix Layout */
+.compact-grid {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 8px;
+  background: #ffffff !important;
+}
+@media (max-width: 580px) {
+  .compact-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+.badge-sem {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 10px;
+  padding: 5px 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.badge-sem.badge-green {
+  border-color: #86efac !important;
+  background: #f0fdf4 !important;
+}
+.badge-sem.badge-yellow {
+  border-color: #F4C542 !important;
+  background: #fffaf0 !important;
+}
+.badge-sem.badge-red {
+  border-color: #fca5a5 !important;
+  background: #fef2f2 !important;
+}
+.badge-sem:hover {
+  border-color: #cbd5e1 !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+.badge-sem.badge-green:hover {
+  background: #ffffff !important;
+  border-color: #4ade80 !important;
+  box-shadow: 0 2px 8px rgba(21, 128, 61, 0.08) !important;
+}
+.badge-sem.badge-yellow:hover {
+  background: #ffffff !important;
+  border-color: #F4C542 !important;
+  box-shadow: 0 2px 8px rgba(180, 83, 9, 0.08) !important;
+}
+.badge-sem.badge-red:hover {
+  background: #ffffff !important;
+  border-color: #f87171 !important;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.08) !important;
+}
+.badge-sem:focus-within {
+  border-color: #253b70 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
+}
+.badge-sem .num {
+  height: 20px;
+  padding: 0 8px;
+  background: #e8ecf5 !important;
+  color: #132450 !important;
+  border-radius: 6px;
+  font-size: 9px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.badge-sem:hover .num,
+.badge-sem:focus-within .num {
+  background: #e8ecf5 !important;
+  color: #0d1938 !important;
+}
+.badge-sem input {
+  width: 100%;
+  border: none !important;
+  background: transparent !important;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1e1b4b !important;
+  text-align: center;
+  padding: 2px;
+  outline: none;
+  font-family: inherit;
+}
+.badge-sem input::-webkit-inner-spin-button,
+.badge-sem input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.badge-del {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 16px;
+  height: 16px;
+  background: #ef4444 !important;
+  border: none !important;
+  border-radius: 50%;
+  color: #ffffff !important;
+  font-size: 10px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.15s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+.badge-del:hover {
+  background: #dc2626 !important;
+  transform: scale(1.1);
+}
+.badge-sem:hover .badge-del {
+  opacity: 1 !important;
+}
+.compact-footer {
+  padding: 8px 12px;
+  background: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
+  display: flex;
+  gap: 8px;
+}
+.compact-btn {
+  flex: 1;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #64748b !important;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  text-align: center;
+}
+.compact-btn:hover {
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #cbd5e1 !important;
+}
+.btn-add-compact {
+  background: #e8ecf5 !important;
+  color: #132450 !important;
+  border-color: #b8c2d9 !important;
+}
+.btn-add-compact:hover {
+  background: #e8ecf5 !important;
+  color: #0d1938 !important;
+}
+
+/* ============================================================
+   3. GRADE DETAILS REFERENCE TABLE STYLES (Ditto Theme)
+   ============================================================ */
+#sp-grade-details-section-v31 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  #cgpa-panels-v31 {
+    flex-direction: column;
+  }
+  #cgpa-right-panel-v31 {
+    width: 100% !important;
+    position: static !important;
+  }
+  #overall-cgpa-section-v31 {
+    max-width: 100% !important;
+  }
+}
+
+/* CGPA Action Buttons Hovers (CSP Compliant) */
+#cgpa-reset-credits-v31:hover {
+  background: #fff4c2 !important;
+  border-color: #F4C542 !important;
+  color: #713f12 !important;
+}
+#cgpa-fresh-v31:hover {
+  background: #e8ecf5 !important;
+  border-color: #c4b5fd !important;
+  color: #5b21b6 !important;
+}
+#cgpa-add-v31:hover {
+  background: #e8ecf5 !important;
+  border-color: #818cf8 !important;
+}
+#cgpa-clear-all-v31:hover {
+  background: #fee2e2 !important;
+  border-color: #f87171 !important;
+}
+#cgpa-restore-subjects-v31:hover {
+  background: #e8ecf5 !important;
+  border-color: #818cf8 !important;
+  color: #0d1938 !important;
+}
+#cgpa-open-tt-link:hover {
+  background: #e8ecf5 !important;
+  border-color: #818cf8 !important;
+  color: #0d1938 !important;
+  box-shadow: 0 3px 8px rgba(79,70,229,0.18) !important;
+  transform: translateY(-1px) !important;
+}

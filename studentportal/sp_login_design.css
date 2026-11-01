@@ -1,0 +1,929 @@
+/* ==========================================================================
+   Academia Prime - Student Portal Login Page Redesign (sp_login_design.css)
+   - Layout Architecture:
+     * LEFT SIDE (50%):
+       - SRM Logo at top-left
+       - "Dear Student..." welcome & academic details access text
+       - NetID credentials instructions
+       - Yellow Troubleshooting Notice Box with bullet points under "Note:"
+     * RIGHT SIDE (50%):
+       - Student Portal login ID (NetID), Password & Forgot Password
+       - Centered CAPTCHA controls bar & input
+       - Elevated Indigo Login button (Picture 2 style)
+     * GUARANTEED NON-WRAPPING (flex-wrap: nowrap on desktop):
+       - Right side login NEVER drops to the bottom on desktop screens
+     * RESPONSIVE MOBILE (<=720px):
+       - Smoothly stacks into single column for phone viewports
+   - Preserves all native inputs, IDs, form action, and tokens 100%
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+/* ── 1. Page Background & Centered Viewport ── */
+html.revanced-login-page,
+body.revanced-login-page {
+  background-color: #f1f5f9 !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #1e293b !important;
+  -webkit-font-smoothing: antialiased !important;
+  min-height: 100vh !important;
+}
+
+/* Strictly scope the font change ONLY to the login page */
+.revanced-login-page,
+.revanced-login-page h1,
+.revanced-login-page h2,
+.revanced-login-page h3,
+.revanced-login-page h4,
+.revanced-login-page h5,
+.revanced-login-page h6,
+.revanced-login-page p,
+.revanced-login-page span,
+.revanced-login-page a,
+.revanced-login-page li,
+.revanced-login-page div,
+.revanced-login-page label,
+.revanced-login-page button,
+.revanced-login-page input,
+.revanced-login-page select,
+.revanced-login-page textarea {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+.revanced-login-page .container {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 24px 16px !important;
+  box-sizing: border-box !important;
+}
+
+.revanced-login-page .row.justify-content-center {
+  width: 100% !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.revanced-login-page .col-xl-12,
+.revanced-login-page .col-lg-12,
+.revanced-login-page .col-md-12,
+.revanced-login-page .col-xl-10,
+.revanced-login-page .col-md-9 {
+  width: 100% !important;
+  max-width: 1140px !important;
+  padding: 0 !important;
+}
+
+/* ── 2. Master Outer Card ── */
+.revanced-login-page .card.o-hidden {
+  max-width: 1140px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+  overflow: hidden !important;
+  padding: 28px !important;
+  box-sizing: border-box !important;
+}
+
+/* Hide original top logo container row since logo is cleanly hoisted inside the left panel */
+.revanced-login-page .row.mb-1,
+.revanced-login-page .revanced-logo-section {
+  display: none !important;
+}
+
+/* ── 3. STRICT 2-COLUMN SIDE-BY-SIDE CONTAINER (DESKTOP) ── */
+.revanced-login-page .card-body {
+  padding: 0 !important;
+}
+
+/* Target the row containing divLogin with flex-wrap: nowrap to prevent right column dropping */
+.revanced-login-page .card-body > .row:has(#divLogin),
+.revanced-login-page .card-body .row:has(#divLogin),
+.revanced-login-page .card-body .revanced-rearranged-flow,
+.revanced-login-page .card-body .row.mt-3 {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  justify-content: space-between !important;
+  gap: 32px !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+/* Neutralize Bootstrap column floats and enforce 50/50 split */
+.revanced-login-page .col-lg-6 {
+  float: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* ── 4. LEFT SIDE: Top-Left Logo + Guidance & Notes Panel ── */
+.revanced-login-page .revanced-student-welcome-section,
+.revanced-login-page .card-body .row:has(#divLogin) > div:not(:has(#divLogin)),
+.revanced-login-page .col-lg-6:first-child {
+  flex: 1 1 50% !important;
+  width: 50% !important;
+  max-width: 50% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  background: linear-gradient(150deg, #f8faff 0%, #f1f5f9 100%) !important;
+  border: 1.5px solid #e8ecf5 !important;
+  border-radius: 16px !important;
+  padding: 28px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  box-shadow: 0 2px 10px rgba(79, 70, 229, 0.03) !important;
+  margin: 0 !important;
+}
+
+/* Top-Left Logo: Unstretched, natural dimensions & aspect ratio */
+.revanced-login-page .revanced-left-logo-wrap {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  margin-bottom: 18px !important;
+  padding-bottom: 14px !important;
+  border-bottom: 1.5px solid #e2e8f0 !important;
+}
+
+.revanced-login-page .revanced-left-logo-wrap img,
+.revanced-login-page img[src*="srmist.jpg"],
+.revanced-login-page img[src*="srmist" i],
+.revanced-login-page img[src*="logo" i] {
+  width: auto !important;
+  max-width: 250px !important;
+  height: auto !important;
+  max-height: 56px !important;
+  object-fit: contain !important;
+  object-position: left center !important;
+  display: block !important;
+  margin: 0 !important;
+  aspect-ratio: auto !important;
+  filter: contrast(1.04) !important;
+}
+
+/* Text on Left Side - Bold typography */
+.revanced-login-page .revanced-student-welcome-section h4,
+.revanced-login-page .col-lg-6:first-child h4 {
+  font-size: 21px !important;
+  font-weight: 800 !important;
+  color: #1e1b4b !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.revanced-login-page .revanced-student-welcome-section p,
+.revanced-login-page .col-lg-6:first-child p {
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+}
+
+.revanced-login-page .revanced-student-welcome-section p:first-of-type,
+.revanced-login-page .col-lg-6:first-child p:first-of-type {
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #0d1938 !important;
+}
+
+/* NetID Credentials in Dotted Box */
+.revanced-login-page .revanced-student-welcome-section p.revanced-netid-box,
+.revanced-login-page .revanced-student-welcome-section p:last-of-type,
+.revanced-login-page .col-lg-6:first-child p:last-of-type {
+  margin-bottom: 0 !important;
+  background: #ffffff !important;
+  border: 1.5px dotted #253b70 !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  margin-top: 10px !important;
+  color: #1e1b4b !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  line-height: 1.55 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 1px 3px rgba(99, 102, 241, 0.06) !important;
+}
+
+/* Troubleshooting Notice Card & Host (inside Left Column) */
+.revanced-login-page .revanced-student-welcome-section .revanced-captcha-notice-host {
+  margin-top: 14px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+
+.revanced-login-page .revanced-notice-card {
+  width: 100% !important;
+  margin-top: 14px !important;
+  padding: 11px 14px !important;
+  background: #fffaf0 !important;
+  border: 1.5px dotted #c69a22 !important;
+  border-radius: 10px !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 1px 3px rgba(217, 119, 6, 0.08) !important;
+}
+
+.revanced-login-page .revanced-notice-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.revanced-login-page .revanced-notice-svg {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  color: #c69a22 !important;
+  flex-shrink: 0 !important;
+}
+
+.revanced-login-page .revanced-notice-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #5c4500 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.revanced-login-page .revanced-report-link {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #132450 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  transition: color 0.15s ease !important;
+}
+
+.revanced-login-page .revanced-report-link:hover {
+  color: #0d1938 !important;
+}
+
+.revanced-login-page .revanced-notice-list {
+  margin: 0 !important;
+  padding-left: 18px !important;
+  list-style-type: disc !important;
+}
+
+.revanced-login-page .revanced-notice-list li {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  color: #9a7200 !important;
+  font-weight: 600 !important;
+  margin-bottom: 4px !important;
+}
+
+.revanced-login-page .revanced-notice-list li:last-child {
+  margin-bottom: 0 !important;
+}
+
+.revanced-login-page .revanced-notice-list li b {
+  color: #5c4500 !important;
+  font-weight: 700 !important;
+}
+
+.revanced-login-page .revanced-notice-pill {
+  display: inline-block !important;
+  padding: 1px 6px !important;
+  border: 1.5px dotted #9a7200 !important;
+  border-radius: 5px !important;
+  font-weight: normal !important;
+  background: #fff4c2 !important;
+  color: #5c4500 !important;
+  margin: 1px 2px !important;
+  line-height: 1.25 !important;
+}
+
+.revanced-login-page .revanced-notice-red {
+  color: #dc2626 !important;
+  font-weight: normal !important;
+}
+
+/* ── 4b. Revanced Exclusive Box (inside Left Column, directly below Notice Card) ── */
+.revanced-login-page .revanced-exclusive-login-card {
+  width: 100% !important;
+  margin-top: 10px !important;
+  padding: 8px 12px !important;
+  background: #f0fdf4 !important; /* Mint/Emerald soft background */
+  border: 1.5px dotted #16a34a !important; /* Vivid emerald green dotted border */
+  border-radius: 8px !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.08) !important;
+  overflow: visible !important;
+}
+
+.revanced-login-page .revanced-exclusive-main-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.revanced-login-page .revanced-exclusive-info-col {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.revanced-login-page .revanced-exclusive-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.revanced-login-page .revanced-exclusive-icon {
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  color: #16a34a !important;
+  flex-shrink: 0 !important;
+}
+
+.revanced-login-page .revanced-exclusive-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #15803d !important;
+  letter-spacing: 0.01em !important;
+}
+
+.revanced-login-page .revanced-exclusive-statement {
+  margin: 0 !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  color: #1e293b !important;
+}
+
+/* Dotted Pill Boxes without Background Color Fill */
+.revanced-login-page .revanced-exclusive-pill {
+  display: inline-block !important;
+  padding: 0.5px 5px !important;
+  border: 1.5px dotted #16a34a !important;
+  border-radius: 4px !important;
+  font-weight: 700 !important;
+  background: transparent !important; /* Without background color fill */
+  background-color: transparent !important;
+  color: #15803d !important;
+  margin: 0.5px 1.5px !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+
+.revanced-login-page .revanced-exclusive-action-wrap {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px 2px !important;
+  margin-top: 10px !important; /* Shifted slightly below to balance against header and multi-line statement */
+  overflow: visible !important;
+}
+
+/* Strictly hide any stray dashboard header buttons on the login page */
+.revanced-login-page #sp-placement-prep-container:not(#sp-login-placement-prep-container),
+.revanced-login-page .sp-placement-container:not(.sp-login-nova-container),
+.revanced-login-page .sp-placement-prep-nav-item {
+  display: none !important;
+}
+
+/* Nova Button Container & Drawers styling for Login Page (Slightly Bigger to match the vibe) */
+.revanced-login-page .nova-btn-container.sp-login-nova-container {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 6px 6px 6px 6px !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+  overflow: visible !important;
+  z-index: 10 !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  line-height: 1 !important;
+}
+
+.revanced-login-page .sp-login-nova-container .nova-drawer {
+  position: absolute !important;
+  padding: 2px 8px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 8.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  background-color: #dcfce7 !important;
+  background-image: none !important;
+  border: 1px solid #86efac !important;
+  border-radius: 4px !important;
+  color: #14532d !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.12) !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease,
+              box-shadow 0.2s ease !important;
+}
+
+.revanced-login-page .sp-login-nova-container .nova-top {
+  top: 0 !important;
+  left: 9px !important;
+  transform: translateY(-3px) rotate(-2deg) !important;
+}
+
+.revanced-login-page .sp-login-nova-container .nova-bottom {
+  bottom: 0 !important;
+  right: 9px !important;
+  transform: translateY(3px) rotate(2deg) !important;
+}
+
+/* Center Main Button: Placement Preparation (Bigger for Login Page) */
+.revanced-login-page .sp-login-nova-container .nova-btn,
+.revanced-login-page .sp-login-nova-container .sp-placement-prep-btn {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 28px !important; /* Bigger height */
+  padding: 0 14px !important; /* Bigger padding */
+  background-color: #e8ecf5 !important;
+  background-image: none !important;
+  border: 1px solid #b8c2d9 !important;
+  border-radius: 8px !important;
+  color: #0d1938 !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12px !important; /* Bigger font-size */
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  outline: none !important;
+  z-index: 2 !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.08) !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.2s ease,
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease !important;
+}
+
+.revanced-login-page .sp-login-nova-container .nova-text {
+  position: relative !important;
+  z-index: 3 !important;
+  display: inline-block !important;
+}
+
+/* Hover Animation Trigger */
+.revanced-login-page .sp-login-nova-container:hover .nova-btn,
+.revanced-login-page .sp-login-nova-container:has(.nova-btn:hover) .nova-btn {
+  transform: scale(1.03) !important;
+  background-color: #e0f2fe !important;
+  border-color: #6b83b4 !important;
+  color: #132450 !important;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.12) !important;
+}
+
+.revanced-login-page .sp-login-nova-container:hover .nova-top,
+.revanced-login-page .sp-login-nova-container:has(.nova-btn:hover) .nova-top {
+  transform: translateY(-12px) rotate(-2.5deg) !important;
+  background-color: #bbf7d0 !important;
+  border-color: #4ade80 !important;
+  color: #052e16 !important;
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.14) !important;
+}
+
+.revanced-login-page .sp-login-nova-container:hover .nova-bottom,
+.revanced-login-page .sp-login-nova-container:has(.nova-btn:hover) .nova-bottom {
+  transform: translateY(12px) rotate(2.5deg) !important;
+  background-color: #bbf7d0 !important;
+  border-color: #4ade80 !important;
+  color: #052e16 !important;
+  box-shadow: 0 1px 4px rgba(16, 185, 129, 0.14) !important;
+}
+
+/* Active State (Click) */
+.revanced-login-page .sp-login-nova-container:active .nova-btn {
+  transform: scale(0.97) !important;
+  background-color: #bae6fd !important;
+}
+
+.revanced-login-page .sp-login-nova-container:active .nova-top {
+  transform: translateY(-8px) rotate(-1.5deg) !important;
+}
+
+.revanced-login-page .sp-login-nova-container:active .nova-bottom {
+  transform: translateY(8px) rotate(1.5deg) !important;
+}
+
+/* ── 5. RIGHT SIDE: Student Portal Login Screen (Picture 2 Style) ── */
+.revanced-login-page .revanced-login-form-section,
+.revanced-login-page .card-body .row:has(#divLogin) > div:has(#divLogin),
+.revanced-login-page .col-lg-6:last-child {
+  flex: 1 1 50% !important;
+  width: 50% !important;
+  max-width: 50% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 10px 14px 10px 10px !important;
+  margin: 0 !important;
+}
+
+.revanced-login-page #divLogin {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Modern Minimalist Header (Picture 2 Style) */
+.revanced-login-page #divLogin .card-header {
+  background: transparent !important;
+  border: none !important;
+  color: #0f172a !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  padding: 0 0 4px 0 !important;
+  text-align: left !important;
+  display: block !important;
+}
+
+.revanced-login-page #divLogin .card-header::after {
+  content: "Enter your NetID credentials to sign in" !important;
+  display: block !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  letter-spacing: normal !important;
+  margin-top: 4px !important;
+  text-transform: none !important;
+}
+
+.revanced-login-page #divLogin .card-body {
+  padding: 16px 0 0 0 !important;
+}
+
+.revanced-login-page #divLogin .p-2 {
+  padding: 0 !important;
+}
+
+/* Form Groups & Labels */
+.revanced-login-page #divLogin .form-group {
+  margin-bottom: 14px !important;
+}
+
+.revanced-login-page #divLogin label {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  letter-spacing: 0.01em !important;
+  margin-bottom: 5px !important;
+  display: inline-block !important;
+}
+
+/* Input Groups */
+.revanced-login-page #divLogin .input-group {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+  width: 100% !important;
+}
+
+.revanced-login-page #divLogin .input-group-text {
+  background: #f8fafc !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-right: none !important;
+  color: #132450 !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 13.5px !important;
+  padding: 0 14px !important;
+  border-radius: 8px 0 0 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.revanced-login-page #divLogin .form-control {
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 0 8px 8px 0 !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #0f172a !important;
+  height: 42px !important;
+  padding: 8px 14px !important;
+  transition: all 0.15s ease !important;
+}
+
+.revanced-login-page #divLogin .form-control:focus {
+  background: #ffffff !important;
+  border-color: #253b70 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+  outline: none !important;
+  color: #0f172a !important;
+}
+
+.revanced-login-page #divLogin .form-control::placeholder {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+}
+
+/* "Forgot Password?" Link (Right-aligned under password field, Picture 2 style) */
+.revanced-login-page .alignRight {
+  margin-top: 5px !important;
+  text-align: right !important;
+}
+
+.revanced-login-page .alignRight a,
+.revanced-login-page a[href*="resetpassword"] {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #132450 !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease, text-decoration 0.15s ease !important;
+}
+
+.revanced-login-page .alignRight a:hover,
+.revanced-login-page a[href*="resetpassword"]:hover {
+  color: #0d1938 !important;
+  text-decoration: underline !important;
+}
+
+/* ── 6. CAPTCHA Controls Bar & Input on Right Side ── */
+.revanced-login-page #divLogin .form-group.row {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 12px !important;
+  gap: 0 !important;
+}
+
+/* Dedicated Centered Controls Bar for CAPTCHA */
+.revanced-login-page .revanced-captcha-controls-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  width: 100% !important;
+  margin: 3px 0 10px 0 !important;
+  padding: 6px 10px !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.revanced-login-page #secure_captcha,
+.revanced-login-page img[id*="captcha" i] {
+  border-radius: 6px !important;
+  border: 1px solid #cbd5e1 !important;
+  vertical-align: middle !important;
+  height: 34px !important;
+  width: auto !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Refresh Button */
+.revanced-login-page #btnRefresh {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #132450 !important;
+  border-radius: 6px !important;
+  padding: 0 8px !important;
+  height: 28px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03) !important;
+}
+
+.revanced-login-page #btnRefresh:hover {
+  background: #e8ecf5 !important;
+  border-color: #818cf8 !important;
+  color: #0d1938 !important;
+  transform: translateY(-0.5px) !important;
+}
+
+/* Full Width Captcha Input */
+.revanced-login-page .revanced-captcha-input-group,
+.revanced-login-page .col-sm-6.input-group {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── 7. Modern Elevated Login Button (Picture 2 Style) ── */
+.revanced-login-page #btnLogin {
+  width: 100% !important;
+  background: linear-gradient(135deg, #132450 0%, #0d1938 100%) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  color: #ffffff !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  letter-spacing: 0.02em !important;
+  padding: 11px 20px !important;
+  height: 44px !important;
+  box-shadow: 0 4px 14px rgba(19, 36, 80, 0.3) !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: 14px !important;
+}
+
+.revanced-login-page #btnLogin:hover {
+  background: linear-gradient(135deg, #0d1938 0%, #0d1938 100%) !important;
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+.revanced-login-page #btnLogin:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.25) !important;
+}
+
+/* ── 8. Mobile Responsiveness (<=720px) ── */
+@media (max-width: 720px) {
+  .revanced-login-page .container {
+    padding: 12px 10px !important;
+    min-height: 100vh !important;
+    justify-content: flex-start !important;
+  }
+
+  .revanced-login-page .row.justify-content-center,
+  .revanced-login-page .col-xl-12,
+  .revanced-login-page .col-lg-12,
+  .revanced-login-page .col-md-12,
+  .revanced-login-page .col-xl-10,
+  .revanced-login-page .col-md-9 {
+    max-width: 100% !important;
+  }
+
+  .revanced-login-page .card.o-hidden {
+    padding: 16px 14px 20px 14px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06) !important;
+    max-width: 100% !important;
+    margin: 4px 0 !important;
+  }
+
+  .revanced-login-page .card-body > .row:has(#divLogin),
+  .revanced-login-page .card-body .row:has(#divLogin),
+  .revanced-login-page .card-body .revanced-rearranged-flow,
+  .revanced-login-page .card-body .row.mt-3 {
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    align-items: center !important;
+  }
+
+  .revanced-login-page .revanced-student-welcome-section,
+  .revanced-login-page .card-body .row:has(#divLogin) > div:not(:has(#divLogin)),
+  .revanced-login-page .col-lg-6:first-child {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .revanced-login-page .revanced-left-logo-wrap {
+    margin-bottom: 14px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .revanced-login-page .revanced-left-logo-wrap img,
+  .revanced-login-page img[src*="srmist.jpg"],
+  .revanced-login-page img[src*="srmist" i] {
+    max-width: 200px !important;
+    max-height: 42px !important;
+  }
+
+  .revanced-login-page .revanced-student-welcome-section h4 {
+    font-size: 16px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .revanced-login-page .revanced-student-welcome-section p {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .revanced-login-page .revanced-student-welcome-section p:first-of-type {
+    font-size: 13px !important;
+  }
+
+  .revanced-login-page .revanced-student-welcome-section p:last-child {
+    font-size: 11.5px !important;
+    padding: 8px 12px !important;
+    margin-top: 4px !important;
+  }
+
+  .revanced-login-page .revanced-login-form-section,
+  .revanced-login-page .card-body .row:has(#divLogin) > div:has(#divLogin),
+  .revanced-login-page .col-lg-6:last-child {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 8px 4px !important;
+  }
+
+  .revanced-login-page #divLogin .card-header {
+    font-size: 20px !important;
+  }
+
+  .revanced-login-page #divLogin .form-control {
+    height: 42px !important;
+    font-size: 14px !important;
+  }
+
+  .revanced-login-page #divLogin .input-group-text {
+    padding: 0 12px !important;
+    font-size: 14px !important;
+  }
+
+  .revanced-login-page .revanced-captcha-controls-bar {
+    padding: 6px 8px !important;
+    gap: 6px !important;
+  }
+
+  .revanced-login-page #btnLogin {
+    height: 44px !important;
+    font-size: 14.5px !important;
+    margin-top: 10px !important;
+  }
+}
+
+/* ── 9. Ultra-Compact Mobile Phones (<=480px) ── */
+@media (max-width: 480px) {
+  .revanced-login-page .container {
+    padding: 6px 4px !important;
+  }
+
+  .revanced-login-page .card.o-hidden {
+    padding: 12px 10px 16px 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .revanced-login-page .revanced-left-logo-wrap img,
+  .revanced-login-page img[src*="srmist.jpg"],
+  .revanced-login-page img[src*="srmist" i] {
+    max-width: 180px !important;
+  }
+}

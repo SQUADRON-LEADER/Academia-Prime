@@ -1,0 +1,5613 @@
+/* ==========================================================================
+   Academia Prime - Student Portal OD & ML Studio
+   File: studentportal/OD_ML/OD_ML.css
+   Strictly scoped to OD/ML Tracker components and Attendance page.
+   Follows Prime Light Theme: Solid colors only (NO gradients, NO emojis).
+   Typography: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif.
+   ========================================================================== */
+
+/* ── Container Wrapper (Top Header Section) ── */
+#sp-odml-top-container {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 14px !important;
+  background-color: #ffffff !important;
+  margin-top: 16px !important;
+  margin-bottom: 22px !important;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05) !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  display: block !important;
+}
+
+#sp-odml-top-container.sp-odml-expanded {
+  overflow: visible !important;
+}
+
+#sp-odml-top-container.sp-odml-expanded:hover {
+  border-color: #94a3b8 !important;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.07) !important;
+}
+
+/* ── Collapsed Right-Shifted State (Before Expanding: Small UI with no logo, no icon, no gradient) ── */
+#sp-odml-top-container:not(.sp-odml-expanded) {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  margin-top: 8px !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+#sp-odml-top-container:not(.sp-odml-expanded):hover {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#sp-odml-top-container:not(.sp-odml-expanded) .sp-odml-studio-ribbon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-left: auto !important;
+}
+
+#sp-odml-top-container:not(.sp-odml-expanded) .sp-odml-ribbon-left,
+#sp-odml-top-container:not(.sp-odml-expanded) .sp-odml-ribbon-center {
+  display: none !important;
+}
+
+#sp-odml-top-container:not(.sp-odml-expanded) .sp-odml-ribbon-right {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  margin-left: auto !important;
+}
+
+#sp-odml-top-container * {
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   TOP STUDIO RIBBON (Always Visible Header Bar)
+   ========================================================================== */
+.sp-odml-studio-ribbon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 18px !important;
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.sp-odml-ribbon-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex: 1 1 auto !important;
+}
+
+/* Prime Monogram Studio Badge */
+.sp-odml-studio-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 9px !important;
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 1px 2px rgba(67, 56, 202, 0.1) !important;
+}
+
+.sp-odml-ribbon-title-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.sp-odml-ribbon-title-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-odml-ribbon-title {
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.2 !important;
+}
+
+.sp-odml-badge-sim {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 2.5px 7px !important;
+  border-radius: 5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.2 !important;
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  border: 1px solid #b8c2d9 !important;
+}
+
+.sp-odml-ribbon-sub-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.sp-odml-live-beacon {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background-color: #16a34a !important;
+  display: inline-block !important;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2) !important;
+}
+
+.sp-odml-ribbon-sub {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  line-height: 1.2 !important;
+}
+
+
+
+/* ── Ribbon Center Controls (Column Toggle & Date/DO Capsules) ── */
+.sp-odml-ribbon-center {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Shifted Button: Toggle OD_ML Column in Table */
+.sp-odml-capsule-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 6px 12px !important;
+  border-radius: 7px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03) !important;
+}
+
+.sp-odml-capsule-btn:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+.sp-odml-capsule-btn.is-active {
+  background-color: #e8ecf5 !important;
+  border-color: #818cf8 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-capsule {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 5px 10px !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+}
+
+.sp-odml-capsule-date {
+  background-color: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-capsule-do {
+  background-color: #fff4c2 !important;
+  border: 1px solid #F4C542 !important;
+  color: #9a7200 !important;
+  font-weight: 800 !important;
+}
+
+.sp-odml-capsule-do-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background-color: #c69a22 !important;
+  display: inline-block !important;
+}
+
+.sp-odml-capsule-unpicked {
+  background-color: #fffaf0 !important;
+  border: 1.5px dashed #F4C542 !important;
+  color: #9a7200 !important;
+  font-weight: 800 !important;
+}
+
+.sp-odml-capsule-unpicked-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background-color: #F4C542 !important;
+  display: inline-block !important;
+}
+
+.sp-odml-capsule-holiday {
+  background-color: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  color: #b91c1c !important;
+  font-weight: 800 !important;
+}
+
+.sp-odml-capsule-holiday-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background-color: #dc2626 !important;
+  display: inline-block !important;
+}
+
+/* ── Ribbon Right: Open Studio Toggle Button (Cool Boxed UI) ── */
+.sp-odml-ribbon-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-odml-studio-toggle-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 5px 11px !important;
+  border-radius: 8px !important;
+  background-color: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #132450 !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  cursor: pointer !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  user-select: none !important;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.08) !important;
+}
+
+.sp-odml-studio-toggle-cta:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #132450 !important;
+  color: #1e40af !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15) !important;
+}
+
+.sp-odml-studio-toggle-cta.is-expanded {
+  background-color: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #132450 !important;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.08) !important;
+}
+
+.sp-odml-studio-toggle-cta.is-expanded:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #132450 !important;
+  color: #1e40af !important;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Dotted Button/Capsule containing both "Mark OD/ML" and "Expand to Mark" */
+.sp-odml-collapsed-dotted-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 3.5px 4px 3.5px 12px !important;
+  border: 1.5px dotted #93c5fd !important;
+  border-radius: 9px !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-collapsed-dotted-box:hover {
+  border-color: #60a5fa !important;
+}
+
+#sp-odml-top-container.sp-odml-expanded .sp-odml-collapsed-dotted-box {
+  border: none !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  gap: 0 !important;
+}
+
+/* Collapsed Non-Clickable Text: "Mark OD/ML" */
+.sp-odml-collapsed-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #1e40af !important;
+  user-select: none !important;
+  pointer-events: none !important;
+  cursor: default !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.2 !important;
+}
+
+#sp-odml-top-container.sp-odml-expanded .sp-odml-collapsed-label {
+  display: none !important;
+}
+
+/* Collapsed Toggle Button: ONLY this is clickable ("Expand to Mark") with dotted blue styling, no inside color */
+.sp-odml-studio-toggle-cta.is-collapsed {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4.5px 10px !important;
+  border-radius: 6px !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: 1.5px dotted #132450 !important;
+  color: #132450 !important;
+  font-family: inherit !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease !important;
+  background-image: none !important;
+}
+
+.sp-odml-studio-toggle-cta.is-collapsed:hover {
+  background-color: rgba(37, 99, 235, 0.04) !important;
+  border-color: #132450 !important;
+  color: #1e40af !important;
+  transform: translateY(-1px) !important;
+  box-shadow: none !important;
+}
+
+.sp-odml-studio-toggle-cta.is-collapsed .sp-odml-toggle-icon-chip {
+  display: inline-flex !important;
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.sp-odml-studio-toggle-cta.is-collapsed .sp-odml-studio-counter-pill {
+  display: inline-flex !important;
+}
+
+.sp-odml-toggle-icon-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 4px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #bfdbfe !important;
+  color: #132450 !important;
+  box-shadow: none !important;
+}
+
+.sp-odml-studio-toggle-cta:hover .sp-odml-toggle-icon-chip {
+  border-color: #60a5fa !important;
+  color: #132450 !important;
+}
+
+.sp-odml-studio-toggle-cta.is-expanded .sp-odml-toggle-icon-chip {
+  background-color: #ffffff !important;
+  border-color: #bfdbfe !important;
+  color: #132450 !important;
+  box-shadow: none !important;
+}
+
+.sp-odml-studio-counter-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 1px 6px !important;
+  border-radius: 999px !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+  line-height: 1.2 !important;
+}
+
+.sp-odml-studio-toggle-cta.is-expanded .sp-odml-studio-counter-pill {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+
+.sp-odml-toggle-icon {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  flex-shrink: 0 !important;
+}
+
+/* ==========================================================================
+   EXPANDABLE STUDIO BODY (Redesigned from scratch)
+   ========================================================================== */
+#sp-odml-top-container .sp-odml-body-panel {
+  display: none;
+  padding: 20px 22px !important;
+  background-color: #ffffff !important;
+  animation: sp-odml-fade-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+#sp-odml-top-container.sp-odml-expanded .sp-odml-body-panel {
+  display: block !important;
+}
+
+@keyframes sp-odml-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ==========================================================================
+   SECTION 2: CREDIT FORGE TERMINAL (The Action Console)
+   ========================================================================== */
+.sp-odml-forge-terminal {
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  background-color: #f8fafc !important;
+  padding: 18px 20px !important;
+  margin-bottom: 22px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+}
+
+.sp-odml-forge-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.sp-odml-forge-title-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-odml-forge-title {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+}
+
+/* "i" Info Button & Guide Popover next to Mark Your Leave */
+.sp-odml-title-info-wrap {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.sp-odml-title-info-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid #b8c2d9 !important;
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  transition: all 0.18s ease !important;
+  outline: none !important;
+  margin-left: 1px !important;
+}
+
+.sp-odml-title-info-btn:hover,
+.sp-odml-title-info-btn:focus-visible,
+.sp-odml-title-info-wrap.is-open .sp-odml-title-info-btn {
+  background-color: #0d1938 !important;
+  border-color: #0d1938 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.22) !important;
+  transform: scale(1.06) !important;
+}
+
+.sp-odml-info-circle-letter {
+  font-family: "Georgia", "Times New Roman", serif !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  user-select: none !important;
+  pointer-events: none !important;
+}
+
+/* Popover card */
+.sp-odml-title-info-popover {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: -8px !important;
+  width: 330px !important;
+  max-width: min(340px, calc(100vw - 40px)) !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.16), 0 8px 10px -6px rgba(15, 23, 42, 0.08) !important;
+  z-index: 1000 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(4px) scale(0.98) !important;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s !important;
+}
+
+/* Upward caret notch pointing to "i" button */
+.sp-odml-title-info-popover::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -6px !important;
+  left: 12px !important;
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #ffffff !important;
+  border-left: 1.5px solid #cbd5e1 !important;
+  border-top: 1.5px solid #cbd5e1 !important;
+  transform: rotate(45deg) !important;
+  z-index: 2 !important;
+}
+
+/* Hover bridge to keep popover open while mouse moves over gap */
+.sp-odml-title-info-popover::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -12px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+}
+
+/* Show on hover, focus-within, or when active */
+.sp-odml-title-info-wrap:hover .sp-odml-title-info-popover,
+.sp-odml-title-info-wrap:focus-within .sp-odml-title-info-popover,
+.sp-odml-title-info-wrap.is-open .sp-odml-title-info-popover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.sp-odml-tip-popover-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding-bottom: 4px !important;
+  margin-bottom: 8px !important;
+  border-bottom: none !important;
+}
+
+.sp-odml-tip-popover-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 1.5px 6px !important;
+  border-radius: 4px !important;
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+}
+
+.sp-odml-tip-popover-title {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+}
+
+.sp-odml-tip-popover-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.sp-odml-tip-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 9px !important;
+}
+
+.sp-odml-tip-item-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  border-radius: 6px !important;
+  margin-top: 1px !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-tip-item-icon.is-blue {
+  background-color: #e8ecf5 !important;
+  color: #132450 !important;
+  border: 1px solid #bfdbfe !important;
+}
+
+.sp-odml-tip-item-icon.is-amber {
+  background-color: #fffaf0 !important;
+  color: #c69a22 !important;
+  border: 1px solid #f4d875 !important;
+}
+
+.sp-odml-tip-item-icon.is-green {
+  background-color: #f0fdf4 !important;
+  color: #16a34a !important;
+  border: 1px solid #bbf7d0 !important;
+}
+
+.sp-odml-tip-item-content {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.sp-odml-tip-item-title {
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin-bottom: 2px !important;
+  line-height: 1.3 !important;
+}
+
+.sp-odml-tip-item-desc {
+  font-size: 11px !important;
+  line-height: 1.45 !important;
+  color: #64748b !important;
+  font-weight: 500 !important;
+}
+
+.sp-odml-tip-item-desc strong {
+  color: #334155 !important;
+  font-weight: 700 !important;
+}
+
+.sp-odml-tip-flow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  margin: 4px 0 !important;
+  flex-wrap: wrap !important;
+}
+
+.sp-odml-tip-flow-node {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 2px 6.5px !important;
+  border-radius: 5px !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+  white-space: nowrap !important;
+}
+
+.sp-odml-tip-flow-node.is-highlight {
+  background-color: #f0fdf4 !important;
+  border-color: #86efac !important;
+  color: #15803d !important;
+  font-weight: 800 !important;
+}
+
+.sp-odml-tip-flow-arrow {
+  flex-shrink: 0 !important;
+  stroke: #16a34a !important;
+  stroke-width: 2.6 !important;
+  display: inline-block !important;
+}
+
+/* Dotted Colored Bold Box for "What It Does" in Note popover */
+.sp-odml-note-summary-box {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3px !important;
+  padding: 8px 11px !important;
+  border-radius: 8px !important;
+  border: 1.5px dotted #253b70 !important;
+  background-color: #e8ecf5 !important;
+  margin-bottom: 2px !important;
+}
+
+.sp-odml-note-summary-header {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #132450 !important;
+}
+
+.sp-odml-note-summary-text {
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  color: #0d1938 !important;
+  line-height: 1.35 !important;
+}
+
+/* Yellow Dotted Box for "Tip" word */
+.sp-odml-tip-dotted-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+  border: 1.5px dotted #F4C542 !important;
+  background-color: #fff4c2 !important;
+  color: #5c4500 !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  line-height: 1.2 !important;
+  margin-right: 5px !important;
+  vertical-align: middle !important;
+}
+
+/* Personal Note "i" Info Button & Popover */
+.sp-odml-pnote-info-wrap {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-left: 5px !important;
+}
+
+.sp-odml-pnote-info-btn {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  font-size: 10px !important;
+  background-color: #e8ecf5 !important;
+  border-color: #b8c2d9 !important;
+  color: #132450 !important;
+  border-radius: 50% !important;
+  border: 1.5px solid #b8c2d9 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  transition: all 0.18s ease !important;
+  outline: none !important;
+}
+
+.sp-odml-pnote-info-btn:hover,
+.sp-odml-pnote-info-btn:focus-visible,
+.sp-odml-pnote-info-wrap.is-open .sp-odml-pnote-info-btn {
+  background-color: #132450 !important;
+  border-color: #0d1938 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.22) !important;
+  transform: scale(1.08) !important;
+}
+
+.sp-odml-pnote-info-popover {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: -20px !important;
+  width: 295px !important;
+  max-width: min(315px, calc(100vw - 40px)) !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.16), 0 8px 10px -6px rgba(15, 23, 42, 0.08) !important;
+  z-index: 1000 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(4px) scale(0.98) !important;
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s !important;
+}
+
+.sp-odml-pnote-info-popover::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -6px !important;
+  left: 23px !important;
+  width: 10px !important;
+  height: 10px !important;
+  background-color: #ffffff !important;
+  border-left: 1.5px solid #cbd5e1 !important;
+  border-top: 1.5px solid #cbd5e1 !important;
+  transform: rotate(45deg) !important;
+  z-index: 2 !important;
+}
+
+.sp-odml-pnote-info-popover::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -12px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 12px !important;
+  background: transparent !important;
+}
+
+.sp-odml-pnote-info-wrap:hover .sp-odml-pnote-info-popover,
+.sp-odml-pnote-info-wrap:focus-within .sp-odml-pnote-info-popover,
+.sp-odml-pnote-info-wrap.is-open .sp-odml-pnote-info-popover {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.sp-odml-pnote-autosave-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 1.5px 6px !important;
+  border-radius: 4px !important;
+  background-color: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+  color: #16a34a !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  margin-left: auto !important;
+}
+
+.sp-odml-pnote-popover-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.sp-odml-pnote-desc-text {
+  font-size: 11.5px !important;
+  color: #334155 !important;
+  line-height: 1.4 !important;
+}
+
+.sp-odml-pnote-badges-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+}
+
+.sp-odml-pnote-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 2.5px 7px !important;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+}
+
+.sp-odml-pnote-tag.is-excluded {
+  background-color: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  color: #b91c1c !important;
+}
+
+.sp-odml-pnote-tag.is-safe {
+  background-color: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+  color: #15803d !important;
+}
+
+.sp-odml-pnote-tip-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 6px 9px !important;
+  border-radius: 6px !important;
+  background-color: #fffaf0 !important;
+  background-image: none !important;
+  border: 1.5px dotted #F4C542 !important;
+  font-size: 11px !important;
+  color: #9a7200 !important;
+}
+
+.sp-odml-pnote-tip-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-size: 11px !important;
+  color: #5c4500 !important;
+  line-height: 1.3 !important;
+}
+
+.sp-odml-pnote-arrow {
+  flex-shrink: 0 !important;
+  stroke: #9a7200 !important;
+  stroke-width: 2.5 !important;
+  display: inline-block !important;
+  margin: 0 1px !important;
+}
+
+.sp-odml-pnote-cam-icon {
+  flex-shrink: 0 !important;
+  stroke: #9a7200 !important;
+  stroke-width: 2.2 !important;
+  display: inline-block !important;
+  margin-left: 2px !important;
+}
+
+.sp-odml-forge-live-pill {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 4px 11px !important;
+  border-radius: 7px !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.03em !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08) !important;
+  border: 1.5px solid !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.sp-odml-forge-live-pill.is-od {
+  background-color: #faf5ff !important;
+  color: #6b21a8 !important;
+  border-color: #c084fc !important;
+}
+
+.sp-odml-forge-live-pill.is-ml {
+  background-color: #fffbf5 !important;
+  color: #9a7200 !important;
+  border-color: #fed7aa !important;
+}
+
+/* Forge 2-Column Grid */
+.sp-odml-forge-grid {
+  display: grid !important;
+  grid-template-columns: 1.18fr 0.82fr !important;
+  gap: 20px !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 900px) {
+  .sp-odml-forge-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+.sp-odml-forge-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 13px !important;
+}
+
+/* Full Dotted Box for Column 1: Target Course, Date, Day Order, Leave Type, Leave Hours */
+.sp-odml-forge-col.sp-odml-forge-col-dotted-box,
+.sp-odml-forge-col-dotted-box {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 13px !important;
+  padding: 14px 16px !important;
+  border-radius: 12px !important;
+  border: 2px dotted #337ab7 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 4px rgba(51, 122, 183, 0.08) !important;
+  transition: all 0.15s ease !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-forge-col.sp-odml-forge-col-dotted-box:hover,
+.sp-odml-forge-col-dotted-box:hover {
+  border-color: #23527c !important;
+  box-shadow: 0 2px 8px rgba(51, 122, 183, 0.15) !important;
+}
+
+.sp-odml-forge-field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+.sp-odml-forge-label {
+  display: block !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #475569 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.sp-odml-field-header-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 3px !important;
+}
+
+/* ── Custom Boxed Course Dropdown in Console ── */
+.sp-odml-custom-dropdown {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.sp-odml-dropdown-trigger {
+  width: 100% !important;
+  min-height: 42px !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 8px 12px !important;
+  background-color: #ffffff !important;
+  border: 1.5px dotted #94a3b8 !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  text-align: left !important;
+  outline: none !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-dropdown-trigger:hover {
+  border-color: #253b70 !important;
+  background-color: #f8fafc !important;
+}
+
+.sp-odml-custom-dropdown.is-open .sp-odml-dropdown-trigger,
+.sp-odml-dropdown-trigger:focus {
+  border-color: #0d1938 !important;
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.12) !important;
+  background-color: #ffffff !important;
+}
+
+/* Unpicked State for Target Course Dropdown (matches Day Order yellow border & soft glow) */
+.sp-odml-dropdown-trigger.is-unpicked {
+  background-color: #fffaf0 !important;
+  border: 1.5px solid #F4C542 !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22), 0 0 12px rgba(245, 158, 11, 0.18) !important;
+  animation: sp-odml-do-soft-glow 2.5s ease-in-out infinite alternate !important;
+}
+
+.sp-odml-dropdown-trigger.is-unpicked:hover {
+  background-color: #fff4c2 !important;
+  border-color: #c69a22 !important;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.32), 0 0 14px rgba(245, 158, 11, 0.25) !important;
+}
+
+.sp-odml-dropdown-trigger.is-unpicked .sp-odml-trigger-title {
+  color: #9a7200 !important;
+  font-weight: 700 !important;
+}
+
+.sp-odml-dropdown-trigger.is-unpicked .sp-odml-dropdown-chevron {
+  color: #c69a22 !important;
+}
+
+.sp-odml-dropdown-trigger.is-glow-alert {
+  background-color: #fff4c2 !important;
+  border: 2px solid #c69a22 !important;
+  animation: sp-odml-do-alert-pulse 0.9s ease-in-out infinite alternate !important;
+}
+
+/* Course Deselect Cross Button at Top Right Corner of Selected Course */
+.sp-odml-course-deselect-btn {
+  position: absolute !important;
+  top: -6px !important;
+  right: -6px !important;
+  width: 19px !important;
+  height: 19px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid #ef4444 !important;
+  color: #ef4444 !important;
+  cursor: pointer !important;
+  display: none; /* Controlled dynamically by JS */
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  z-index: 10 !important;
+  box-shadow: 0 1px 4px rgba(239, 68, 68, 0.25) !important;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  user-select: none !important;
+}
+
+.sp-odml-course-deselect-btn:hover {
+  background-color: #ef4444 !important;
+  border-color: #dc2626 !important;
+  color: #ffffff !important;
+  transform: scale(1.15) !important;
+  box-shadow: 0 2px 7px rgba(239, 68, 68, 0.4) !important;
+}
+
+
+.sp-odml-trigger-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+.sp-odml-trigger-code-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #0d1938 !important;
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  padding: 2.5px 7px !important;
+  border-radius: 5px !important;
+  letter-spacing: 0.02em !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-trigger-title {
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-break: break-word !important;
+  line-height: 1.35 !important;
+  flex: 1 1 auto !important;
+}
+
+.sp-odml-trigger-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-trigger-stat-badge,
+#spOdmlTriggerStat {
+  display: none !important;
+}
+
+.sp-odml-dropdown-chevron {
+  transition: transform 0.2s ease !important;
+  color: #64748b !important;
+}
+
+.sp-odml-custom-dropdown.is-open .sp-odml-dropdown-chevron {
+  transform: rotate(180deg) !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 5px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  background-color: #ffffff !important;
+  border: 2px dotted #818cf8 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08) !important;
+  z-index: 1050 !important;
+  display: none !important;
+  padding: 6px !important;
+  animation: sp-odml-fade-in 0.15s ease !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.sp-odml-custom-dropdown.is-open .sp-odml-dropdown-menu {
+  display: block !important;
+}
+
+.sp-odml-dropdown-menu-list {
+  max-height: none !important;
+  overflow-y: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  padding-right: 0 !important;
+}
+
+.sp-odml-dropdown-box-item {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  padding: 8px 10px !important;
+  border-radius: 7px !important;
+  border: 1px solid #e2e8f0 !important;
+  background-color: #ffffff !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  text-align: left !important;
+}
+
+.sp-odml-dropdown-box-item:hover {
+  border-color: #94a3b8 !important;
+  background-color: #f8fafc !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 5px rgba(15, 23, 42, 0.05) !important;
+}
+
+.sp-odml-dropdown-box-item.is-selected {
+  border-color: #0d1938 !important;
+  background-color: #e8ecf5 !important;
+  box-shadow: 0 0 0 1.5px rgba(67, 56, 202, 0.3) !important;
+}
+
+.sp-odml-item-top-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+.sp-odml-item-serial-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 22px !important;
+  height: 20px !important;
+  padding: 0 5px !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  color: #64748b !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+  letter-spacing: 0.02em !important;
+}
+
+.sp-odml-dropdown-box-item.is-selected .sp-odml-item-serial-box {
+  background-color: #0d1938 !important;
+  color: #ffffff !important;
+  border-color: #0d1938 !important;
+}
+
+.sp-odml-item-code-box {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #1e293b !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  letter-spacing: 0.02em !important;
+}
+
+.sp-odml-dropdown-box-item.is-selected .sp-odml-item-code-box {
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  border-color: #b8c2d9 !important;
+}
+
+.sp-odml-item-title {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  flex: 1 1 auto !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  word-break: break-word !important;
+  line-height: 1.35 !important;
+}
+
+.sp-odml-item-check {
+  display: none !important;
+  color: #0d1938 !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-dropdown-box-item.is-selected .sp-odml-item-check {
+  display: inline-flex !important;
+}
+
+.sp-odml-item-bottom-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+}
+
+.sp-odml-item-pill {
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  padding: 1.5px 6px !important;
+  border-radius: 4px !important;
+}
+
+.sp-odml-dropdown-add-custom-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  padding: 8px 12px !important;
+  border-radius: 7px !important;
+  border: 1.5px dashed #818cf8 !important;
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  margin-top: 4px !important;
+}
+
+.sp-odml-dropdown-add-custom-item:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #0d1938 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-custom-tag-badge {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 1px 5px !important;
+  border-radius: 4px !important;
+  background-color: #fffaf0 !important;
+  border: 1px solid #F4C542 !important;
+  color: #5c4500 !important;
+}
+
+/* Custom Subject Elements (Removed/Hidden) */
+.sp-odml-dropdown-box-item.is-custom-subject,
+.sp-odml-dropdown-add-custom-item,
+.sp-odml-custom-name-inline-input,
+.sp-odml-custom-slot-del-btn {
+  display: none !important;
+}
+
+/* ── Leave Matrix & Tile Buttons (Unified Single Open Dotted Box) ── */
+.sp-odml-forge-unified-box,
+.sp-odml-forge-matrix {
+  display: block !important;
+  padding: 12px 14px !important;
+  border-radius: 10px !important;
+  border: 2px dotted #337ab7 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 4px rgba(51, 122, 183, 0.08) !important;
+  transition: all 0.15s ease !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-forge-unified-box:hover,
+.sp-odml-forge-matrix:hover {
+  border-color: #23527c !important;
+  box-shadow: 0 2px 8px rgba(51, 122, 183, 0.15) !important;
+}
+
+.sp-odml-forge-matrix-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  align-items: start !important;
+}
+
+.sp-odml-matrix-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.sp-odml-control-box {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  padding: 10px 12px !important;
+  border-radius: 9px !important;
+  border: 1.5px dotted #cbd5e1 !important;
+  background-color: #f8fafc !important;
+  transition: all 0.15s ease !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-control-box.sp-odml-box-leave-type {
+  border: 1.5px dotted #d8b4fe !important;
+  background-color: #faf5ff !important;
+}
+
+.sp-odml-control-box.sp-odml-box-credit-hours {
+  border: 1.5px dotted #bfdbfe !important;
+  background-color: #f0f7ff !important;
+}
+
+.sp-odml-box-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.sp-odml-box-leave-type .sp-odml-box-title {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #132450 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.sp-odml-box-credit-hours .sp-odml-box-title {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #0d1938 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.sp-odml-tile-group {
+  display: flex !important;
+  gap: 6px !important;
+}
+
+/* Stack Leave Type buttons top and bottom to completely eliminate text wrapping */
+.sp-odml-tile-group.sp-odml-leave-type-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  width: 100% !important;
+}
+
+.sp-odml-leave-type-group .sp-odml-tile-btn {
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  padding: 7px 10px !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+}
+
+/* Leave Hours layout alongside stacked Leave Type */
+.sp-odml-box-credit-hours {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.sp-odml-box-credit-hours .sp-odml-tile-group {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.sp-odml-box-credit-hours .sp-odml-tile-btn {
+  flex: 1 1 0 !important;
+  height: 38px !important;
+  white-space: nowrap !important;
+}
+
+.sp-odml-tile-btn span {
+  white-space: nowrap !important;
+}
+
+.sp-odml-tile-btn {
+  flex: 1 1 0 !important;
+  padding: 8px 8px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  border-radius: 7px !important;
+  border: 1px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  transition: all 0.15s ease !important;
+  user-select: none !important;
+}
+
+.sp-odml-tile-btn:hover {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+  border-color: #94a3b8 !important;
+}
+
+.sp-odml-tile-btn.active {
+  background-color: #e8ecf5 !important;
+  border-color: #818cf8 !important;
+  color: #0d1938 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 3px rgba(19, 36, 80, 0.15) !important;
+}
+
+/* Dotted Box UI for Leave Type & Credit Hours Buttons */
+.sp-odml-box-leave-type .sp-odml-tile-btn,
+.sp-odml-box-credit-hours .sp-odml-tile-btn {
+  border: 1.5px dotted #94a3b8 !important;
+}
+
+/* OD Tile: Purple Theme (Dotted) */
+.sp-odml-tile-btn.sp-odml-tile-od {
+  border: 1.5px dotted #c084fc !important;
+  background-color: #faf5ff !important;
+  color: #132450 !important;
+}
+
+.sp-odml-tile-btn.sp-odml-tile-od:hover {
+  background-color: #e8ecf5 !important;
+  border: 1.5px dotted #a855f7 !important;
+  color: #6b21a8 !important;
+}
+
+.sp-odml-tile-btn.sp-odml-tile-od.active {
+  background-color: #e8ecf5 !important;
+  border: 2px dotted #132450 !important;
+  color: #5b21b6 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 4px rgba(124, 58, 237, 0.25) !important;
+}
+
+/* ML Tile: Light Pastel Peach Theme (Dotted) */
+.sp-odml-tile-btn.sp-odml-tile-ml {
+  border: 1.5px dotted #fed7aa !important;
+  background-color: #fffbf5 !important;
+  color: #9a7200 !important;
+}
+
+.sp-odml-tile-btn.sp-odml-tile-ml:hover {
+  background-color: #fff1e0 !important;
+  border: 1.5px dotted #fba85f !important;
+  color: #9a3412 !important;
+}
+
+.sp-odml-tile-btn.sp-odml-tile-ml.active {
+  background-color: #ffedd5 !important;
+  border: 2px dotted #fb923c !important;
+  color: #8c3b06 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 3px rgba(251, 146, 60, 0.18) !important;
+}
+
+/* +1 Hour Tile: Light Blue Theme (Dotted) */
+.sp-odml-tile-btn.sp-odml-tile-hr-1,
+#sp-odml-hrs-1 {
+  border: 1.5px dotted #93c5fd !important;
+  background-color: #ffffff !important;
+  color: #132450 !important;
+}
+
+.sp-odml-tile-btn.sp-odml-tile-hr-1:hover,
+#sp-odml-hrs-1:hover {
+  background-color: #e0f2fe !important;
+  border: 1.5px dotted #60a5fa !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-tile-btn.sp-odml-tile-hr-1.active,
+#sp-odml-hrs-1.active {
+  background-color: #e8ecf5 !important;
+  border: 2px dotted #132450 !important;
+  color: #075985 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 4px rgba(2, 132, 199, 0.2) !important;
+}
+
+/* +2 Hours Tile: Light Green Theme (Dotted) */
+.sp-odml-tile-btn.sp-odml-tile-hr-2,
+#sp-odml-hrs-2 {
+  border: 1.5px dotted #86efac !important;
+  background-color: #ffffff !important;
+  color: #16a34a !important;
+}
+
+.sp-odml-tile-btn.sp-odml-tile-hr-2:hover,
+#sp-odml-hrs-2:hover {
+  background-color: #dcfce7 !important;
+  border: 1.5px dotted #4ade80 !important;
+  color: #15803d !important;
+}
+
+.sp-odml-tile-btn.sp-odml-tile-hr-2.active,
+#sp-odml-hrs-2.active {
+  background-color: #bbf7d0 !important;
+  border: 2px dotted #16a34a !important;
+  color: #14532d !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 4px rgba(22, 163, 74, 0.2) !important;
+}
+
+/* ── Date, DO Track & Quick Presets ── */
+.sp-odml-forge-date-row {
+  display: flex !important;
+  gap: 10px !important;
+  align-items: flex-start !important;
+}
+
+.sp-odml-quick-date-capsules {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.sp-odml-mini-capsule-btn {
+  padding: 2.5px 7px !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  border-radius: 4px !important;
+  border: 1px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-mini-capsule-btn:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.sp-odml-mini-capsule-btn.active {
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  border-color: #818cf8 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 2px rgba(99, 102, 241, 0.1) !important;
+}
+
+
+
+.sp-odml-input-capsule {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-input-capsule:focus-within {
+  border-color: #0d1938 !important;
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.12) !important;
+}
+
+.sp-odml-date-picker {
+  border: none !important;
+  outline: none !important;
+  padding: 2px 0 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  width: 100% !important;
+  background: transparent !important;
+  font-family: inherit !important;
+  cursor: pointer !important;
+}
+
+.sp-odml-human-date-preview {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #0d1938 !important;
+  display: block !important;
+  background-color: #e8ecf5 !important;
+  padding: 3px 8px !important;
+  border-radius: 5px !important;
+  border: 1px solid #b8c2d9 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.sp-odml-human-date-preview.is-holiday {
+  background-color: #fef2f2 !important;
+  border-color: #fecaca !important;
+  color: #b91c1c !important;
+}
+
+/* Holiday Badge in Day Order Field */
+.sp-odml-holiday-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 2px 8px !important;
+  border-radius: 5px !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  background-color: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  color: #b91c1c !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* 5-track Segment Strip for Day Order */
+.sp-odml-do-track {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 4px !important;
+  border-radius: 8px !important;
+  border: 1.5px solid transparent !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.sp-odml-do-track.is-unpicked {
+  background-color: #fffaf0 !important;
+  border: 1.5px solid #F4C542 !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22), 0 0 12px rgba(245, 158, 11, 0.18) !important;
+  animation: sp-odml-do-soft-glow 2.5s ease-in-out infinite alternate !important;
+}
+
+@keyframes sp-odml-do-soft-glow {
+  0% {
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.15), 0 0 6px rgba(245, 158, 11, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.32), 0 0 14px rgba(245, 158, 11, 0.25);
+  }
+}
+
+.sp-odml-do-track.is-glow-alert {
+  background-color: #fff4c2 !important;
+  border: 2px solid #c69a22 !important;
+  animation: sp-odml-do-alert-pulse 0.9s ease-in-out infinite alternate !important;
+}
+
+@keyframes sp-odml-do-alert-pulse {
+  0% {
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.4), 0 0 14px rgba(245, 158, 11, 0.4);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.65), 0 0 24px rgba(245, 158, 11, 0.7);
+    transform: scale(1.015);
+  }
+}
+
+.sp-odml-do-status-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  transition: all 0.2s ease !important;
+}
+
+.sp-odml-do-status-badge.is-unpicked {
+  background-color: #fff4c2 !important;
+  border: 1px solid #F4C542 !important;
+  color: #9a7200 !important;
+}
+
+.sp-odml-do-status-badge.is-unpicked.is-alert {
+  background-color: #F4C542 !important;
+  border-color: #c69a22 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.45) !important;
+  animation: sp-odml-badge-bounce 0.4s ease-in-out !important;
+}
+
+@keyframes sp-odml-badge-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.sp-odml-do-status-badge.is-picked {
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-do-status-badge.is-holiday {
+  background-color: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  color: #b91c1c !important;
+}
+
+.sp-odml-do-track-btn {
+  flex: 1 1 0 !important;
+  padding: 7px 0 !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+  border: 1px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  user-select: none !important;
+}
+
+.sp-odml-do-track-btn:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+.sp-odml-do-track.is-unpicked .sp-odml-do-track-btn {
+  border-color: #F4C542 !important;
+  background-color: #ffffff !important;
+  color: #9a7200 !important;
+}
+
+.sp-odml-do-track.is-unpicked .sp-odml-do-track-btn:hover {
+  background-color: #fff4c2 !important;
+  border-color: #F4C542 !important;
+  color: #9a7200 !important;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.2) !important;
+}
+
+.sp-odml-do-track.is-glow-alert .sp-odml-do-track-btn {
+  border-color: #F4C542 !important;
+  background-color: #ffffff !important;
+  color: #9a7200 !important;
+  font-weight: 800 !important;
+}
+
+.sp-odml-do-track-btn.active {
+  background-color: #e8ecf5 !important;
+  border: 1.5px solid #253b70 !important;
+  color: #0d1938 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18), 0 1px 3px rgba(19, 36, 80, 0.15) !important;
+}
+
+/* Day Order Cross on Selected Button & Deselect Button - Removed per user request */
+.sp-odml-do-track-cross,
+.sp-odml-do-deselect-btn {
+  display: none !important;
+}
+
+/* Date Picker Day Month Year Styled Capsule */
+.sp-odml-date-capsule-styled {
+  position: relative !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  padding: 5px 8px 5px 11px !important;
+  height: 35px !important;
+  box-sizing: border-box !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-date-capsule-styled:hover {
+  background-color: #f8fafc !important;
+  border-color: #132450 !important;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15) !important;
+}
+
+.sp-odml-date-capsule-left {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+.sp-odml-date-val-display {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #1e293b !important;
+  letter-spacing: 0.01em !important;
+  user-select: none !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.sp-odml-date-cal-action-btn {
+  position: relative !important;
+  z-index: 6 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 3px 8px !important;
+  border-radius: 5px !important;
+  background-color: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+  color: #132450 !important;
+  font-family: inherit !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-date-cal-action-btn:hover,
+.sp-odml-date-capsule-styled:hover .sp-odml-date-cal-action-btn {
+  background-color: #132450 !important;
+  border-color: #132450 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(2, 132, 199, 0.25) !important;
+}
+
+.sp-odml-date-picker-hidden {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+}
+
+.sp-odml-date-picker-hidden::-webkit-calendar-picker-indicator {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  color: transparent !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  opacity: 0 !important;
+  pointer-events: auto !important;
+}
+
+/* Reason / Note Tag Cloud */
+.sp-odml-preset-badge {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+}
+
+.sp-odml-preset-status-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  transition: all 0.2s ease !important;
+  margin-left: auto !important;
+}
+
+.sp-odml-preset-status-badge.is-unpicked {
+  background-color: #fff4c2 !important;
+  border: 1px solid #F4C542 !important;
+  color: #9a7200 !important;
+}
+
+.sp-odml-preset-status-badge.is-unpicked.is-alert {
+  background-color: #F4C542 !important;
+  border-color: #c69a22 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.45) !important;
+  animation: sp-odml-badge-bounce 0.4s ease-in-out !important;
+}
+
+.sp-odml-preset-status-badge.is-picked {
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-tags-strip {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  margin-bottom: 7px !important;
+  width: 100% !important;
+  align-items: stretch !important;
+  padding: 5px !important;
+  border-radius: 8px !important;
+  border: 1.5px solid transparent !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Compulsory Unpicked State for Quick Presets (matches Day Order & Course dropdown yellow border & soft glow) */
+.sp-odml-tags-strip.is-unpicked {
+  background-color: #fffaf0 !important;
+  border: 1.5px solid #F4C542 !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22), 0 0 12px rgba(245, 158, 11, 0.18) !important;
+  animation: sp-odml-do-soft-glow 2.5s ease-in-out infinite alternate !important;
+}
+
+.sp-odml-tags-strip.is-unpicked:hover {
+  background-color: #fff4c2 !important;
+  border-color: #c69a22 !important;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.32), 0 0 14px rgba(245, 158, 11, 0.25) !important;
+}
+
+.sp-odml-tags-strip.is-glow-alert {
+  background-color: #fff4c2 !important;
+  border: 2px solid #c69a22 !important;
+  animation: sp-odml-do-alert-pulse 0.9s ease-in-out infinite alternate !important;
+}
+
+.sp-odml-tag-btn {
+  flex: 1 1 auto !important;
+  text-align: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  padding: 4.5px 9px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  border-radius: 5px !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  line-height: 1.3 !important;
+  user-select: none !important;
+}
+
+.sp-odml-tag-btn[data-tag="Hackathon"] {
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  border-color: #b8c2d9 !important;
+}
+.sp-odml-tag-btn[data-tag="Workshop"] {
+  background-color: #e0f2fe !important;
+  color: #0d1938 !important;
+  border-color: #bae6fd !important;
+}
+.sp-odml-tag-btn[data-tag="Ideathon"] {
+  background-color: #fff4c2 !important;
+  color: #9a7200 !important;
+  border-color: #F4C542 !important;
+}
+.sp-odml-tag-btn[data-tag="Seminar"] {
+  background-color: #e8ecf5 !important;
+  color: #132450 !important;
+  border-color: #ddd6fe !important;
+}
+.sp-odml-tag-btn[data-tag="Conference"] {
+  background-color: #f0fdf4 !important;
+  color: #166534 !important;
+  border-color: #bbf7d0 !important;
+}
+.sp-odml-tag-btn[data-tag="Summit"] {
+  background-color: #fdf4ff !important;
+  color: #86198f !important;
+  border-color: #f5d0fe !important;
+}
+.sp-odml-tag-btn[data-tag="Interview"] {
+  background-color: #dcfce7 !important;
+  color: #15803d !important;
+  border-color: #86efac !important;
+}
+.sp-odml-tag-btn[data-tag="Placement Test"] {
+  background-color: #ccfbf1 !important;
+  color: #0f766e !important;
+  border-color: #99f6e4 !important;
+}
+.sp-odml-tag-btn[data-tag="Pre Placement Talk"] {
+  background-color: #e8ecf5 !important;
+  color: #132450 !important;
+  border-color: #bfdbfe !important;
+}
+.sp-odml-tag-btn[data-tag="Internship"] {
+  background-color: #ecfeff !important;
+  color: #0e7490 !important;
+  border-color: #a5f3fc !important;
+}
+.sp-odml-tag-btn[data-tag="Event"] {
+  background-color: #ffe4e6 !important;
+  color: #be123c !important;
+  border-color: #fecdd3 !important;
+}
+.sp-odml-tag-btn[data-tag="Conclave"] {
+  background-color: #fffaf0 !important;
+  color: #745900 !important;
+  border-color: #fff4c2 !important;
+}
+.sp-odml-tag-btn[data-tag="Fest"] {
+  background-color: #e8ecf5 !important;
+  color: #132450 !important;
+  border-color: #d8b4fe !important;
+}
+.sp-odml-tag-btn[data-tag="Club Work"] {
+  background-color: #fff7ed !important;
+  color: #9a7200 !important;
+  border-color: #fed7aa !important;
+}
+.sp-odml-tag-btn[data-tag="Club Event"],
+.sp-odml-tag-btn[data-tag="Club Event OD"] {
+  background-color: #ffedd5 !important;
+  color: #9a7200 !important;
+  border-color: #fed7aa !important;
+}
+.sp-odml-tag-btn[data-tag="Group Discussion"] {
+  background-color: #e0f2fe !important;
+  color: #0d1938 !important;
+  border-color: #bae6fd !important;
+}
+.sp-odml-tag-btn[data-tag="Medical Issue"] {
+  background-color: #fff1f2 !important;
+  color: #be123c !important;
+  border-color: #fecdd3 !important;
+}
+.sp-odml-tag-btn[data-tag="custom"],
+.sp-odml-tag-custom-btn {
+  background-color: #fffaf0 !important;
+  color: #9a7200 !important;
+  border: 1.5px solid #F4C542 !important; /* Yellow border UI! */
+  flex: 1 1 auto !important;
+  max-width: none !important;
+  padding: 4px 9px !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  border-radius: 5px !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.sp-odml-tag-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08) !important;
+}
+
+.sp-odml-tag-btn.active {
+  box-shadow: 0 0 0 2px #0f172a, 0 2px 5px rgba(15, 23, 42, 0.15) !important;
+}
+
+.sp-odml-input {
+  width: 100% !important;
+  padding: 8px 12px !important;
+  font-size: 12.5px !important;
+  border-radius: 7px !important;
+  border: 1px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  font-family: inherit !important;
+  outline: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.sp-odml-input:focus {
+  border-color: #0d1938 !important;
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.12) !important;
+}
+
+/* Reason Input Box UI (Single-line combined button & input with comfortable padding) */
+.sp-odml-reason-single-line-field {
+  margin: 4px 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.sp-odml-reason-box-ui {
+  position: relative !important;
+  margin-top: 0 !important;
+}
+
+.sp-odml-reason-box-ui.sp-odml-reason-box-single-line {
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.sp-odml-reason-box-single-line .sp-odml-reason-input-inner {
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 0 6px 0 0 !important;
+  height: 35px !important;
+  max-height: 35px !important;
+  overflow: hidden !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-reason-box-single-line .sp-odml-reason-input-inner:focus-within {
+  background-color: #ffffff !important;
+  border-color: #132450 !important;
+  box-shadow: 0 0 0 2.5px rgba(99, 102, 241, 0.18) !important;
+}
+
+.sp-odml-reason-inline-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: stretch !important;
+  gap: 6px !important;
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+  border-right: 1.5px solid #cbd5e1 !important;
+  padding: 0 12px !important;
+  margin: 0 !important;
+  margin-bottom: 0 !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  user-select: none !important;
+  flex-shrink: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-reason-inline-label svg {
+  color: #132450 !important;
+  stroke: currentColor !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+.sp-odml-reason-inline-label span {
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sp-odml-reason-inline-label:hover {
+  background-color: #e2e8f0 !important;
+  color: #132450 !important;
+}
+
+.sp-odml-reason-box-single-line .sp-odml-input.sp-odml-reason-styled-input {
+  flex: 1 1 auto !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 6px 10px !important;
+  box-shadow: none !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #0f172a !important;
+  outline: none !important;
+  height: 100% !important;
+  min-width: 0 !important;
+}
+
+.sp-odml-reason-box-single-line .sp-odml-input.sp-odml-reason-styled-input::placeholder {
+  color: #94a3b8 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
+
+.sp-odml-reason-box-single-line .sp-odml-reason-clear-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  background-color: #e2e8f0 !important;
+  border: none !important;
+  color: #64748b !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+  margin: auto 6px auto 2px !important;
+  line-height: 0 !important;
+  box-sizing: border-box !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-reason-box-single-line .sp-odml-reason-clear-btn svg {
+  display: block !important;
+  margin: auto !important;
+  flex-shrink: 0 !important;
+  pointer-events: none !important;
+}
+
+.sp-odml-reason-box-single-line .sp-odml-reason-clear-btn:hover {
+  background-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Fallback Reason styles */
+.sp-odml-reason-input-inner {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background-color: #f8fafc !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 1px 10px !important;
+  transition: all 0.18s ease !important;
+}
+
+.sp-odml-reason-input-inner:focus-within {
+  background-color: #ffffff !important;
+  border-color: #253b70 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+}
+
+.sp-odml-reason-icon-col {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #253b70 !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-input.sp-odml-reason-styled-input {
+  flex: 1 1 auto !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 8px 0 !important;
+  box-shadow: none !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  color: #0f172a !important;
+  outline: none !important;
+}
+
+.sp-odml-input.sp-odml-reason-styled-input::placeholder {
+  color: #94a3b8 !important;
+  font-weight: 500 !important;
+}
+
+.sp-odml-reason-clear-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50% !important;
+  background-color: #e2e8f0 !important;
+  border: none !important;
+  color: #64748b !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+  margin: auto 6px auto 2px !important;
+  line-height: 0 !important;
+  box-sizing: border-box !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-reason-clear-btn svg {
+  display: block !important;
+  margin: auto !important;
+  flex-shrink: 0 !important;
+  pointer-events: none !important;
+}
+
+.sp-odml-reason-clear-btn:hover {
+  background-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Primary Action Bar */
+.sp-odml-forge-action-bar {
+  margin-top: 14px !important;
+}
+
+/* Redesigned Submit CTA Button (+ Apply +1 Hr OD Credit) - Light Theme */
+.sp-odml-submit-btn {
+  width: 100% !important;
+  padding: 10px 18px !important;
+  border-radius: 9px !important;
+  background-color: #f0fdf4 !important;
+  border: 1.5px solid #86efac !important;
+  color: #15803d !important;
+  font-family: inherit !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+  letter-spacing: 0.01em !important;
+  user-select: none !important;
+}
+
+.sp-odml-submit-btn:hover {
+  transform: translateY(-1.5px) !important;
+}
+
+.sp-odml-submit-btn:active {
+  transform: translateY(0.5px) !important;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.12) !important;
+}
+
+.sp-odml-submit-btn.is-od-btn {
+  background-color: #faf5ff !important;
+  border-color: #c084fc !important;
+  color: #6b21a8 !important;
+  box-shadow: 0 2px 8px rgba(107, 33, 168, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.sp-odml-submit-btn.is-od-btn:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #a855f7 !important;
+  color: #581c87 !important;
+  box-shadow: 0 4px 14px rgba(107, 33, 168, 0.22), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+.sp-odml-submit-btn.is-ml-btn {
+  background-color: #fffbf5 !important;
+  border-color: #fed7aa !important;
+  color: #9a7200 !important;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+.sp-odml-submit-btn.is-ml-btn:hover {
+  background-color: #ffedd5 !important;
+  border-color: #fba85f !important;
+  color: #9a3412 !important;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.18), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+.sp-odml-submit-btn-icon-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  flex-shrink: 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.sp-odml-submit-btn.is-od-btn .sp-odml-submit-btn-icon-wrap {
+  border-color: #e9d5ff !important;
+  color: #132450 !important;
+}
+
+.sp-odml-submit-btn.is-ml-btn .sp-odml-submit-btn-icon-wrap {
+  border-color: #fee2cc !important;
+  color: #c69a22 !important;
+}
+
+.sp-odml-submit-btn-text {
+  flex: 0 0 auto !important;
+  font-weight: 800 !important;
+}
+
+.sp-odml-submit-btn-arrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: 2px !important;
+  opacity: 0.85 !important;
+  transition: transform 0.15s ease !important;
+}
+
+.sp-odml-submit-btn.is-od-btn .sp-odml-submit-btn-arrow {
+  color: #132450 !important;
+}
+
+.sp-odml-submit-btn.is-ml-btn .sp-odml-submit-btn-arrow {
+  color: #c69a22 !important;
+}
+
+.sp-odml-submit-btn:hover .sp-odml-submit-btn-arrow {
+  transform: translateX(3px) !important;
+  opacity: 1 !important;
+}
+
+/* ==========================================================================
+   SECTION 3: BOTTOM DUAL DECK (Ledger + Simulation Analytics)
+   ========================================================================== */
+.sp-odml-bottom-dual-deck {
+  display: grid !important;
+  grid-template-columns: 1fr 375px !important;
+  gap: 20px !important;
+  align-items: start !important;
+  margin-bottom: 16px !important;
+}
+
+@media (max-width: 1000px) {
+  .sp-odml-bottom-dual-deck {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Activity Timeline & Ledger ── */
+.sp-odml-feed-card-panel {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  background-color: #ffffff !important;
+  padding: 16px 18px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+}
+
+.sp-odml-feed-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 12px !important;
+}
+
+.sp-odml-feed-title-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-odml-feed-title {
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+}
+
+.sp-odml-feed-count-badge {
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #475569 !important;
+}
+
+.sp-odml-feed-hrs-badge {
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-feed-clear-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 4px 9px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #dc2626 !important;
+  background-color: #fee2e2 !important;
+  border: 1px solid #fca5a5 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-feed-clear-btn:hover {
+  background-color: #fecaca !important;
+  border-color: #f87171 !important;
+}
+
+/* ── Feed Filter & Search Toolbar (Only rendered when records are added) ── */
+.sp-odml-feed-toolbar {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 9px !important;
+  margin-bottom: 12px !important;
+  padding: 10px 12px !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 9px !important;
+}
+
+.sp-odml-feed-search-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+.sp-odml-feed-search-box {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  flex: 1 !important;
+}
+
+.sp-odml-feed-search-icon {
+  position: absolute !important;
+  left: 10px !important;
+  pointer-events: none !important;
+}
+
+.sp-odml-feed-search-input {
+  width: 100% !important;
+  height: 31px !important;
+  padding: 2px 28px 2px 30px !important;
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+  color: #1e293b !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 7px !important;
+  outline: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.sp-odml-feed-search-input:hover {
+  border-color: #94a3b8 !important;
+}
+
+.sp-odml-feed-search-input:focus {
+  border-color: #132450 !important;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.12) !important;
+}
+
+.sp-odml-feed-search-clear-btn {
+  position: absolute !important;
+  right: 7px !important;
+  width: 17px !important;
+  height: 17px !important;
+  border-radius: 50% !important;
+  background-color: #e2e8f0 !important;
+  border: none !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+.sp-odml-feed-search-clear-btn.is-visible {
+  display: inline-flex !important;
+}
+
+.sp-odml-feed-search-clear-btn:hover {
+  background-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.sp-odml-feed-search-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  height: 31px !important;
+  padding: 0 13px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #0d1938 !important;
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  border-radius: 7px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: all 0.15s ease !important;
+  box-shadow: 0 1px 2px rgba(99, 102, 241, 0.08) !important;
+}
+
+.sp-odml-feed-search-btn:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #b8c2d9 !important;
+  color: #0d1938 !important;
+  box-shadow: 0 2px 5px rgba(99, 102, 241, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+.sp-odml-feed-search-btn:active {
+  transform: translateY(0.5px) !important;
+  box-shadow: 0 1px 2px rgba(99, 102, 241, 0.08) !important;
+}
+
+/* ── Station Search & Filter Wrap (Right Deck) ── */
+.sp-odml-station-search-filter-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+.sp-odml-station-filter-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+.sp-odml-station-filter-title-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.sp-odml-station-filter-title {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #475569 !important;
+  letter-spacing: 0.03em !important;
+  text-transform: uppercase !important;
+}
+
+.sp-odml-station-chips-box {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  width: 100% !important;
+  max-height: 110px !important;
+  overflow-y: auto !important;
+  padding-right: 2px !important;
+}
+
+.sp-odml-station-chips-box::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.sp-odml-station-chips-box::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+  border-radius: 4px !important;
+}
+
+.sp-odml-station-chips-box::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+  border-radius: 4px !important;
+}
+
+.sp-odml-station-divider {
+  height: 1px !important;
+  background: #f1f5f9 !important;
+  margin: 2px 0 2px 0 !important;
+  width: 100% !important;
+}
+
+/* ── Filter Chips Bar ── */
+.sp-odml-feed-chips-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  padding-top: 2px !important;
+  width: 100% !important;
+}
+
+.sp-odml-chips-left-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.sp-odml-chips-right-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-chips-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #64748b !important;
+  margin-right: 2px !important;
+  user-select: none !important;
+}
+
+.sp-odml-filter-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 3.5px 10px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease !important;
+  will-change: transform !important;
+  user-select: none !important;
+  white-space: nowrap !important;
+  max-width: 240px !important;
+}
+
+.sp-odml-filter-chip:hover {
+  border-color: #94a3b8 !important;
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.sp-odml-filter-chip:active {
+  transform: scale(0.97) !important;
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+.sp-odml-filter-chip.is-active {
+  background-color: #e8ecf5 !important;
+  border-color: #253b70 !important;
+  color: #0d1938 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.16) !important;
+}
+
+.sp-odml-chip-name {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.sp-odml-chip-count {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 16px !important;
+  height: 16px !important;
+  padding: 0 4px !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  line-height: 1 !important;
+}
+
+.sp-odml-filter-chip.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+/* ── Expand & Collapse Filter Chips Button (">>") ── */
+.sp-odml-chips-expand-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3.5px 9px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  color: #132450 !important;
+  background-color: #e8ecf5 !important;
+  border: 1.5px dashed #a78bfa !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  transition: all 0.15s ease !important;
+  line-height: 1 !important;
+  min-height: 24px !important;
+}
+
+.sp-odml-chips-expand-btn:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #132450 !important;
+  color: #5b21b6 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 1px 4px rgba(124, 58, 237, 0.15) !important;
+}
+
+.sp-odml-chips-expand-btn:active {
+  background-color: #e8ecf5 !important;
+  transform: scale(0.96) !important;
+}
+
+.sp-odml-chips-expand-btn.is-expanded {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #475569 !important;
+}
+
+.sp-odml-chips-expand-btn.is-expanded:hover {
+  background-color: #e2e8f0 !important;
+  border-color: #64748b !important;
+  color: #1e293b !important;
+}
+
+/* ── Rich Color Variants for Filter Chips (Light Pastel Theme when Active/Tapped) ── */
+/* All Courses Chip */
+.sp-odml-filter-chip.sp-odml-chip-all {
+  background-color: #f8fafc !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-all:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-all.is-active {
+  background-color: #e8ecf5 !important;
+  border-color: #818cf8 !important;
+  color: #0d1938 !important;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.16) !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-all.is-active:hover {
+  background-color: #b8c2d9 !important;
+  border-color: #253b70 !important;
+  color: #0d1938 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-all.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+/* Color 0: Emerald */
+.sp-odml-filter-chip.sp-odml-chip-color-0 {
+  background-color: #f0fdf4 !important;
+  border: 1.5px solid #bbf7d0 !important;
+  color: #166534 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-0 .sp-odml-chip-count {
+  background-color: #dcfce7 !important;
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-0:hover {
+  background-color: #dcfce7 !important;
+  border-color: #86efac !important;
+  color: #14532d !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-0.is-active {
+  background-color: #dcfce7 !important;
+  border-color: #4ade80 !important;
+  color: #14532d !important;
+  box-shadow: 0 1px 4px rgba(34, 197, 94, 0.16) !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-0.is-active:hover {
+  background-color: #bbf7d0 !important;
+  border-color: #22c55e !important;
+  color: #14532d !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-0.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+}
+
+/* Color 1: Warm Amber / Gold */
+.sp-odml-filter-chip.sp-odml-chip-color-1 {
+  background-color: #fffaf0 !important;
+  border: 1.5px solid #f4d875 !important;
+  color: #9a7200 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-1 .sp-odml-chip-count {
+  background-color: #fff4c2 !important;
+  border: 1px solid #F4C542 !important;
+  color: #9a7200 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-1:hover {
+  background-color: #fff4c2 !important;
+  border-color: #F4C542 !important;
+  color: #5c4500 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-1.is-active {
+  background-color: #fff4c2 !important;
+  border-color: #F4C542 !important;
+  color: #5c4500 !important;
+  box-shadow: 0 1px 4px rgba(245, 158, 11, 0.16) !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-1.is-active:hover {
+  background-color: #f4d875 !important;
+  border-color: #c69a22 !important;
+  color: #5c4500 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-1.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #F4C542 !important;
+  color: #9a7200 !important;
+}
+
+/* Color 2: Oceanic Sky Blue */
+.sp-odml-filter-chip.sp-odml-chip-color-2 {
+  background-color: #e8ecf5 !important;
+  border: 1.5px solid #bae6fd !important;
+  color: #0d1938 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-2 .sp-odml-chip-count {
+  background-color: #e0f2fe !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #132450 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-2:hover {
+  background-color: #e0f2fe !important;
+  border-color: #b8c2d9 !important;
+  color: #075985 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-2.is-active {
+  background-color: #e0f2fe !important;
+  border-color: #6b83b4 !important;
+  color: #075985 !important;
+  box-shadow: 0 1px 4px rgba(14, 165, 233, 0.16) !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-2.is-active:hover {
+  background-color: #bae6fd !important;
+  border-color: #132450 !important;
+  color: #075985 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-2.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #132450 !important;
+}
+
+/* Color 3: Purple / Violet */
+.sp-odml-filter-chip.sp-odml-chip-color-3 {
+  background-color: #faf5ff !important;
+  border: 1.5px solid #e9d5ff !important;
+  color: #132450 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-3 .sp-odml-chip-count {
+  background-color: #e8ecf5 !important;
+  border: 1px solid #d8b4fe !important;
+  color: #6b21a8 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-3:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #d8b4fe !important;
+  color: #581c87 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-3.is-active {
+  background-color: #e8ecf5 !important;
+  border-color: #c084fc !important;
+  color: #581c87 !important;
+  box-shadow: 0 1px 4px rgba(168, 85, 247, 0.16) !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-3.is-active:hover {
+  background-color: #e9d5ff !important;
+  border-color: #9333ea !important;
+  color: #581c87 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-3.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #d8b4fe !important;
+  color: #132450 !important;
+}
+
+/* Color 4: Rose / Crimson */
+.sp-odml-filter-chip.sp-odml-chip-color-4 {
+  background-color: #fff1f2 !important;
+  border: 1.5px solid #fecdd3 !important;
+  color: #be123c !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-4 .sp-odml-chip-count {
+  background-color: #ffe4e6 !important;
+  border: 1px solid #fda4af !important;
+  color: #9f1239 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-4:hover {
+  background-color: #ffe4e6 !important;
+  border-color: #fda4af !important;
+  color: #881337 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-4.is-active {
+  background-color: #ffe4e6 !important;
+  border-color: #fb7185 !important;
+  color: #881337 !important;
+  box-shadow: 0 1px 4px rgba(244, 63, 94, 0.16) !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-4.is-active:hover {
+  background-color: #fecdd3 !important;
+  border-color: #e11d48 !important;
+  color: #881337 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-4.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #fda4af !important;
+  color: #be123c !important;
+}
+
+/* Color 5: Teal / Cyan */
+.sp-odml-filter-chip.sp-odml-chip-color-5 {
+  background-color: #f0fdfa !important;
+  border: 1.5px solid #99f6e4 !important;
+  color: #0f766e !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-5 .sp-odml-chip-count {
+  background-color: #ccfbf1 !important;
+  border: 1px solid #5eead4 !important;
+  color: #115e59 !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-5:hover {
+  background-color: #ccfbf1 !important;
+  border-color: #5eead4 !important;
+  color: #134e4a !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-5.is-active {
+  background-color: #ccfbf1 !important;
+  border-color: #2dd4bf !important;
+  color: #134e4a !important;
+  box-shadow: 0 1px 4px rgba(20, 184, 166, 0.16) !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-5.is-active:hover {
+  background-color: #99f6e4 !important;
+  border-color: #0d9488 !important;
+  color: #134e4a !important;
+}
+.sp-odml-filter-chip.sp-odml-chip-color-5.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #5eead4 !important;
+  color: #0f766e !important;
+}
+
+/* ── OD & ML Type Filter Chips (Pinned to right side) ── */
+.sp-odml-type-filter-chip {
+  padding: 3.5px 9px !important;
+  gap: 5px !important;
+  font-weight: 700 !important;
+}
+
+.sp-odml-type-dot {
+  width: 6.5px !important;
+  height: 6.5px !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+/* OD Chip */
+.sp-odml-type-chip-od {
+  background-color: #ffffff !important;
+  border: 1px solid #bbf7d0 !important;
+  color: #166534 !important;
+}
+
+.sp-odml-type-chip-od .sp-odml-type-dot {
+  background-color: #16a34a !important;
+}
+
+.sp-odml-type-chip-od .sp-odml-chip-count {
+  background-color: #f0fdf4 !important;
+  border: 1px solid #bbf7d0 !important;
+  color: #166534 !important;
+}
+
+.sp-odml-type-chip-od:hover {
+  background-color: #f0fdf4 !important;
+  border-color: #86efac !important;
+  color: #15803d !important;
+  transform: translateY(-1px) !important;
+}
+
+.sp-odml-type-chip-od.is-active {
+  background-color: #dcfce7 !important;
+  border-color: #22c55e !important;
+  color: #15803d !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 4px rgba(22, 163, 74, 0.2) !important;
+}
+
+.sp-odml-type-chip-od.is-active:hover {
+  background-color: #bbf7d0 !important;
+  border-color: #16a34a !important;
+  color: #15803d !important;
+}
+
+.sp-odml-type-chip-od.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+}
+
+/* ML Chip */
+.sp-odml-type-chip-ml {
+  background-color: #ffffff !important;
+  border: 1px solid #bae6fd !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-type-chip-ml .sp-odml-type-dot {
+  background-color: #132450 !important;
+}
+
+.sp-odml-type-chip-ml .sp-odml-chip-count {
+  background-color: #e8ecf5 !important;
+  border: 1px solid #bae6fd !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-type-chip-ml:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #b8c2d9 !important;
+  color: #132450 !important;
+  transform: translateY(-1px) !important;
+}
+
+.sp-odml-type-chip-ml.is-active {
+  background-color: #e0f2fe !important;
+  border-color: #132450 !important;
+  color: #0d1938 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 4px rgba(2, 132, 199, 0.2) !important;
+}
+
+.sp-odml-type-chip-ml.is-active:hover {
+  background-color: #bae6fd !important;
+  border-color: #132450 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-type-chip-ml.is-active .sp-odml-chip-count {
+  background-color: #ffffff !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-feed-content-area {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+/* Empty filter result state */
+.sp-odml-feed-no-results {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 28px 16px !important;
+  border: 1px dashed #cbd5e1 !important;
+  border-radius: 8px !important;
+  background-color: #f8fafc !important;
+  text-align: center !important;
+}
+
+.sp-odml-feed-no-results-text {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  margin-bottom: 8px !important;
+}
+
+.sp-odml-feed-reset-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 4px 10px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #0d1938 !important;
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
+
+.sp-odml-feed-reset-btn:hover {
+  background-color: #b8c2d9 !important;
+}
+
+/* Empty State */
+.sp-odml-feed-empty-state {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 38px 20px !important;
+  border: 1px dashed #cbd5e1 !important;
+  border-radius: 10px !important;
+  background-color: #f8fafc !important;
+}
+
+.sp-odml-empty-icon-wrap {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 10px !important;
+}
+
+.sp-odml-empty-title {
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #334155 !important;
+  margin-bottom: 4px !important;
+}
+
+.sp-odml-empty-desc {
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  line-height: 1.4 !important;
+  max-width: 300px !important;
+}
+
+/* Activity Feed List */
+.sp-odml-feed-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  max-height: 380px !important;
+  overflow-y: auto !important;
+  padding-right: 4px !important;
+}
+
+.sp-odml-feed-list::-webkit-scrollbar,
+.sp-odml-dropdown-menu-list::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+.sp-odml-feed-list::-webkit-scrollbar-track,
+.sp-odml-dropdown-menu-list::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+  border-radius: 4px !important;
+}
+
+.sp-odml-feed-list::-webkit-scrollbar-thumb,
+.sp-odml-dropdown-menu-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+  border-radius: 4px !important;
+}
+
+.sp-odml-feed-list::-webkit-scrollbar-thumb:hover,
+.sp-odml-dropdown-menu-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+.sp-odml-feed-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+  background-color: #f0fdf4 !important; /* Light green box UI */
+  border: 1.5px solid #86efac !important;
+  border-radius: 9px !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease !important;
+  will-change: transform !important;
+}
+
+.sp-odml-feed-card:hover {
+  border-color: #4ade80 !important;
+  background-color: #dcfce7 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 6px rgba(21, 128, 61, 0.12) !important;
+}
+
+.sp-odml-feed-card-left {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 3px !important;
+  min-width: 86px !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-feed-date-chip {
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  white-space: nowrap !important;
+}
+
+.sp-odml-feed-do-chip {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 1.5px 6px !important;
+  border-radius: 4px !important;
+  background-color: #fff4c2 !important;
+  border: 1px solid #F4C542 !important;
+  color: #9a7200 !important;
+  white-space: nowrap !important;
+}
+
+.sp-odml-feed-holiday-chip {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 1.5px 6px !important;
+  border-radius: 4px !important;
+  background-color: #fef2f2 !important;
+  border: 1px solid #fecaca !important;
+  color: #b91c1c !important;
+  white-space: nowrap !important;
+  letter-spacing: 0.01em !important;
+}
+
+.sp-odml-feed-card-main {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+.sp-odml-feed-subj-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+  flex-wrap: wrap !important;
+}
+
+.sp-odml-feed-code-box {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 2.5px 7px !important;
+  border-radius: 5px !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
+  letter-spacing: 0.02em !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-feed-subj-name {
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.sp-odml-feed-meta-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.sp-odml-feed-no-note {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+  font-style: italic !important;
+}
+
+.sp-odml-feed-card-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-feed-type-badge {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.sp-odml-feed-type-od {
+  background-color: #dcfce7 !important;
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+}
+
+.sp-odml-feed-type-ml {
+  background-color: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-feed-del-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 6px !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  color: #94a3b8 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-feed-del-btn:hover {
+  background-color: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+  color: #dc2626 !important;
+}
+
+/* ── Colorful Tag Badges ── */
+.sp-odml-tag-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 2px 7px !important;
+  border-radius: 5px !important;
+  font-weight: 700 !important;
+  font-size: 10.5px !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  border: 1px solid transparent !important;
+}
+
+.sp-odml-tag-badge.sp-odml-tag-hackathon {
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  border-color: #b8c2d9 !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-workshop {
+  background-color: #e0f2fe !important;
+  color: #0d1938 !important;
+  border-color: #bae6fd !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-ideathon {
+  background-color: #fff4c2 !important;
+  color: #9a7200 !important;
+  border-color: #F4C542 !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-seminar {
+  background-color: #e8ecf5 !important;
+  color: #132450 !important;
+  border-color: #ddd6fe !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-conference {
+  background-color: #f0fdf4 !important;
+  color: #166534 !important;
+  border-color: #bbf7d0 !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-summit {
+  background-color: #fdf4ff !important;
+  color: #86198f !important;
+  border-color: #f5d0fe !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-interview {
+  background-color: #dcfce7 !important;
+  color: #15803d !important;
+  border-color: #86efac !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-placement-test {
+  background-color: #ccfbf1 !important;
+  color: #0f766e !important;
+  border-color: #99f6e4 !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-pre-placement {
+  background-color: #e8ecf5 !important;
+  color: #132450 !important;
+  border-color: #bfdbfe !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-internship {
+  background-color: #ecfeff !important;
+  color: #0e7490 !important;
+  border-color: #a5f3fc !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-event {
+  background-color: #ffe4e6 !important;
+  color: #be123c !important;
+  border-color: #fecdd3 !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-fest {
+  background-color: #e8ecf5 !important;
+  color: #132450 !important;
+  border-color: #d8b4fe !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-club-work {
+  background-color: #fff7ed !important;
+  color: #9a7200 !important;
+  border-color: #fed7aa !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-club-event-od {
+  background-color: #ffedd5 !important;
+  color: #9a7200 !important;
+  border-color: #fed7aa !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-medical {
+  background-color: #fff1f2 !important;
+  color: #be123c !important;
+  border-color: #fecdd3 !important;
+}
+.sp-odml-tag-badge.sp-odml-tag-custom {
+  background-color: #f8fafc !important;
+  color: #334155 !important;
+  border: 1.5px solid #F4C542 !important; /* Yellow border UI! */
+}
+
+/* ── Right Deck: Analytics & Tools Station ── */
+/* ── Right Deck: Redesigned Simulation Analytics Station ── */
+.sp-odml-analytics-card {
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  background-color: #ffffff !important;
+  padding: 15px 16px !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.sp-odml-analytics-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.sp-odml-analytics-header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-odml-analytics-title {
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.01em !important;
+}
+
+.sp-odml-analytics-badge-live {
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  padding: 2px 7px !important;
+  border-radius: 999px !important;
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+/* ── Simulation Analytics Stats Stack ── */
+.sp-odml-analytics-stat-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.sp-odml-stat-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 11px 14px !important;
+  border-radius: 10px !important;
+  border: 1.5px solid #e2e8f0 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02) !important;
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.15s ease !important;
+  will-change: transform !important;
+}
+
+.sp-odml-stat-row:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.05) !important;
+}
+
+.sp-odml-stat-row.is-od {
+  background-color: #f8fdf9 !important;
+  border-color: #bbf7d0 !important;
+}
+
+.sp-odml-stat-row.is-ml {
+  background-color: #f8fbff !important;
+  border-color: #bae6fd !important;
+}
+
+.sp-odml-stat-row.is-courses {
+  background-color: #faf5ff !important;
+  border-color: #e9d5ff !important;
+}
+
+.sp-odml-stat-row-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.sp-odml-stat-icon-wrap {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-stat-icon-wrap.is-od {
+  background-color: #dcfce7 !important;
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+}
+
+.sp-odml-stat-icon-wrap.is-ml {
+  background-color: #e0f2fe !important;
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-stat-icon-wrap.is-courses {
+  background-color: #e8ecf5 !important;
+  border: 1px solid #d8b4fe !important;
+  color: #132450 !important;
+}
+
+.sp-odml-stat-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5px !important;
+}
+
+.sp-odml-stat-label {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  letter-spacing: -0.01em !important;
+}
+
+.sp-odml-stat-sub {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+}
+
+.sp-odml-stat-val {
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+  padding-left: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-stat-val.is-od {
+  color: #15803d !important;
+}
+
+.sp-odml-stat-val.is-ml {
+  color: #0d1938 !important;
+}
+
+.sp-odml-stat-val.is-courses {
+  color: #132450 !important;
+}
+
+/* ==========================================================================
+   TOP NOTICES & HOW TO USE GUIDE DECK (SIDE-BY-SIDE: NOTE ON LEFT, USE ON RIGHT)
+   ========================================================================== */
+.sp-odml-top-notices-deck {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  gap: 12px !important;
+  margin-bottom: 14px !important;
+}
+
+@media (max-width: 900px) {
+  .sp-odml-top-notices-deck {
+    flex-direction: column !important;
+  }
+}
+
+/* Yellow Dotted Advisory Note Box (Left Box) */
+.sp-odml-advisory-note-box {
+  flex: 1 1 50% !important;
+  background-color: #fffaf0 !important;
+  border: 1.5px dotted #F4C542 !important;
+  border-radius: 9px !important;
+  padding: 10px 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+/* Green Dotted How to Use Window (Right Box) */
+.sp-odml-how-to-use-box {
+  flex: 1 1 50% !important;
+  background-color: #f0fdf4 !important;
+  border: 1.5px dotted #16a34a !important;
+  border-radius: 9px !important;
+  padding: 10px 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  box-shadow: 0 1px 2px rgba(22, 163, 74, 0.04) !important;
+}
+
+.sp-odml-how-to-use-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+}
+
+.sp-odml-how-to-use-title-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+}
+
+.sp-odml-how-to-use-title {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #15803d !important;
+  letter-spacing: 0.01em !important;
+}
+
+.sp-odml-how-to-use-flow {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  margin: 2px 0 !important;
+}
+
+/* Dotted step box for each instruction item */
+.sp-odml-flow-step-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 3.5px 8.5px !important;
+  border-radius: 6px !important;
+  background-color: #ffffff !important;
+  border: 1.5px dotted #16a34a !important;
+  color: #14532d !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 2px rgba(22, 163, 74, 0.04) !important;
+  letter-spacing: -0.01em !important;
+  white-space: nowrap !important;
+}
+
+.sp-odml-flow-step-box.is-done {
+  background-color: #dcfce7 !important;
+  border-color: #15803d !important;
+  color: #15803d !important;
+  font-weight: 800 !important;
+}
+
+/* Real arrow SVG icon between steps */
+.sp-odml-flow-real-arrow {
+  flex-shrink: 0 !important;
+  stroke: #16a34a !important;
+  stroke-width: 2.4 !important;
+  display: inline-block !important;
+}
+
+.sp-odml-how-to-view-line {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin-top: 2px !important;
+  font-size: 11.5px !important;
+  color: #166534 !important;
+}
+
+.sp-odml-how-to-view-label {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #15803d !important;
+}
+
+.sp-odml-how-to-view-text {
+  font-weight: 600 !important;
+  color: #14532d !important;
+}
+
+.sp-odml-view-keyword {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 1.5px 7px !important;
+  border-radius: 4px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* ==========================================================================
+   SECTION 4: DATA BACKUP & REPORT EXPORT TOOLS DECK
+   ========================================================================== */
+.sp-odml-footer-deck {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin-top: 18px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+.sp-odml-advisory-note-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  margin-bottom: 6px !important;
+}
+
+.sp-odml-advisory-note-title {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #9a7200 !important;
+  letter-spacing: 0.01em !important;
+}
+
+.sp-odml-advisory-points {
+  margin: 0 !important;
+  padding-left: 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  font-size: 11.5px !important;
+  line-height: 1.45 !important;
+  color: #5c4500 !important;
+}
+
+.sp-odml-advisory-points li {
+  list-style-type: decimal !important;
+}
+
+/* Dotted invisible non-clickable box around highlighted advisory text */
+.sp-odml-note-highlight-box {
+  display: inline !important;
+  padding: 1px 4.5px !important;
+  border: 1.5px dotted #c69a22 !important;
+  border-radius: 4px !important;
+  background-color: transparent !important;
+  color: #9a7200 !important;
+  font-weight: 700 !important;
+  pointer-events: none !important;
+  cursor: default !important;
+  user-select: text !important;
+  box-decoration-break: clone !important;
+  -webkit-box-decoration-break: clone !important;
+}
+
+/* Dotted Tools Box (Backup & Restore: Import, Export JSON & Export PNG) */
+.sp-odml-tools-dotted-box {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 8px 14px !important;
+  border: 1.5px dotted #cbd5e1 !important;
+  border-radius: 9px !important;
+  background-color: #f8fafc !important;
+  transition: all 0.2s ease !important;
+  flex-wrap: wrap !important;
+}
+
+.sp-odml-tools-dotted-title-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-tools-dotted-title {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #475569 !important;
+}
+
+/* Right-side group keeping import/export and rightmost whole collapse button */
+.sp-odml-tools-right-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-left: auto !important;
+  flex-wrap: wrap !important;
+}
+
+.sp-odml-tools-btn-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+/* Rightmost Bottom Whole Collapse Button */
+.sp-odml-bottom-collapse-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4.5px 10px 4.5px 12px !important;
+  border-radius: 7px !important;
+  background-color: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #132450 !important;
+  font-family: inherit !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  white-space: nowrap !important;
+  box-shadow: 0 1px 2px rgba(37, 99, 235, 0.08) !important;
+  user-select: none !important;
+}
+
+.sp-odml-bottom-collapse-btn:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #132450 !important;
+  color: #1e40af !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.16) !important;
+}
+
+.sp-odml-bottom-collapse-icon-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 17px !important;
+  height: 17px !important;
+  border-radius: 4px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #bfdbfe !important;
+  color: #132450 !important;
+}
+
+.sp-odml-bottom-collapse-btn:hover .sp-odml-bottom-collapse-icon-chip {
+  color: #132450 !important;
+  border-color: #60a5fa !important;
+}
+
+.sp-odml-tools-btn-group .sp-odml-footer-btn {
+  border: 1.5px dotted #cbd5e1 !important;
+}
+
+.sp-odml-footer-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 6px 12px !important;
+  border-radius: 7px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  outline: none !important;
+  user-select: none !important;
+}
+
+/* Brown dotted Import button */
+.sp-odml-btn-import {
+  background-color: #fffaf0 !important;
+  border: 1.5px dotted #9a7200 !important;
+  color: #9a7200 !important;
+}
+
+.sp-odml-btn-import:hover {
+  background-color: #fff4c2 !important;
+  border-color: #5c4500 !important;
+  color: #5c4500 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 1px 3px rgba(244, 197, 66, 0.15) !important;
+}
+
+/* Blue dotted Export JSON button */
+.sp-odml-btn-export,
+.sp-odml-btn-export-json {
+  background-color: #e8ecf5 !important;
+  border: 1.5px dotted #132450 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-btn-export:hover,
+.sp-odml-btn-export-json:hover {
+  background-color: #e0f2fe !important;
+  border-color: #0d1938 !important;
+  color: #075985 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* Indigo/Blue dotted Export PNG button */
+.sp-odml-btn-export-png {
+  background-color: #e8ecf5 !important;
+  border: 1.5px dotted #253b70 !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-btn-export-png:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #132450 !important;
+  color: #0d1938 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 1px 3px rgba(99, 102, 241, 0.15) !important;
+}
+
+@keyframes spOdmlSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sp-odml-spin {
+  animation: spOdmlSpin 0.8s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   DEDICATED NEW COLUMN IN ATTENDANCE TABLE (OD_ML Margin)
+   ========================================================================== */
+
+/* Header cell for the new OD_ML Margin column */
+th.sp-odml-col-header,
+table.sp-attendance-table thead th.sp-odml-col-header {
+  background: #f1f5f9 !important;
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  font-size: 11.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  padding: 10px 14px !important;
+  border: 1px solid #cbd5e1 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+}
+
+/* Body cell for the new OD_ML Margin column */
+td.sp-odml-col-cell,
+table.sp-attendance-table tbody td.sp-odml-col-cell {
+  border: 1px solid #e2e8f0 !important;
+  padding: 10px 14px !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #334155 !important;
+  background-color: #ffffff !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  transition: background-color 0.15s ease !important;
+}
+
+tr:hover td.sp-odml-col-cell,
+table.sp-attendance-table tbody tr:hover td.sp-odml-col-cell {
+  background-color: #f8fafc !important;
+}
+
+/* Visibility Control for New Column */
+th.sp-odml-col-header.sp-odml-col-hidden,
+td.sp-odml-col-cell.sp-odml-col-hidden,
+table.sp-attendance-table th.sp-odml-col-header.sp-odml-col-hidden,
+table.sp-attendance-table td.sp-odml-col-cell.sp-odml-col-hidden {
+  display: none !important;
+}
+
+th.sp-odml-col-header:not(.sp-odml-col-hidden),
+table.sp-attendance-table th.sp-odml-col-header:not(.sp-odml-col-hidden) {
+  display: table-cell !important;
+}
+
+td.sp-odml-col-cell:not(.sp-odml-col-hidden),
+table.sp-attendance-table td.sp-odml-col-cell:not(.sp-odml-col-hidden) {
+  display: table-cell !important;
+}
+
+/* Header layout for the new column */
+.sp-odml-col-header-wrap {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+}
+
+.sp-odml-col-header-top {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+.sp-odml-col-title {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #1e293b !important;
+}
+
+.sp-odml-col-collapse-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 4px !important;
+  background-color: #e2e8f0 !important;
+  border: none !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-col-collapse-btn:hover {
+  background-color: #fee2e2 !important;
+  color: #dc2626 !important;
+}
+
+/* Minimal Info Icon Trigger in OD/ML Margin Header */
+.sp-odml-col-info-trigger {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #132450 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 1px !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  outline: none !important;
+}
+
+.sp-odml-col-info-trigger:hover,
+.sp-odml-col-info-trigger:focus {
+  color: #0d1938 !important;
+  transform: scale(1.15) !important;
+}
+
+/* Card Header Info Trigger beside View OD/ML button */
+.sp-odml-card-header-info-trigger {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 50% !important;
+  color: #0d1938 !important;
+  background-color: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  transition: all 0.15s ease !important;
+  cursor: pointer !important;
+}
+
+.sp-odml-card-header-info-trigger:hover,
+.sp-odml-card-header-info-trigger:focus {
+  background-color: #132450 !important;
+  color: #ffffff !important;
+  border-color: #0d1938 !important;
+  transform: scale(1.08) !important;
+}
+
+/* Global Floating Tooltip for OD/ML Margin Column */
+.sp-odml-margin-col-tooltip {
+  position: fixed !important;
+  width: 285px !important;
+  padding: 12px 14px !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  color: #1e293b !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s !important;
+  transform: translateY(4px) !important;
+  z-index: 2147483647 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', 'Segoe UI', Roboto, sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-margin-col-tooltip.sp-tooltip-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.sp-odml-col-tt-head {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  color: #1e1b4b !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 5px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.sp-odml-col-tt-box {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  padding: 8px 11px !important;
+  border-radius: 8px !important;
+  border: 1.5px dotted #253b70 !important;
+  background-color: #e8ecf5 !important;
+}
+
+.sp-odml-col-tt-box-header {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #132450 !important;
+}
+
+.sp-odml-col-tt-box-text {
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #0d1938 !important;
+  line-height: 1.4 !important;
+}
+
+/* Row Cell Flow Layout (Percentage & Margin: Current (green) ➔ After OD (yellow)) */
+.sp-odml-cell-flow-box {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Individual Flow Box for Total % and Margin */
+.sp-odml-flow-card {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 6px !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03) !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-flow-card:hover {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06) !important;
+}
+
+.sp-odml-flow-card .sp-odml-metric-lbl {
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  color: #64748b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  min-width: 44px !important;
+  text-align: left !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-flow-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+/* Base Flow Value Box */
+.sp-odml-flow-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 38px !important;
+  padding: 2px 6px !important;
+  border-radius: 5px !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+}
+
+/* Current Value Box in Green */
+.sp-odml-flow-box.sp-odml-box-green {
+  background-color: #dcfce7 !important;
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+}
+
+/* After OD Value Box in Yellow */
+.sp-odml-flow-box.sp-odml-box-yellow {
+  background-color: #fff4c2 !important;
+  border: 1.5px solid #F4C542 !important;
+  color: #5c4500 !important;
+}
+
+/* Real SVG Arrow between Current & After OD */
+.sp-odml-flow-real-arrow {
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  stroke: #64748b !important;
+  vertical-align: middle !important;
+}
+
+.sp-odml-credit-pill {
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  padding: 2px 5px !important;
+  border-radius: 4px !important;
+  background-color: #e8ecf5 !important;
+  color: #0d1938 !important;
+  border: 1px solid #b8c2d9 !important;
+  margin-left: 2px !important;
+}
+
+/* No OD/ML Added Box */
+.sp-odml-no-added-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.sp-odml-no-added-text {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  background-color: #f1f5f9 !important;
+  padding: 3px 8px !important;
+  border-radius: 5px !important;
+  border: 1px dashed #cbd5e1 !important;
+  letter-spacing: 0.02em !important;
+  white-space: nowrap !important;
+}
+
+/* ==========================================================================
+   GLOBAL FLOATING TOOLTIP (Attached to body)
+   ========================================================================== */
+.sp-odml-global-tooltip {
+  position: fixed !important;
+  width: 290px !important;
+  padding: 12px 14px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.18), 0 4px 6px -2px rgba(0, 0, 0, 0.04) !important;
+  color: #1e293b !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s !important;
+  transform: translateY(4px) !important;
+  z-index: 2147483647 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-global-tooltip.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.sp-odml-tt-head {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 6px !important;
+  padding-bottom: 4px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.sp-odml-tt-body {
+  font-size: 11.5px !important;
+  color: #475569 !important;
+  line-height: 1.4 !important;
+  margin-bottom: 6px !important;
+}
+
+.sp-odml-tt-bullet {
+  font-size: 11px !important;
+  color: #334155 !important;
+  line-height: 1.35 !important;
+  margin-bottom: 4px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+}
+
+.sp-odml-tt-dot {
+  width: 5px !important;
+  height: 5px !important;
+  border-radius: 50% !important;
+  margin-top: 5px !important;
+  flex-shrink: 0 !important;
+}
+
+.sp-odml-tt-bullet strong {
+  color: #0f172a !important;
+}
+
+/* ==========================================================================
+   Course Wise Attendance Card Header - "View OD/ML" Toggle Button
+   Strictly scoped to Attendance Card Header on Student Portal
+   ========================================================================== */
+
+.card-header.sp-odml-card-header-flex,
+.sp-odml-card-header-flex {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  /* Preserve original card header background, border, and padding from Student Portal */
+}
+
+.sp-odml-card-header-title {
+  display: inline-block !important;
+  flex: 1 1 auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  /* Preserve original card header color, font, and styles */
+  color: inherit !important;
+  font: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  background: transparent !important;
+}
+
+.sp-odml-card-header-title * {
+  margin-bottom: 0 !important;
+}
+
+.sp-odml-card-header-actions {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex: 0 0 auto !important;
+  margin-left: auto !important;
+}
+
+/* "View Marked OD/ML" Dotted Action Button */
+.sp-odml-view-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 5px 13px !important;
+  border-radius: 7px !important;
+  background-color: #ffffff !important;
+  border: 1.5px dotted #337ab7 !important;
+  color: #1e3a8a !important;
+  font-family: inherit !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  line-height: 1.3 !important;
+  text-decoration: none !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+  transition: all 0.15s ease-in-out !important;
+  outline: none !important;
+  user-select: none !important;
+  white-space: nowrap !important;
+}
+
+.sp-odml-view-btn:hover {
+  background-color: #f0f7fc !important;
+  border-color: #23527c !important;
+  color: #132450 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(51, 122, 183, 0.15) !important;
+}
+
+.sp-odml-view-btn:active {
+  transform: translateY(0) !important;
+}
+
+.sp-odml-view-btn.is-active {
+  background-color: #e0f2fe !important;
+  border: 1.5px dotted #132450 !important;
+  color: #0d1938 !important;
+  box-shadow: 0 1px 3px rgba(3, 105, 161, 0.12) !important;
+}
+
+.sp-odml-view-btn.is-active:hover {
+  background-color: #bae6fd !important;
+  border-color: #0d1938 !important;
+  color: #0c4a6e !important;
+}
+
+.sp-odml-view-btn-text {
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* ==========================================================================
+   PERSONAL NOTE BOX & ON-DEMAND POPUP
+   ========================================================================== */
+
+/* Compact Personal Note Field in Forge Column 2 */
+.sp-odml-personal-note-field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  width: 100% !important;
+}
+
+/* Column 2 (Presets, Single-line Reason, and Personal Notes) Space Optimization */
+.sp-odml-forge-col.sp-odml-forge-col-presets-notes {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  padding: 10px 14px !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-forge-col-presets-notes .sp-odml-presets-field {
+  margin: 0 !important;
+  gap: 3px !important;
+}
+
+.sp-odml-forge-col-presets-notes .sp-odml-tags-strip {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 4.5px !important;
+  margin-bottom: 3px !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
+
+.sp-odml-forge-col-presets-notes .sp-odml-tag-btn {
+  flex: 1 1 auto !important;
+  min-width: 60px !important;
+  max-width: none !important;
+  text-align: center !important;
+  justify-content: center !important;
+  padding: 3.5px 7px !important;
+  font-size: 10.5px !important;
+}
+
+.sp-odml-forge-col-presets-notes .sp-odml-tag-custom-btn {
+  flex: 1 1 auto !important;
+  min-width: 65px !important;
+  max-width: none !important;
+  text-align: center !important;
+  justify-content: center !important;
+}
+
+.sp-odml-forge-col-presets-notes .sp-odml-personal-note-field {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  margin-top: 1px !important;
+  min-height: 0 !important;
+}
+
+.sp-odml-forge-col-presets-notes .sp-odml-personal-note-card {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+}
+
+.sp-odml-forge-col-presets-notes .sp-odml-note-editor {
+  flex: 1 1 auto !important;
+  min-height: 72px !important;
+  max-height: 180px !important;
+  padding: 6px 10px !important;
+  font-size: 11.5px !important;
+  line-height: 1.5 !important;
+  outline: none !important;
+  overflow-y: auto !important;
+  word-wrap: break-word !important;
+  white-space: pre-wrap !important;
+  color: #0f172a !important;
+  cursor: text !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-note-header-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+  margin-bottom: 2px !important;
+}
+
+.sp-odml-note-title-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.sp-odml-note-header-actions {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.sp-odml-mini-tools-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+  background-color: #f1f5f9 !important;
+  padding: 1.5px 3px !important;
+  border-radius: 5px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.sp-odml-mini-tool-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 19px !important;
+  height: 19px !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  border-radius: 3px !important;
+  color: #475569 !important;
+  font-family: inherit !important;
+  font-size: 10.5px !important;
+  cursor: pointer !important;
+  transition: all 0.12s ease !important;
+  user-select: none !important;
+}
+
+.sp-odml-mini-tool-btn:hover {
+  background-color: #ffffff !important;
+  color: #132450 !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08) !important;
+}
+
+.sp-odml-note-popup-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  background-color: #ffffff !important;
+  border: 1.5px dotted #132450 !important;
+  border-radius: 5px !important;
+  color: #132450 !important;
+  font-family: inherit !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  padding: 2.5px 8.5px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  line-height: 1.3 !important;
+  box-shadow: 0 1px 2px rgba(2, 132, 199, 0.08) !important;
+}
+
+.sp-odml-note-popup-btn:hover {
+  background-color: #e8ecf5 !important;
+  border-color: #0d1938 !important;
+  color: #0d1938 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(2, 132, 199, 0.18) !important;
+}
+
+.sp-odml-note-popup-btn:active {
+  transform: translateY(0) !important;
+}
+
+/* Compact Personal Note Card Container */
+.sp-odml-personal-note-card {
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.sp-odml-personal-note-card:focus-within {
+  border-color: #132450 !important;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* Note Editor (Compact) */
+.sp-odml-note-editor,
+.sp-odml-note-textarea {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 60px !important;
+  max-height: 160px !important;
+  padding: 8px 10px !important;
+  border: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+  color: #0f172a !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 11.5px !important;
+  line-height: 1.5 !important;
+  overflow-y: auto !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  box-sizing: border-box !important;
+  cursor: text !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.sp-odml-note-editor::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+.sp-odml-note-editor::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+  border-radius: 3px !important;
+}
+
+.sp-odml-note-textarea::placeholder {
+  color: #94a3b8 !important;
+  font-style: italic !important;
+}
+
+/* Compact Action Row (Save & Reset) */
+.sp-odml-note-action-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 4px 8px !important;
+  background-color: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+.sp-odml-note-status-hint {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+}
+
+.sp-odml-note-status-hint.is-saved {
+  color: #16a34a !important;
+}
+
+.sp-odml-note-status-hint.is-unsaved {
+  color: #c69a22 !important;
+}
+
+.sp-odml-note-action-btns {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.sp-odml-note-btn-reset {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  padding: 2.5px 8px !important;
+  border-radius: 4px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #64748b !important;
+  font-family: inherit !important;
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.12s ease !important;
+  line-height: 1.2 !important;
+}
+
+.sp-odml-note-btn-reset:hover {
+  background-color: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+  color: #dc2626 !important;
+}
+
+.sp-odml-note-btn-save {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 3px !important;
+  padding: 2.5px 9px !important;
+  border-radius: 4px !important;
+  background-color: #132450 !important;
+  border: 1px solid #132450 !important;
+  color: #ffffff !important;
+  font-family: inherit !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.12s ease !important;
+  line-height: 1.2 !important;
+}
+
+.sp-odml-note-btn-save:hover {
+  background-color: #0d1938 !important;
+  border-color: #0d1938 !important;
+}
+
+/* ==========================================================================
+   PERSONAL NOTE MODAL POPUP (Hidden by default, shown ONLY when asked)
+   ========================================================================== */
+/* ==========================================================================
+   PERSONAL NOTE MODAL POPUP (Hidden by default, shown ONLY when asked)
+   ========================================================================== */
+.sp-odml-modal-backdrop {
+  display: none !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  z-index: 99999 !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+}
+
+.sp-odml-modal-backdrop.is-open {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto !important;
+  background: rgba(15, 23, 42, 0.28) !important;
+  backdrop-filter: blur(2px) !important;
+  -webkit-backdrop-filter: blur(2px) !important;
+}
+
+.sp-odml-modal-dialog {
+  position: relative !important;
+  pointer-events: auto !important;
+  background: #ffffff !important;
+  width: 600px !important;
+  max-width: calc(100vw - 32px) !important;
+  height: 480px !important;
+  max-height: calc(100vh - 48px) !important;
+  min-width: 340px !important;
+  min-height: 280px !important;
+  top: auto !important;
+  left: auto !important;
+  margin: auto !important;
+  border-radius: 12px !important;
+  border: 2px solid #132450 !important;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3), 0 4px 14px rgba(15, 23, 42, 0.12) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  transform: none !important;
+  z-index: 100000 !important;
+  animation: spOdmlModalFadeIn 0.14s ease-out !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+@keyframes spOdmlModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.sp-odml-modal-header {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 10px 16px !important;
+  background: #f8fafc !important;
+  border-bottom: 1.5px dotted #cbd5e1 !important;
+  cursor: default !important;
+  user-select: none !important;
+}
+
+.sp-odml-modal-title-row {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-odml-modal-title {
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  letter-spacing: -0.01em !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.sp-odml-modal-close-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #64748b !important;
+  padding: 4px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-modal-close-btn:hover {
+  background: #fee2e2 !important;
+  color: #ef4444 !important;
+}
+
+/* Modal Formatting Toolbar */
+.sp-odml-modal-toolbar {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 6px 14px !important;
+  background: #f8fafc !important;
+  border-bottom: 1.5px dotted #cbd5e1 !important;
+  gap: 6px !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-toolbar-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.sp-odml-toolbar-divider {
+  width: 1px !important;
+  height: 20px !important;
+  background: #cbd5e1 !important;
+  margin: 0 4px !important;
+}
+
+.sp-odml-tool-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 28px !important;
+  height: 28px !important;
+  padding: 0 8px !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 6px !important;
+  color: #334155 !important;
+  font-family: inherit !important;
+  font-size: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.12s ease !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+}
+
+.sp-odml-tool-btn:hover {
+  background: #f1f5f9 !important;
+  border-color: #132450 !important;
+  color: #132450 !important;
+  transform: translateY(-1px) !important;
+}
+
+.sp-odml-tool-btn:active {
+  background: #e2e8f0 !important;
+  transform: translateY(0) scale(0.97) !important;
+}
+
+/* Instant Clean Hover Tooltip for Format Buttons showing Keyboard Shortcut */
+.sp-odml-mini-tool-btn,
+.sp-odml-tool-btn {
+  position: relative !important;
+}
+
+.sp-odml-mini-tool-btn[data-tooltip]::after,
+.sp-odml-tool-btn[data-tooltip]::after {
+  content: attr(data-tooltip) !important;
+  position: absolute !important;
+  top: calc(100% + 6px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-2px) scale(0.96) !important;
+  background: #0f172a !important;
+  color: #ffffff !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  padding: 3px 7px !important;
+  border-radius: 5px !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.12s ease, transform 0.12s ease !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.28) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  z-index: 1000000 !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1.3 !important;
+}
+
+.sp-odml-mini-tool-btn[data-tooltip]::before,
+.sp-odml-tool-btn[data-tooltip]::before {
+  content: "" !important;
+  position: absolute !important;
+  top: calc(100% + 1px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-2px) !important;
+  border-width: 0 4px 5px 4px !important;
+  border-style: solid !important;
+  border-color: transparent transparent #0f172a transparent !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.12s ease, transform 0.12s ease !important;
+  z-index: 1000001 !important;
+}
+
+/* Edge safety so tooltips on end buttons don't spill or clip */
+.sp-odml-mini-tool-btn:first-child[data-tooltip]::after,
+.sp-odml-tool-btn:first-child[data-tooltip]::after {
+  left: 0 !important;
+  transform: translateY(-2px) scale(0.96) !important;
+}
+.sp-odml-mini-tool-btn:first-child[data-tooltip]::before,
+.sp-odml-tool-btn:first-child[data-tooltip]::before {
+  left: 9px !important;
+}
+
+.sp-odml-mini-tool-btn:last-child[data-tooltip]::after,
+.sp-odml-tool-btn:last-child[data-tooltip]::after {
+  left: auto !important;
+  right: 0 !important;
+  transform: translateY(-2px) scale(0.96) !important;
+}
+.sp-odml-mini-tool-btn:last-child[data-tooltip]::before,
+.sp-odml-tool-btn:last-child[data-tooltip]::before {
+  left: auto !important;
+  right: 9px !important;
+}
+
+.sp-odml-mini-tool-btn[data-tooltip]:hover::after,
+.sp-odml-tool-btn[data-tooltip]:hover::after,
+.sp-odml-mini-tool-btn[data-tooltip]:hover::before,
+.sp-odml-tool-btn[data-tooltip]:hover::before {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.sp-odml-mini-tool-btn[data-tooltip]:hover::after,
+.sp-odml-tool-btn[data-tooltip]:hover::after {
+  transform: translateX(-50%) translateY(0) scale(1) !important;
+}
+.sp-odml-mini-tool-btn:first-child[data-tooltip]:hover::after,
+.sp-odml-tool-btn:first-child[data-tooltip]:hover::after,
+.sp-odml-mini-tool-btn:last-child[data-tooltip]:hover::after,
+.sp-odml-tool-btn:last-child[data-tooltip]:hover::after {
+  transform: translateY(0) scale(1) !important;
+}
+
+.sp-odml-mini-tool-btn[data-tooltip]:hover::before,
+.sp-odml-tool-btn[data-tooltip]:hover::before {
+  transform: translateX(-50%) translateY(0) !important;
+}
+.sp-odml-mini-tool-btn:first-child[data-tooltip]:hover::before,
+.sp-odml-tool-btn:first-child[data-tooltip]:hover::before,
+.sp-odml-mini-tool-btn:last-child[data-tooltip]:hover::before,
+.sp-odml-tool-btn:last-child[data-tooltip]:hover::before {
+  transform: translateY(0) !important;
+}
+
+.sp-odml-tool-btn strong {
+  font-weight: 800 !important;
+  font-size: 13px !important;
+}
+
+.sp-odml-tool-btn em {
+  font-style: italic !important;
+  font-family: Georgia, serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+.sp-odml-tool-btn u {
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+  font-weight: 700 !important;
+}
+
+.sp-odml-tool-btn-points,
+.sp-odml-tool-btn-strike,
+.sp-odml-tool-btn-todo {
+  gap: 5px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  padding: 0 9px !important;
+}
+
+.sp-odml-tool-btn-strike s {
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #ef4444 !important;
+}
+
+.sp-odml-tool-bullet-icon {
+  font-size: 16px !important;
+  line-height: 1 !important;
+  color: #132450 !important;
+}
+
+.sp-odml-tool-check-icon {
+  font-size: 13px !important;
+  line-height: 1 !important;
+  color: #16a34a !important;
+}
+
+/* Mini Toolbar Specific Buttons */
+.sp-odml-mini-tool-strike s {
+  font-weight: 800 !important;
+  color: #ef4444 !important;
+  text-decoration: line-through !important;
+}
+
+.sp-odml-mini-tool-todo span {
+  color: #16a34a !important;
+  font-weight: 700 !important;
+}
+
+/* Toolbar Hint */
+.sp-odml-toolbar-hint {
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  user-select: none !important;
+  padding-right: 4px !important;
+}
+
+/* Modal Body: Single Full-width Rich Text Notepad */
+.sp-odml-modal-body {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  padding: 0 !important;
+}
+
+.sp-odml-modal-editor {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  border: none !important;
+  outline: none !important;
+  padding: 16px 20px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 13.5px !important;
+  line-height: 1.65 !important;
+  color: #0f172a !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
+  box-sizing: border-box !important;
+  background: #ffffff !important;
+  cursor: text !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.sp-odml-modal-editor::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.sp-odml-modal-editor::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+  border-radius: 4px !important;
+}
+
+.sp-odml-modal-editor::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+  border-radius: 4px !important;
+}
+
+.sp-odml-modal-editor::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+/* Non-destructive Placeholder: Placed absolutely so typing & erasing never get interrupted */
+.sp-odml-note-editor.is-empty::before {
+  content: attr(data-placeholder) !important;
+  color: #94a3b8 !important;
+  font-style: italic !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 8px !important;
+  left: 10px !important;
+  user-select: none !important;
+  display: block !important;
+}
+
+.sp-odml-modal-editor.is-empty::before {
+  content: attr(data-placeholder) !important;
+  color: #94a3b8 !important;
+  font-style: italic !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: 16px !important;
+  left: 20px !important;
+  user-select: none !important;
+  display: block !important;
+}
+
+/* Rich Typography inside Realtime Editors */
+.sp-odml-note-editor strong,
+.sp-odml-note-editor b,
+.sp-odml-modal-editor strong,
+.sp-odml-modal-editor b {
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.sp-odml-note-editor em,
+.sp-odml-note-editor i,
+.sp-odml-modal-editor em,
+.sp-odml-modal-editor i {
+  font-style: italic !important;
+  color: #1e293b !important;
+}
+
+.sp-odml-note-editor u,
+.sp-odml-modal-editor u {
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: #132450 !important;
+  text-decoration-thickness: 1.5px !important;
+}
+
+/* Sliced / Strike-Through (Mark Done) */
+.sp-odml-note-editor strike,
+.sp-odml-note-editor del,
+.sp-odml-note-editor s,
+.sp-odml-modal-editor strike,
+.sp-odml-modal-editor del,
+.sp-odml-modal-editor s {
+  text-decoration: line-through !important;
+  text-decoration-thickness: 1.5px !important;
+  text-decoration-color: #ef4444 !important;
+  color: #94a3b8 !important;
+}
+
+/* Point-wise Bullet Lists */
+.sp-odml-note-editor ul,
+.sp-odml-modal-editor ul {
+  margin: 4px 0 6px 20px !important;
+  padding: 0 !important;
+  list-style-type: disc !important;
+}
+
+.sp-odml-note-editor li,
+.sp-odml-modal-editor li {
+  margin-bottom: 3px !important;
+  color: #1e293b !important;
+  line-height: 1.55 !important;
+}
+
+.sp-odml-note-editor li::marker,
+.sp-odml-modal-editor li::marker {
+  color: #132450 !important;
+  font-size: 1.05em !important;
+}
+
+.sp-odml-note-editor li strike,
+.sp-odml-note-editor li del,
+.sp-odml-note-editor li s,
+.sp-odml-modal-editor li strike,
+.sp-odml-modal-editor li del,
+.sp-odml-modal-editor li s {
+  text-decoration: line-through !important;
+  text-decoration-thickness: 1.5px !important;
+  text-decoration-color: #ef4444 !important;
+  color: #94a3b8 !important;
+}
+
+/* Interactive Point-wise Checklist / To-Do Tasks */
+.sp-odml-todo-item {
+  position: relative !important;
+  display: block !important;
+  padding-left: 22px !important;
+  margin: 3.5px 0 !important;
+  line-height: 1.55 !important;
+  min-height: 20px !important;
+}
+
+.sp-odml-todo-box {
+  position: absolute !important;
+  left: 0 !important;
+  top: 2px !important;
+  cursor: pointer !important;
+  color: #132450 !important;
+  font-size: 13.5px !important;
+  line-height: 1 !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  height: 16px !important;
+  transition: transform 0.12s ease, color 0.12s ease !important;
+}
+
+.sp-odml-todo-box:hover {
+  transform: scale(1.2) !important;
+  color: #0d1938 !important;
+}
+
+.sp-odml-todo-item[data-done="true"] .sp-odml-todo-box,
+.sp-odml-todo-item.is-done .sp-odml-todo-box {
+  color: #16a34a !important;
+}
+
+.sp-odml-todo-text {
+  display: inline !important;
+  outline: none !important;
+  word-break: break-word !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-todo-item[data-done="true"] .sp-odml-todo-text,
+.sp-odml-todo-item.is-done .sp-odml-todo-text {
+  text-decoration: line-through !important;
+  text-decoration-thickness: 1.5px !important;
+  text-decoration-color: #ef4444 !important;
+  color: #94a3b8 !important;
+}
+
+/* Modal Footer */
+.sp-odml-modal-footer {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 10px 18px !important;
+  background: #f8fafc !important;
+  border-top: 1.5px dotted #cbd5e1 !important;
+}
+
+.sp-odml-modal-footer-left {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-odml-modal-footer-right {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-odml-modal-feedback-msg {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #16a34a !important;
+}
+
+.sp-odml-modal-reset-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  border: 1.5px dotted #ef4444 !important;
+  color: #dc2626 !important;
+  font-family: inherit !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-modal-reset-btn:hover {
+  background: #fee2e2 !important;
+  border-color: #dc2626 !important;
+  transform: translateY(-1px) !important;
+}
+
+.sp-odml-modal-save-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 6px 14px !important;
+  border-radius: 6px !important;
+  background: #132450 !important;
+  border: 1.5px solid #132450 !important;
+  color: #ffffff !important;
+  font-family: inherit !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-modal-save-btn:hover {
+  background: #0d1938 !important;
+  border-color: #0d1938 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 5px rgba(2, 132, 199, 0.25) !important;
+}
+
+.sp-odml-modal-done-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 16px !important;
+  border-radius: 6px !important;
+  background: #0f172a !important;
+  border: 1.5px solid #0f172a !important;
+  color: #ffffff !important;
+  font-family: inherit !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.sp-odml-modal-done-btn:hover {
+  background: #1e293b !important;
+  border-color: #1e293b !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Modal Responsive Handling */
+@media (max-width: 700px) {
+  .sp-odml-modal-dialog {
+    max-width: 95vw !important;
+  }
+}
+
+

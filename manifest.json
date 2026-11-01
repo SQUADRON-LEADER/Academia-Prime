@@ -1,0 +1,116 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "name": "Academia Prime",
+  "version": "1.4.5",
+  "description": "Skip the Feedback. Track the Margin. View your Timetable.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "https://academia.srmist.edu.in/*",
+    "https://sp.srmist.edu.in/*",
+    "https://www.srmist.edu.in/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/academia-prime-logo.png",
+      "32": "icons/academia-prime-logo.png",
+      "48": "icons/academia-prime-logo.png",
+      "128": "icons/academia-prime-logo.png"
+    }
+  },
+  "icons": {
+    "16": "icons/academia-prime-logo.png",
+    "32": "icons/academia-prime-logo.png",
+    "48": "icons/academia-prime-logo.png",
+    "128": "icons/academia-prime-logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://academia.srmist.edu.in/*"
+      ],
+      "js": [
+        "src/contact_directory/contact_directory_ui.js",
+        "src/content/main.js",
+        "src/content/content.js",
+        "src/timetable/html2canvas.min.js",
+        "src/timetable/timetable.js",
+        "src/cgpa_ext_btn.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://sp.srmist.edu.in/*"
+      ],
+      "js": [
+        "src/contact_directory/contact_directory_ui.js",
+        "src/timetable/html2canvas.min.js",
+        "studentportal/sp_attendence.js",
+        "studentportal/sp_sidepanel.js",
+        "studentportal/sp_revanced.js",
+        "studentportal/exam_inspect.js",
+        "studentportal/sp_internals.js",
+        "studentportal/marks_graph.js",
+        "studentportal/cgpa_sgpa.js",
+        "studentportal/captcha_button.js",
+        "studentportal/sp_timetable.js",
+        "src/cgpa_ext_btn.js",
+        "studentportal/sp_login_design.js",
+        "studentportal/OD_ML/OD_ML.js"
+      ],
+      "css": [
+        "studentportal/sp_attendence.css",
+        "studentportal/sp_sidepanel.css",
+        "studentportal/sp_revanced.css",
+        "studentportal/exam_inspect.css",
+        "studentportal/sp_login_design.css",
+        "studentportal/OD_ML/OD_ML.css"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://sp.srmist.edu.in/*"
+      ],
+      "js": [
+        "captcha_solver/captcha_solver.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/*",
+        "src/injected/automator.js",
+        "src/timetable/html2canvas.min.js",
+        "captcha_solver/*",
+        "src/cgpa_calculator/*",
+        "src/cgpa_ext_btn.js",
+        "src/contact_directory/*",
+        "important_contacts/*"
+      ],
+      "matches": [
+        "https://academia.srmist.edu.in/*",
+        "https://sp.srmist.edu.in/*"
+      ]
+    }
+  ]
+}

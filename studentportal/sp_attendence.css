@@ -1,0 +1,1030 @@
+/* ==========================================================================
+   Student Portal Attendance - V1 Timetable Theme with Minimal Colored Metric Boxes
+   Strictly scoped to the Attendance Details table only.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+/* Scope strictly to the Attendance Card and Table */
+.sp-attendance-card {
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  margin-top: 18px !important;
+  margin-bottom: 28px !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* ── Spacious Attendance Table Layout ── */
+table.sp-attendance-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: collapse !important;
+  border: 1px solid #cbd5e1 !important;
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  background: #ffffff !important;
+  margin: 0 !important;
+}
+
+/* Lightish Tone Table Header */
+table.sp-attendance-table thead th,
+table.sp-attendance-table thead td {
+  background: #f1f5f9 !important;
+  color: #1e293b !important;
+  font-weight: 700 !important;
+  font-size: 11.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  padding: 13px 14px !important;
+  border: 1px solid #cbd5e1 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+}
+
+table.sp-attendance-table thead th:first-child,
+table.sp-attendance-table thead td:first-child {
+  text-align: left !important;
+  padding-left: 18px !important;
+}
+
+/* Table Body Grid Cells */
+table.sp-attendance-table tbody td {
+  border: 1px solid #e2e8f0 !important;
+  padding: 12px 14px !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #334155 !important;
+  background-color: #ffffff !important;
+  line-height: 1.3 !important;
+  transition: background-color 0.15s ease !important;
+}
+
+table.sp-attendance-table tbody tr:hover td {
+  background-color: #f8fafc !important;
+}
+
+/* ── Course Identity Cell ── */
+table.sp-attendance-table tbody td.sp-course-cell {
+  background-color: #f8fafc !important;
+  text-align: left !important;
+  padding: 10px 16px !important;
+}
+
+.sp-code-badge {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 3px 8px !important;
+  border-radius: 5px !important;
+  letter-spacing: 0.03em !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
+  margin-bottom: 3px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+}
+
+.sp-title-text {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  display: block !important;
+  line-height: 1.35 !important;
+}
+
+/* ── Minimal Colored Metric Boxes (Hours) ── */
+.sp-metric-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 38px !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 12.5px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Max / Conducted Hours Box (Light Blue) */
+.sp-metric-conducted {
+  color: #0d1938 !important;
+  background-color: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+}
+
+/* Attended Hours Box (Soft Emerald Green) */
+.sp-metric-attended {
+  color: #15803d !important;
+  background-color: #dcfce7 !important;
+  border: 1px solid #86efac !important;
+}
+
+/* Absent Hours Box (Soft Rose Red when > 0, Slate when 0) */
+.sp-metric-absent {
+  color: #dc2626 !important;
+  background-color: #fee2e2 !important;
+  border: 1px solid #fca5a5 !important;
+}
+
+.sp-metric-absent-zero {
+  color: #64748b !important;
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* ── Margin Header & Threshold Toggle (60% / 75%) ── */
+.sp-margin-header-wrap {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+}
+
+.sp-margin-header-top {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+}
+
+.sp-margin-header-title {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: #1e293b !important;
+  line-height: 1 !important;
+}
+
+/* Minimal Info Icon & Hover Tooltip */
+.sp-margin-info-trigger {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #132450 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 1px !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  outline: none !important;
+  vertical-align: middle !important;
+  box-shadow: none !important;
+}
+
+.sp-info-icon {
+  width: 14px !important;
+  height: 14px !important;
+  display: block !important;
+}
+
+.sp-margin-info-trigger:hover,
+.sp-margin-info-trigger:focus {
+  color: #0d1938 !important;
+  background: transparent !important;
+  border: none !important;
+  transform: scale(1.15) !important;
+  box-shadow: none !important;
+}
+
+/* Global Floating Tooltip (Attached to body - never clipped by table/card overflow) */
+.sp-margin-global-tooltip {
+  position: fixed !important;
+  width: 270px !important;
+  padding: 12px 14px !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  color: #1e293b !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s !important;
+  transform: translateY(4px) !important;
+  z-index: 2147483647 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', 'Segoe UI', Roboto, sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+.sp-margin-global-tooltip.sp-tooltip-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.sp-tooltip-header {
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  color: #1e1b4b !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 5px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.sp-tooltip-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 7px !important;
+  margin-bottom: 8px !important;
+}
+
+.sp-tooltip-item:last-child {
+  margin-bottom: 0 !important;
+}
+
+.sp-tooltip-tag {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+  flex-shrink: 0 !important;
+  line-height: 1.3 !important;
+}
+
+.sp-tooltip-tag.sp-tag-75 {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+  border: 1px solid #86efac !important;
+}
+
+.sp-tooltip-tag.sp-tag-65 {
+  background: #fff4c2 !important;
+  color: #5c4500 !important;
+  border: 1px solid #fff4c2 !important;
+}
+
+.sp-tooltip-desc {
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+  color: #475569 !important;
+}
+
+.sp-tooltip-desc strong {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+/* Calculator Icon Button in Margin Header Top */
+.sp-calc-icon-btn {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  color: #0d1938 !important;
+  background: #e8ecf5 !important;
+  border: 1px solid #b8c2d9 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  outline: none !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.sp-calc-icon-btn:hover,
+.sp-calc-icon-btn:focus {
+  background: #132450 !important;
+  color: #ffffff !important;
+  border-color: #0d1938 !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 1px 4px rgba(19, 36, 80, 0.3) !important;
+}
+
+.sp-calc-icon-btn:active {
+  transform: scale(0.96) !important;
+}
+
+/* Threshold Controls (65% Lighter Yellow Left, 75% Green Right) */
+.sp-threshold-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #f1f5f9 !important;
+  padding: 2px !important;
+  border-radius: 6px !important;
+  gap: 3px !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  justify-content: space-between !important;
+}
+
+.sp-threshold-btn {
+  flex: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2px 6px !important;
+  height: 21px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  border-radius: 4px !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  user-select: none !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+/* 65% Button (Left - Light Soft Yellow Theme) */
+.sp-threshold-btn.sp-btn-65 {
+  background: #fffaf0 !important;
+  color: #5c4500 !important;
+  border-color: #fff4c2 !important;
+}
+
+.sp-threshold-btn.sp-btn-65:hover {
+  background: #fff4c2 !important;
+  color: #713f12 !important;
+  border-color: #F4C542 !important;
+}
+
+.sp-threshold-btn.sp-btn-65.sp-active {
+  background: #fff4c2 !important;
+  color: #713f12 !important;
+  border-color: #F4C542 !important;
+  box-shadow: 0 1px 3px rgba(250, 204, 21, 0.25) !important;
+}
+
+/* 75% Button (Right - Emerald Green Theme) */
+.sp-threshold-btn.sp-btn-75 {
+  background: #f0fdf4 !important;
+  color: #15803d !important;
+  border-color: #bbf7d0 !important;
+}
+
+.sp-threshold-btn.sp-btn-75:hover {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+  border-color: #86efac !important;
+}
+
+.sp-threshold-btn.sp-btn-75.sp-active {
+  background: #16a34a !important;
+  color: #ffffff !important;
+  border-color: #15803d !important;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.35) !important;
+}
+
+/* ── Custom Attendance Calculator Modal ── */
+.sp-calc-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(4px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 999999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+}
+
+.sp-calc-overlay.sp-modal-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.sp-calc-card {
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  padding: 24px 26px !important;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.3), 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #cbd5e1 !important;
+  transform: scale(0.95) translateY(8px) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', 'Segoe UI', Roboto, sans-serif !important;
+  box-sizing: border-box !important;
+}
+
+.sp-calc-overlay.sp-modal-open .sp-calc-card {
+  transform: scale(1) translateY(0) !important;
+}
+
+.sp-calc-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 18px !important;
+  padding-bottom: 14px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.sp-calc-title {
+  font-size: 15.5px !important;
+  font-weight: 800 !important;
+  color: #1e1b4b !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.sp-calc-title-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 7px !important;
+  background: #e8ecf5 !important;
+  color: #132450 !important;
+  border: 1px solid #b8c2d9 !important;
+}
+
+.sp-calc-close-btn {
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #64748b !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 7px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+}
+
+.sp-calc-close-btn:hover {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+  border-color: #fca5a5 !important;
+}
+
+/* ── Color-Coded Metric Cards (Conducted: Blue, Attended: Green, Absent: Red) ── */
+.sp-calc-form-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  margin-bottom: 18px !important;
+}
+
+.sp-calc-metric-card {
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 7px !important;
+  box-sizing: border-box !important;
+  transition: all 0.15s ease !important;
+}
+
+/* Blue Box for Total Conducted */
+.sp-card-conducted {
+  background: #e8ecf5 !important;
+  border: 1.5px solid #bae6fd !important;
+}
+
+.sp-card-conducted:focus-within {
+  border-color: #132450 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12) !important;
+}
+
+/* Green Box for Present / Attended */
+.sp-card-attended {
+  background: #f0fdf4 !important;
+  border: 1.5px solid #bbf7d0 !important;
+}
+
+.sp-card-attended:focus-within {
+  border-color: #16a34a !important;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12) !important;
+}
+
+/* Red Box for Absent */
+.sp-card-absent {
+  background: #fff1f2 !important;
+  border: 1.5px solid #fecdd3 !important;
+}
+
+.sp-card-absent:focus-within {
+  border-color: #e11d48 !important;
+  box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.12) !important;
+}
+
+.sp-card-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.sp-card-label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #334155 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.sp-card-badge {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 2px 7px !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+}
+
+.sp-badge-blue {
+  background: #e0f2fe !important;
+  color: #0d1938 !important;
+  border: 1px solid #b8c2d9 !important;
+}
+
+.sp-badge-green {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+  border: 1px solid #86efac !important;
+}
+
+.sp-badge-red {
+  background: #ffe4e6 !important;
+  color: #be123c !important;
+  border: 1px solid #fda4af !important;
+}
+
+.sp-card-input-wrap {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.sp-calc-input {
+  width: 100% !important;
+  height: 38px !important;
+  padding: 0 48px 0 12px !important;
+  border-radius: 7px !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  background: #ffffff !important;
+  transition: all 0.15s ease !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.sp-input-blue {
+  border: 1px solid #b8c2d9 !important;
+  color: #0d1938 !important;
+}
+
+.sp-input-green {
+  border: 1px solid #86efac !important;
+  color: #15803d !important;
+}
+
+.sp-input-red {
+  border: 1px solid #fda4af !important;
+  color: #be123c !important;
+}
+
+.sp-card-unit {
+  position: absolute !important;
+  right: 12px !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #94a3b8 !important;
+  pointer-events: none !important;
+}
+
+/* ── Compact Threshold Row ── */
+.sp-calc-thresh-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  margin-bottom: 16px !important;
+  background: #f8fafc !important;
+  padding: 6px 12px !important;
+  border-radius: 9px !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.sp-calc-section-label {
+  display: inline-block !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #475569 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  margin: 0 !important;
+}
+
+.sp-calc-thresh-btns {
+  display: inline-flex !important;
+  gap: 6px !important;
+}
+
+.sp-calc-thresh-opt {
+  height: 28px !important;
+  border: 1px solid #cbd5e1 !important;
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  padding: 2px 10px !important;
+}
+
+.sp-thresh-val {
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+.sp-thresh-sub {
+  font-size: 9.5px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  line-height: 1 !important;
+}
+
+.sp-thresh-opt-65:hover {
+  background: #fffaf0 !important;
+  border-color: #F4C542 !important;
+}
+
+.sp-thresh-opt-65.sp-calc-thresh-active {
+  background: #fff4c2 !important;
+  border-color: #F4C542 !important;
+  color: #713f12 !important;
+  box-shadow: 0 1px 3px rgba(250, 204, 21, 0.25) !important;
+}
+
+.sp-thresh-opt-65.sp-calc-thresh-active .sp-thresh-val {
+  color: #713f12 !important;
+}
+
+.sp-thresh-opt-65.sp-calc-thresh-active .sp-thresh-sub {
+  color: #5c4500 !important;
+}
+
+.sp-thresh-opt-75:hover {
+  background: #f0fdf4 !important;
+  border-color: #86efac !important;
+}
+
+.sp-thresh-opt-75.sp-calc-thresh-active {
+  background: #16a34a !important;
+  border-color: #15803d !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(22, 163, 74, 0.3) !important;
+}
+
+.sp-thresh-opt-75.sp-calc-thresh-active .sp-thresh-sub {
+  color: #dcfce7 !important;
+}
+
+/* ── Result & Verdict Card ── */
+.sp-calc-result-box {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  margin-bottom: 16px !important;
+}
+
+.sp-calc-metric-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 10px !important;
+}
+
+.sp-calc-metric-title {
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #475569 !important;
+  display: block !important;
+}
+
+.sp-calc-metric-sub {
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  margin-top: 2px !important;
+}
+
+.sp-calc-pct-badge {
+  font-size: 18px !important;
+  font-weight: 800 !important;
+  padding: 5px 14px !important;
+  border-radius: 8px !important;
+  display: inline-block !important;
+}
+
+.sp-calc-margin-verdict {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.45 !important;
+  padding: 10px 14px !important;
+  border-radius: 8px !important;
+}
+
+.sp-calc-verdict-safe {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+  border: 1px solid #86efac !important;
+}
+
+.sp-calc-verdict-zero {
+  background: #fff4c2 !important;
+  color: #5c4500 !important;
+  border: 1px solid #fff4c2 !important;
+}
+
+.sp-calc-verdict-short {
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fca5a5 !important;
+}
+
+/* ── Unified Custom Future Simulation Section ── */
+.sp-calc-custom-section {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 13px 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  box-sizing: border-box !important;
+}
+
+.sp-custom-header-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+.sp-custom-heading {
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #475569 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.sp-stepper-control {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 6px !important;
+  padding: 1px !important;
+  height: 28px !important;
+  box-sizing: border-box !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+}
+
+.sp-step-btn {
+  width: 24px !important;
+  height: 24px !important;
+  border: none !important;
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  transition: all 0.12s ease !important;
+  padding: 0 !important;
+}
+
+.sp-step-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.sp-step-btn:active {
+  transform: scale(0.92) !important;
+}
+
+.sp-step-input {
+  width: 30px !important;
+  border: none !important;
+  text-align: center !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  background: transparent !important;
+  outline: none !important;
+  padding: 0 2px !important;
+  -moz-appearance: textfield !important;
+}
+
+.sp-step-input::-webkit-outer-spin-button,
+.sp-step-input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+.sp-step-unit {
+  font-size: 10.5px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  margin-right: 5px !important;
+}
+
+.sp-calc-scenarios {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+}
+
+.sp-scen-card {
+  border-radius: 10px !important;
+  padding: 11px 13px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 7px !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+/* Green Box for Attend Next */
+.sp-scen-attend {
+  background: #f0fdf4 !important;
+  border: 1.5px solid #bbf7d0 !important;
+}
+
+/* Red Box for Miss Next */
+.sp-scen-miss {
+  background: #fff1f2 !important;
+  border: 1.5px solid #fecdd3 !important;
+}
+
+.sp-scen-card-head {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.sp-scen-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+.sp-scen-card-body {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+}
+
+.sp-scen-primary-pct {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+.sp-scen-attend .sp-scen-primary-pct {
+  color: #15803d !important;
+}
+
+.sp-scen-miss .sp-scen-primary-pct {
+  color: #dc2626 !important;
+}
+
+.sp-scen-sub {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+/* Mini Tooltip for Calculator & Action Buttons */
+.sp-mini-tooltip {
+  position: fixed !important;
+  padding: 4px 9px !important;
+  background: #1e1b4b !important;
+  border-radius: 6px !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s !important;
+  transform: translateY(3px) !important;
+  z-index: 2147483647 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', 'Segoe UI', Roboto, sans-serif !important;
+  line-height: 1.2 !important;
+}
+
+.sp-mini-tooltip.sp-tooltip-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* ── Margin & Percentage Badges ── */
+.sp-margin-box {
+  background-color: #f8fafc !important;
+  padding: 8px !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+/* 65% Mode Column Background Indicator (Only on course body cells, NOT on table header) */
+table.sp-attendance-table.sp-table-thresh-65 tbody td.sp-margin-cell,
+td.sp-margin-cell.sp-margin-cell-65 {
+  background-color: #fffaf0 !important; /* Soft distinct yellow column background */
+  border-left: 2px solid #fff4c2 !important;
+  border-right: 2px solid #fff4c2 !important;
+}
+
+table.sp-attendance-table.sp-table-thresh-65 tbody tr:hover td.sp-margin-cell {
+  background-color: #fff4c2 !important;
+}
+
+.sp-margin-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 48px !important;
+  padding: 4px 10px !important;
+  border-radius: 7px !important;
+  font-weight: 800 !important;
+  font-size: 12.5px !important;
+  line-height: 1.1 !important;
+  text-align: center !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Green (Safe / Surplus Margin > 0) */
+.sp-margin-pos {
+  color: #15803d !important;
+  background-color: #dcfce7 !important;
+  border: 1px solid #86efac !important;
+}
+
+/* Amber / Orange (Exact Borderline Margin = 0 - sharply distinct on yellow background) */
+.sp-margin-zero {
+  color: #9a3412 !important;
+  background-color: #ffedd5 !important;
+  border: 1.5px solid #fdba74 !important;
+  box-shadow: 0 1px 2px rgba(234, 88, 12, 0.12) !important;
+}
+
+/* Red (Short / Classes Needed < 0) */
+.sp-margin-neg {
+  color: #b91c1c !important;
+  background-color: #fee2e2 !important;
+  border: 1px solid #fca5a5 !important;
+}
+
+/* ── Summary / Total Row ── */
+table.sp-attendance-table tbody tr.sp-total-row td {
+  border-top: 2px solid #cbd5e1 !important;
+  background-color: #f8fafc !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  padding: 13px 14px !important;
+}

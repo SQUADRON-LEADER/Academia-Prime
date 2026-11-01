@@ -1,0 +1,19 @@
+# Local experiments and generated analysis
+scratch/
+search_results.csv
+
+# Local data-processing helpers and raw source data
+tools/
+
+# Draft and internal documentation
+markdown_files/
+
+# Python and editor-generated files
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db
