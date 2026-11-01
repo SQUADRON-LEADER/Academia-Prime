@@ -83,3 +83,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - Academic utilities include CGPA and SGPA calculations.
 - Attendance tools provide focused academic progress information.
 - Marks views include visual analysis for easier review.
+- Feedback automation reduces repetitive course feedback entry.
