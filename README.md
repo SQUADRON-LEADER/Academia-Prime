@@ -84,3 +84,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - Attendance tools provide focused academic progress information.
 - Marks views include visual analysis for easier review.
 - Feedback automation reduces repetitive course feedback entry.
+- Contact-directory assets are included for in-portal reference.
