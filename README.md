@@ -85,3 +85,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - Marks views include visual analysis for easier review.
 - Feedback automation reduces repetitive course feedback entry.
 - Contact-directory assets are included for in-portal reference.
+- CAPTCHA support is packaged locally under `captcha_solver/`.
