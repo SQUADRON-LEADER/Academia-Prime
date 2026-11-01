@@ -87,3 +87,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - Contact-directory assets are included for in-portal reference.
 - CAPTCHA support is packaged locally under `captcha_solver/`.
 - CAPTCHA model and runtime assets are loaded by the extension when required.
+- The popup interface is located under `src/popup/`.
