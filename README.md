@@ -92,3 +92,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - No analytics or tracking services are part of the extension.
 - The privacy policy is available in `privacy-policy.html`.
 - Chrome and Edge store links are included near the top of this README.
+- Required runtime PDF references are preserved under `important_contacts/`.
