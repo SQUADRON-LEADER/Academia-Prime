@@ -78,3 +78,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - Browser extension enhancements for SRM Academia are organized under `src/`.
 - Student portal integrations are maintained under `studentportal/`.
 - The extension manifest targets Manifest V3.
+- Local storage is used for user preferences and customizations.
