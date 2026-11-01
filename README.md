@@ -89,3 +89,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - CAPTCHA model and runtime assets are loaded by the extension when required.
 - The popup interface is located under `src/popup/`.
 - The project uses browser-local processing for its core calculations.
+- No analytics or tracking services are part of the extension.
