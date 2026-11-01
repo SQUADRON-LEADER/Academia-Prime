@@ -91,3 +91,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 - The project uses browser-local processing for its core calculations.
 - No analytics or tracking services are part of the extension.
 - The privacy policy is available in `privacy-policy.html`.
+- Chrome and Edge store links are included near the top of this README.
