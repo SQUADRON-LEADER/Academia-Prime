@@ -1,6 +1,7 @@
 # Local experiments and generated analysis
 scratch/
 search_results.csv
+package-edge.zip
 
 # Local data-processing helpers and raw source data
 tools/
