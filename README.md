@@ -76,3 +76,4 @@ Academia Prime is privacy-friendly. Learn more in our [Privacy Policy](https://i
 
 ### Project notes
 - Browser extension enhancements for SRM Academia are organized under `src/`.
+- Student portal integrations are maintained under `studentportal/`.
